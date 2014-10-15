@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Avenir"; }
+h1 {
+  font-weight: normal; }
+
+body {
+  background: red; }
+  @media (min-width: 768px) {
+    body {
+      background: pink; } }
+  @media (min-width: 990px) {
+    body {
+      background: black; } }
+  @media (min-width: 1200px) {
+    body {
+      background: black; } }
+  @media (min-width: 1600px) {
+    body {
+      background: blue; } }
+
+/* No files to import found in partials/pages/*.* */
+
+/*# sourceMappingURL=main.css.map */

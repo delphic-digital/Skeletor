@@ -1,0 +1,12 @@
+// Media Queries
+// ------------------------------------------------------------------------------
+
+$breakpoints: (
+	small: 320px,
+	medium: 768px,
+	wide: 990px,
+	superwide: 1200px,
+	superduperwide: 1600px,
+);
+
+$oldIE: false !default;

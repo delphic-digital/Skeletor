@@ -1,0 +1,23 @@
+body{
+	background: red;
+
+  @include breakpoint(medium) {
+    background: yellow;
+  }
+
+  @include breakpoint(wide) {
+    background: black;
+  } 
+
+ 
+
+  @if ( $oldIE == false){
+    @include breakpoint(superwide) {
+      background: black;
+    }
+  }
+
+   @include breakpoint(superduperwide) {
+    background: blue;
+  }
+}
