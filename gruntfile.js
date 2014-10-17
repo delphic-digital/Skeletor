@@ -2,6 +2,14 @@
 module.exports = function(grunt) {
 
 	grunt.initConfig({
+		projectConfig: {
+			baseTemplate: 'index.html',
+			paths: {
+				scss: 'scss',
+				css: 'css',
+				js: 'js'
+			}
+		},
 		pkg: grunt.file.readJSON('package.json'),
 		banner: '/*\n * <%= pkg.name %> v<%= pkg.version %>\n * Build: <%= grunt.template.today("yyyymmddHHMM") %>\n * Author: <%= pkg.author %>\n */\n',
 		watch: {
@@ -9,13 +17,13 @@ module.exports = function(grunt) {
 				livereload: true,
 			},
 			scripts: {
-				files: ['**/*.js'],
+				files: ['<%= projectConfig.paths.js %>/**/*.js'],
 				options: {
 					spawn: false,
 				}
 			},
 			css: {
-				files: ['**/*.scss'],
+				files: ['<%= projectConfig.paths.scss %>/**/*.scss'],
 				tasks: ['sass'],
 				options: {
 					spawn: false,
@@ -29,8 +37,8 @@ module.exports = function(grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'css/main.min.css': 'scss/main.scss',
-					'css/main.min-oldie.css': 'scss/main-oldie.scss'
+					'<%= projectConfig.paths.css %>/main.min.css': '<%= projectConfig.paths.scss %>/main.scss',
+					'<%= projectConfig.paths.css %>/main.min-oldie.css': '<%= projectConfig.paths.scss %>/main-oldie.scss'
 				}
 			}
 		},
@@ -47,22 +55,24 @@ module.exports = function(grunt) {
 			},
 			main: {
 				files: {
-					'js/main.min.js': [
-						'js/vendor/onmediaquery.js',
-						'js/vendor/LAB.js',
-						'js/vendor/minified-src.js',
-						'js/utilities/delphic.inject.js',
-						'js/config.js',
-						'js/main.js'
+					'<%= projectConfig.paths.js %>/main.min.js': [
+						'<%= projectConfig.paths.js %>/vendor/onmediaquery.js',
+						'<%= projectConfig.paths.js %>/vendor/LAB.js',
+						'<%= projectConfig.paths.js %>/vendor/minified-src.js',
+						'<%= projectConfig.paths.js %>/utilities/delphic.inject.js',
+						'<%= projectConfig.paths.js %>/config.js',
+						'<%= projectConfig.paths.js %>/main.js'
 					]
 				}
 			},
 			plugins: {
-				files: grunt.file.expandMapping(['js/plugins/*.js','!js/plugins/*.min.js'], 'js/plugins/', {
-					rename: function(destBase, destPath) {
-						return destPath.replace('.js', '.min.js');
-					}
-				})
+				files: [{
+					expand: true,
+					cwd: '<%= projectConfig.paths.js %>/plugins/',
+					src: ['*.js', '!*.min.js'],
+					ext: '.min.js',
+					extDot: 'last'
+				}]
 			}
 		},
 
@@ -71,17 +81,19 @@ module.exports = function(grunt) {
 				banner: '<%= banner %>',
 			},
 			plugins: {
-				files: grunt.file.expandMapping(['css/plugins/*.css','!css/plugins/*.min.css'], 'css/plugins/', {
-					rename: function(destBase, destPath) {
-						return destPath.replace('.css', '.min.css');
-					}
-				})
+				files: [{
+					expand: true,
+					cwd: '<%= projectConfig.paths.css %>/plugins/',
+					src: ['*.css', '!*.min.css'],
+					ext: '.min.css',
+					extDot: 'last'
+				}]
 			}
 		},
 
 		replace: {
 			dev: {
-				src: ['index.html'],
+				src: ['<%= projectConfig.baseTemplate %>'],
 				overwrite: true,
 				replacements: [{
 					from: /<(!|%)-- @START_PRODUCTION --(%?)>([\s\S]*?)<(!|%)-- @END_PRODUCTION --(%?)>/g,
