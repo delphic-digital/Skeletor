@@ -1,0 +1,72 @@
+
+//Mediaqueries
+
+@mixin breakpoint($point) {
+	 @if $oldIE {
+		@content;
+	}@else{
+		@each $breakpoint in $breakpoints {
+			@if $point == nth($breakpoint, 1) {
+				@media (min-width: nth($breakpoint, 2)) {
+					@content;
+				}
+			}
+		}
+	}
+}
+
+@mixin hide-text() {
+	$approximate-em-value: 12px / 1em;
+	$wider-than-any-screen: -9999em;
+	text-indent: $wider-than-any-screen * $approximate-em-value;
+	overflow: hidden;
+	text-align: left;
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+@mixin box-shadow($left, $top, $blur, $size, $color, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow:inset $left $top $blur $size $color;
+		-moz-box-shadow:inset $left $top $blur $size $color;
+		box-shadow:inset $left $top $blur $size $color;
+	} @else {
+		-webkit-box-shadow: $left $top $blur $size $color;
+		-moz-box-shadow: $left $top $blur $size $color;
+		box-shadow: $left $top $blur $size $color;
+	}
+}
+// @include box-shadow(1px,1px,1px,0, #fff, true);
+
+@mixin gradient($from, $to) {
+	background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background: -moz-linear-gradient(top,  $from, $to);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
+@mixin fluid-image(){
+	max-width: 100%;
+	height: auto!important;
+}
+
+@mixin blank-list(){
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+@mixin rotate( $degrees ) {
+	-webkit-transform: rotate(#{$degrees}deg);
+	-moz-transform: rotate(#{$degrees}deg);
+	-ms-transform: rotate(#{$degrees}deg);
+	-o-transform: rotate(#{$degrees}deg);
+	transform: rotate(#{$degrees}deg);
+
+	filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+	zoom: 1;
+ }

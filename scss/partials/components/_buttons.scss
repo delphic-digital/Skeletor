@@ -1,0 +1,22 @@
+
+%btn-base{
+	display: inline-block;
+	padding: 7px 20px 6px;
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #fff;
+	@include border-radius(3px);
+	@include box-shadow(0,2px,0,0,#2276af);
+}
+
+.btn-primary{
+	@extend %btn-base;
+	@extend %icon-arrow-right;
+	@extend %pull-icon-right;
+	background: $buttonPrimary;
+
+	&:hover {
+		background: #2276af;
+	}
+}
