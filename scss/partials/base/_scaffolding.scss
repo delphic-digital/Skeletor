@@ -2,54 +2,12 @@
 
 html {
 	font-family: "mobile";
-	
+
 	@include breakpoint(medium) {
 	 	font-family: "tablet";
   }
 
 	@include breakpoint(wide) {
 		font-family: "desktop";
-	}
-}
-
-
-body{
-
-	.container { 
-		overflow: hidden; 
-		position: relative; 
-		min-width: 320px;
-	}
-
-	@include breakpoint(wide) {
-		border-top: 5px solid #920037;
-	}
-}
-
-#page-content { 
-	margin: 0 auto; 
-	padding: 0 10px; 
-	max-width: $siteMaxWidth;
-	@if($oldIE){
-		width: $siteMaxWidth;
-	}
-}
-
-
-#primary-sidebar {
-	@include breakpoint(medium) {
-		float: left;
-		margin: 40px 0 0; 
-		width: 25%; 
-	}
-	
-}
-#main-column {
-	margin: 20px 0 0;
-	min-height: 400px;
-	@include breakpoint(medium) {
-		float: right; 
-		margin: 40px 0 0; 
-		width: 68%; 
 	}
 }
