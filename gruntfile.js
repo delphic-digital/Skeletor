@@ -29,8 +29,8 @@ module.exports = function(grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'css/main.min.css': 'sass/main.scss',
-					'css/main.min-oldie.css': 'sass/main-oldie.scss'
+					'css/main.min.css': 'scss/main.scss',
+					'css/main.min-oldie.css': 'scss/main-oldie.scss'
 				}
 			}
 		},
