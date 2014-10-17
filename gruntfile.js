@@ -4,15 +4,6 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		banner: '/*\n * <%= pkg.name %> v<%= pkg.version %>\n * Build: <%= grunt.template.today("yyyymmddHHMM") %>\n * Author: <%= pkg.author %>\n */\n',
-		bumpup: {
-			options: {
-				updateProps: {
-				pkg: 'package.json'
-				}
-			},
-			file: 'package.json'
-		},
-
 		watch: {
 			options: {
 				livereload: true,
@@ -34,15 +25,14 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				options: {
-					//style: 'compressed'
-					sourcemap: true,
+					style: 'compressed'
 					require: 'sass-globbing'
 				},
 				files: {
-					'css/main.css': 'sass/main.scss',
-					'css/main-oldie.css': 'sass/main-oldie.scss'
+					'css/main.min.css': 'sass/main.scss',
+					'css/main.min-oldie.css': 'sass/main-oldie.scss'
 				}
-			} 
+			}
 		},
 		uglify: {
 			options: {
@@ -58,12 +48,12 @@ module.exports = function(grunt) {
 			main: {
 				files: {
 					'js/main.min.js': [
-						'js/vendor/onmediaquery.js', 
-						'js/vendor/LAB.js',  
+						'js/vendor/onmediaquery.js',
+						'js/vendor/LAB.js',
 						'js/vendor/minified-src.js',
-						'js/utilities/delphic.inject.js', 
-						'js/config.js', 
-						'js/main.js' 
+						'js/utilities/delphic.inject.js',
+						'js/config.js',
+						'js/main.js'
 					]
 				}
 			},
@@ -103,7 +93,7 @@ module.exports = function(grunt) {
 			},
 			prod: {
 				src: ['index.html'],
-				overwrite: true,        
+				overwrite: true,
 				replacements: [{
 						from: /<(!|%)-- @START_DEBUG --(%?)>([\s\S]*?)<(!|%)-- @END_DEBUG --(%?)>/g,
 						to: "<$1-- @START_DEBUG $3@END_DEBUG --$5>"
@@ -125,23 +115,16 @@ module.exports = function(grunt) {
 			}
 		}
 	});
-	
+
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-text-replace');
-	grunt.loadNpmTasks('grunt-bumpup');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 
 
 	grunt.registerTask('dev', ['replace:dev']);
 	grunt.registerTask('prod', ['replace:version', 'uglify:main', 'uglify:plugins', 'cssmin:plugins', 'replace:prod']);
-
-	grunt.registerTask('release', function (type) {
-		type = type ? type : 'patch';
-		grunt.task.run('bumpup:' + type);
-		grunt.task.run('replace:prod'); 
-	});
 
 	grunt.registerTask('default', 'dev');
 };
