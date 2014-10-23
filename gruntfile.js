@@ -96,22 +96,22 @@ module.exports = function(grunt) {
 				src: ['<%= projectConfig.baseTemplate %>'],
 				overwrite: true,
 				replacements: [{
-					from: /<(!|%)-- @START_PRODUCTION --(%?)>([\s\S]*?)<(!|%)-- @END_PRODUCTION --(%?)>/g,
-					to: "<$1-- @START_PRODUCTION $3@END_PRODUCTION --$5>"
+					from: /<(!|%)-- @START_PRODUCTION --(%?)>/g,
+					to: "<$1-- @START_PRODUCTION --#$2>"
 				},{
-					from: /<(!|%)-- @START_DEBUG([\s\S]*?)@END_DEBUG --(%?)>/g,
-					to: "<$1-- @START_DEBUG --$3> $2<$1-- @END_DEBUG --$3>"
+					from: /<(!|%)-- @START_DEBUG --#(%?)>/g,
+					to: "<$1-- @START_DEBUG --$2>"
 				}]
 			},
 			prod: {
 				src: ['index.html'],
 				overwrite: true,
 				replacements: [{
-						from: /<(!|%)-- @START_DEBUG --(%?)>([\s\S]*?)<(!|%)-- @END_DEBUG --(%?)>/g,
-						to: "<$1-- @START_DEBUG $3@END_DEBUG --$5>"
+						from: /<(!|%)-- @START_DEBUG --(%?)>/g,
+						to: "<$1-- @START_DEBUG --#$2>"
 					},{
-						from: /<(!|%)-- @START_PRODUCTION([\s\S]*?)@END_PRODUCTION --(%?)>/g,
-						to: "<$1-- @START_PRODUCTION --$3> $2<$1-- @END_PRODUCTION --$3>"
+						from: /<(!|%)-- @START_PRODUCTION --#(%?)>/g,
+						to: "<$1-- @START_PRODUCTION --$2>"
 				},{
 						from: /\?v=\d+\.\d+\.\d+(\+)?(?:[a-z][a-z]*[0-9]+[a-z0-9]*)?/g,
 						to: "?v=<%= pkg.version %>+build<%= grunt.template.today('yyyymmddHHMMss') %>"
