@@ -1,9 +1,6 @@
 //Creating a delphic namespace for all our site code
-;(function (DELPHIC, MINI, MQ) {
-	DELPHIC.ver = '0.1.0+build20140522173219';
-
-	//Define minified.js essential functions. http://minifiedjs.com/
-	var $ = MINI.$, $$=MINI.$$, EE=MINI.EE,
+;(function (DELPHIC, $, MQ) {
+	DELPHIC.ver = '0.1.0+build20141024145030';
 
 	mediaQueries = [{
 		context: 'mobile',
@@ -85,4 +82,4 @@
 	features.init();
 
 
-} (DELPHIC = window.DELPHIC || {}, MINI = require('minified'), MQ));
+} (DELPHIC = window.DELPHIC || {}, $, MQ));

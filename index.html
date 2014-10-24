@@ -10,20 +10,20 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- @START_PRODUCTION
-		<link rel="stylesheet" href="/css/main.min.css?v=0.1.0+build20140522190613">
-	@END_PRODUCTION -->
+	<!-- @START_PRODUCTION -->
+		<link rel="stylesheet" href="/css/main.min.css?v=0.1.0+build20141024145031">
+	<!-- @END_PRODUCTION -->
 
 	<!--[if (gt IE 8) | (IEMobile)]><!-->
 
-	<!-- @START_DEBUG -->
+	<!-- @START_DEBUG --#>
 		<link rel="stylesheet" href="css/main.min.css" />
 	<!-- @END_DEBUG -->
 
 	<!--<![endif]-->
 
 	<!--[if lt IE 9]>
-		<link rel="stylesheet" href="css/main.min-oldie.css?v=0.1.0+build20140522190613"  />
+		<link rel="stylesheet" href="css/main.min-oldie.css?v=0.1.0+build20141024145031"  />
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
@@ -31,20 +31,30 @@
 <body data-feature="myFirstFeature mySecondFeature">
 
 
-<!-- Add your site or application content here -->
+	<!-- Add your site or application content here -->
 
-	<!-- @START_PRODUCTION
-		<script src="js/main.min.js?v=0.1.0+build20140522190613"></script>
-	@END_PRODUCTION -->
+	<!--[if lte IE 9]>
+		According to the conditional comment this is IE 5-9
+	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/main-ie.min.js?v=0.1.0+build20141024145031"></script>
+	<![endif]-->
 
-	<!-- @START_DEBUG -->
+	<!--[if !IE]> -->
+
+	<!-- @START_PRODUCTION -->
+		<script src="js/main.min.js?v=0.1.0+build20141024145031"></script>
+	<!-- @END_PRODUCTION -->
+
+	<!-- @START_DEBUG --#>
 		<script>var DEBUG = true</script>
 		<script src="js/vendor/onmediaquery.js"></script>
 		<script src="js/vendor/LAB.js"></script>
-		<script src="js/vendor/minified-src.js"></script>
+		<script src="js/vendor/zepto.js"></script>
 		<script src="js/utilities/delphic.inject.js"></script>
 		<script src="js/config.js"></script>
 		<script src="js/main.js"></script>
 	<!-- @END_DEBUG -->
+
+	<!-- <![endif]-->
 </body>
 </html>
