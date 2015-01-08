@@ -35,6 +35,7 @@ When architecting the SCSS/Sass for a project, we look to a quote by Tolkien by 
 > And in the Sass way merge them."
 > — J.R.R. Tolkien
 
+The main.scss file is the hub for all of your partial stylesheets (which are denoted by the underscore in their filenames).
 
 As with all Delphic projects, we follow the [mobile first](http://www.html5rocks.com/en/mobile/responsivedesign/) mantra.
 
