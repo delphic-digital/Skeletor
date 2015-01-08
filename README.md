@@ -21,11 +21,13 @@ Front End Developer boilerplate. Loosly based off of [HTML5 Boilerplate](https:/
 
 ### CSS / SCSS
 
-As with all Delphic projects, we follow the [mobile first](http://www.html5rocks.com/en/mobile/responsivedesign/) mantra.
-
 * __css/__ This is where SCSS files that have been compiled into CSS will live as well as plugin CSS files (see comment below).
 
 * __css/plugins/*__ Put any css file in here that correspond to the js/plugins you have added to the site. These css files can be loaded on demand. See the main.js documention _(coming soon)_.
+
+#### SCSS / SASS Guidelines
+
+As with all Delphic projects, we follow the [mobile first](http://www.html5rocks.com/en/mobile/responsivedesign/) mantra.
 
 ## How to use it
 
@@ -35,9 +37,7 @@ When your site is ready for production, you can run some grunt commands.
 
 A standard build will:
 
-* Combine and minify normalize.css and main.css into one file. 
-* Minify medium.css  
-* Minify wide.css
+* Minify main.css
 * Combine and minify onmediaquery.js, LAB.js,delphic.jsload.js and main.js into one file.  
 * Files are created in the same directory and named *.min.css or *.min.js
 
