@@ -11,11 +11,15 @@ Front End Developer boilerplate. Loosly based off of [HTML5 Boilerplate](https:/
 
 ## Description of files
 
+### JavaScript
+
 * __js/main.js__ Contains all the site JavaScript application code. ALL JavaScript application code should go into this one file for performance and maintainability. See documentation on this file _(coming soon)_.
 
 * __js/lib/delphic.jsload.js__ Wrapper function for LABjs. This is included by default because page specific JavaScripts should be loaded on demand.
 
-* __js/plugins/*__ Put any JavaScript plugins in here to be used asynchronously and on demand with the dd-jsloader. 
+* __js/plugins/*__ Put any JavaScript plugins in here to be used asynchronously and on demand with the dd-jsloader.
+
+### CSS
 
 * __css/main.css__ Following the [mobile first](http://www.html5rocks.com/en/mobile/responsivedesign/) mantra, all your core and mobile styles go in here.
 
