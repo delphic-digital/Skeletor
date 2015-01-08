@@ -19,13 +19,11 @@ Front End Developer boilerplate. Loosly based off of [HTML5 Boilerplate](https:/
 
 * __js/plugins/*__ Put any JavaScript plugins in here to be used asynchronously and on demand with the dd-jsloader.
 
-### CSS
+### CSS / SCSS
 
-* __css/main.css__ Following the [mobile first](http://www.html5rocks.com/en/mobile/responsivedesign/) mantra, all your core and mobile styles go in here.
+As with all Delphic projects, we follow the [mobile first](http://www.html5rocks.com/en/mobile/responsivedesign/) mantra.
 
-* __css/medium.css__ Tablet styles in here.
-
-* __css/wide.css__ Desktop styles in here.
+* __css/__ This is where our compiled SCSS files will live as well as plugin css files (see comment below).
 
 * __css/plugins/*__ Put any css file in here that correspond to the js/plugins you have added to the site. These css files can be loaded on demand. See the main.js documention _(coming soon)_.
 
