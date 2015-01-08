@@ -27,6 +27,15 @@ Front End Developer boilerplate. Loosly based off of [HTML5 Boilerplate](https:/
 
 #### SCSS / SASS Guidelines
 
+When architecting the SCSS/Sass for a project, we look to a quote by Tolkien by way of [Hugo Giraudel](http://sass-guidelin.es/):
+
+> "One file to rule them all,
+> One file to find them,
+> One file to bring them all,
+> And in the Sass way merge them."
+> — J.R.R. Tolkien
+
+
 As with all Delphic projects, we follow the [mobile first](http://www.html5rocks.com/en/mobile/responsivedesign/) mantra.
 
 ## How to use it
