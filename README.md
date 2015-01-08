@@ -35,7 +35,7 @@ When architecting the SCSS/Sass for a project, we look to a quote by Tolkien by 
 > And in the Sass way merge them."
 > — J.R.R. Tolkien
 
-The main.scss file is the hub for all of your styles. Main merges all of your partial stylesheets (which are denoted by the underscore in their filenames) into your final single main.css file.
+The main.scss file is the hub for all of your styles. Main merges all of your partial stylesheets (which are denoted by the underscore in their filenames) into your final single __css/main.css__ file.
 
 As with all Delphic projects, we follow the [mobile first](http://www.html5rocks.com/en/mobile/responsivedesign/) mantra. We now apply this methodology to pages or components per file in our partials folder.
 
