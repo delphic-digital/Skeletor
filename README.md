@@ -23,7 +23,7 @@ Front End Developer boilerplate. Loosly based off of [HTML5 Boilerplate](https:/
 
 As with all Delphic projects, we follow the [mobile first](http://www.html5rocks.com/en/mobile/responsivedesign/) mantra.
 
-* __css/__ This is where our compiled SCSS files will live as well as plugin css files (see comment below).
+* __css/__ This is where SCSS files that have been compiled into CSS will live as well as plugin css files (see comment below).
 
 * __css/plugins/*__ Put any css file in here that correspond to the js/plugins you have added to the site. These css files can be loaded on demand. See the main.js documention _(coming soon)_.
 
