@@ -54,18 +54,6 @@ module.exports = function(grunt) {
 					'<%= pkg.config.paths.js %>/main.min.js': [
 						'<%= pkg.config.paths.js %>/vendor/onmediaquery.js',
 						'<%= pkg.config.paths.js %>/vendor/LAB.js',
-						'<%= pkg.config.paths.js %>/vendor/zepto.js',
-						'<%= pkg.config.paths.js %>/utilities/delphic.inject.js',
-						'<%= pkg.config.paths.js %>/config.js',
-						'<%= pkg.config.paths.js %>/main.js'
-					]
-				}
-			},
-			ie: {
-				files: {
-					'<%= pkg.config.paths.js %>/main-ie.min.js': [
-						'<%= pkg.config.paths.js %>/vendor/onmediaquery.js',
-						'<%= pkg.config.paths.js %>/vendor/LAB.js',
 						'<%= pkg.config.paths.js %>/utilities/delphic.inject.js',
 						'<%= pkg.config.paths.js %>/config.js',
 						'<%= pkg.config.paths.js %>/main.js'
@@ -145,7 +133,7 @@ module.exports = function(grunt) {
 
 
 	grunt.registerTask('dev', ['replace:dev']);
-	grunt.registerTask('prod', ['replace:version', 'uglify:main', 'uglify:ie', 'uglify:plugins', 'cssmin:plugins', 'replace:prod']);
+	grunt.registerTask('prod', ['replace:version', 'uglify:main', 'uglify:plugins', 'cssmin:plugins', 'replace:prod']);
 
 	grunt.registerTask('default', 'dev');
 };

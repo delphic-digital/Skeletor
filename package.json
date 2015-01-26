@@ -6,7 +6,7 @@
     "baseTemplate": "index.html",
     "paths": {
       "scss": "scss",
-      "css": "cs",
+      "css": "css",
       "js": "js"
     }
   },

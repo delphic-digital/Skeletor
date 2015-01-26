@@ -10,13 +10,13 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- @START_PRODUCTION -->
+	<!-- @START_PRODUCTION --#>
 		<link rel="stylesheet" href="/css/main.min.css?v=0.1.0+build20141024145031">
 	<!-- @END_PRODUCTION -->
 
 	<!--[if (gt IE 8) | (IEMobile)]><!-->
 
-	<!-- @START_DEBUG --#>
+	<!-- @START_DEBUG -->
 		<link rel="stylesheet" href="css/main.min.css" />
 	<!-- @END_DEBUG -->
 
@@ -33,28 +33,28 @@
 
 	<!-- Add your site or application content here -->
 
-	<!--[if lte IE 9]>
-		According to the conditional comment this is IE 5-9
-	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/main-ie.min.js?v=0.1.0+build20141024145031"></script>
+	<!--[if lte IE 8]>
+	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<![endif]-->
 
-	<!--[if !IE]> -->
+	<!--[if (!IE)|(gt IE 8)]><!-->
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!--<![endif]-->
 
-	<!-- @START_PRODUCTION -->
+	<script src="//cdn.jsdelivr.net/velocity/1.2.1/velocity.min.js"></script>
+
+	<!-- @START_PRODUCTION --#>
 		<script src="js/main.min.js?v=0.1.0+build20141024145031"></script>
 	<!-- @END_PRODUCTION -->
 
-	<!-- @START_DEBUG --#>
+	<!-- @START_DEBUG -->
 		<script>var DEBUG = true</script>
 		<script src="js/vendor/onmediaquery.js"></script>
 		<script src="js/vendor/LAB.js"></script>
-		<script src="js/vendor/zepto.js"></script>
 		<script src="js/utilities/delphic.inject.js"></script>
 		<script src="js/config.js"></script>
 		<script src="js/main.js"></script>
 	<!-- @END_DEBUG -->
 
-	<!-- <![endif]-->
 </body>
 </html>
