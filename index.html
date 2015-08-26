@@ -1,60 +1,28 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title></title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- @START_PRODUCTION --#>
-		<link rel="stylesheet" href="/css/main.min.css?v=0.1.0+build20141024145031">
-	<!-- @END_PRODUCTION -->
-
 	<!--[if (gt IE 8) | (IEMobile)]><!-->
-
-	<!-- @START_DEBUG -->
-		<link rel="stylesheet" href="css/main.min.css" />
-	<!-- @END_DEBUG -->
-
+		<link rel="stylesheet" href="css/main.css" />
 	<!--<![endif]-->
 
 	<!--[if lt IE 9]>
-		<link rel="stylesheet" href="css/main.min-oldie.css?v=0.1.0+build20141024145031"  />
+		<link rel="stylesheet" href="css/main.min-oldie.css"  />
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
 </head>
-<body data-feature="myFirstFeature mySecondFeature">
+<body>
 
 
 	<!-- Add your site or application content here -->
 
-	<!--[if lte IE 8]>
-	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<![endif]-->
-
-	<!--[if (!IE)|(gt IE 8)]><!-->
-  	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<!--<![endif]-->
-
-	<script src="//cdn.jsdelivr.net/velocity/1.2.1/velocity.min.js"></script>
-
-	<!-- @START_PRODUCTION --#>
-		<script src="js/main.min.js?v=0.1.0+build20141024145031"></script>
-	<!-- @END_PRODUCTION -->
-
-	<!-- @START_DEBUG -->
-		<script>var DEBUG = true</script>
-		<script src="js/vendor/onmediaquery.js"></script>
-		<script src="js/vendor/LAB.js"></script>
-		<script src="js/utilities/delphic.inject.js"></script>
-		<script src="js/config.js"></script>
-		<script src="js/main.js"></script>
-	<!-- @END_DEBUG -->
+	<script data-main="js/src/skeletor.main" src="/js/src/lib/require.js"></script>
 
 </body>
 </html>
