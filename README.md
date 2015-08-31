@@ -1,14 +1,18 @@
 FED Responsive Boilerplate
 ===============
 
-Front End Developer boilerplate. Loosly based off of [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate) with Delphic customization.
+Front End Developer boilerplate for Delphic Digital sites.
 
 ## Features
 
-* [Normalize.css](https://github.com/necolas/normalize.css).
-* [onMediaQuery](https://github.com/JoshBarr/on-media-query) for responsive development.
+* Includes
+	* [jQuery](https://jquery.com/) with [conditional](https://github.com/rnsloan/requirejs-conditionally-load-jquery2) loading for ver 2.
+	* [onMediaQuery](https://github.com/JoshBarr/on-media-query) for responsive JavaScript development.
+	* [Normalize.css](https://github.com/necolas/normalize.css).
+	* [Sass](http://sass-lang.com/).
+	* [RequireJS](http://requirejs.org/) for async module loading.
 
-## Description of files
+## Documentation
 
 ### JavaScript
 
