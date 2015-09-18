@@ -1,4 +1,4 @@
-define([],function() {
+define(['./mobile/main-menu'],function() {
 
 	return {
 		args: arguments,

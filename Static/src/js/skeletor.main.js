@@ -14,7 +14,7 @@ require.config({
 
 require(['jquery'], function($){
 
-	console.log($.fn.jquery)
+	console.log('jQuery version: '+$.fn.jquery)
 
 	require([
 	        'utils/utils',

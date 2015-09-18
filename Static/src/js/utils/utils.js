@@ -9,7 +9,23 @@ define([
 	loader
 ){
 
+	/**
+  *   Remove hovers from mobile devices
+  */
+	if(isMobile.any){
+		require(['utils/remove-hover'],function(removeHover){
+			removeHover();
+		});
+	}
+
+	/**
+  *   Initialize OnMediaQuery
+  */
 	MQ.init();
+
+	/**
+  *   Initialize Delphics component loader
+  */
 	loader.init();
 
 });

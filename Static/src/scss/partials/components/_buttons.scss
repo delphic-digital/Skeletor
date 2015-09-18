@@ -1,8 +1,6 @@
-
 %btn-base{
-
-	@include border-radius(3px);
-	@include box-shadow(0,2px,0,0,#2276af);
+	border-radius: 3px;
+	@include background(linear-gradient(red, green) left repeat);
 }
 
 .btn-primary{

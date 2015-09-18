@@ -5,11 +5,11 @@ module.exports = function(grunt) {
 
 		watch: {
 			css: {
-				files: ['<%= pkg.config.paths.scss %>/**/*.scss'],
+				files: ['Static/src/scss/**/*.scss'],
 				tasks: ['sass']
 			},
 			sprites: {
-				files: ['<%= pkg.config.paths.images %>/sprites/*'],
+				files: ['Static/src/sprites/*'],
 				tasks: ['sprite']
 			}
 		},
@@ -18,20 +18,60 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					style: 'compressed',
+					loadPath: require('node-bourbon').includePaths,
 					require: ['sass-css-importer', 'sass-globbing', 'susy']
 				},
 				files: {
-					'<%= pkg.config.paths.css %>/main.css': '<%= pkg.config.paths.scss %>/main.scss',
-					'<%= pkg.config.paths.css %>/main-oldie.css': '<%= pkg.config.paths.scss %>/main-oldie.scss'
+					'Static/dist/css/main.css': 'Static/src/scss/main.scss',
+					'Static/dist/css/oldie.css': 'Static/src/scss/oldie.scss'
 				}
 			}
 		},
 
 		sprite:{
 			all: {
-				src: '<%= pkg.config.paths.images %>/sprites/*.png',
-				dest: '<%= pkg.config.paths.images %>/spritesheet.png',
-				destCss: '<%= pkg.config.paths.scss %>/partials/base/_sprites.scss'
+				src: 'Static/src/sprites/*.png',
+				dest: 'Static/dist/spritesheet.png',
+				destCss: 'Static/src/scss/partials/base/_sprites.scss'
+			}
+		},
+
+		requirejs: {
+			compile: {
+				options: {
+					baseUrl: 'Website/js/src',
+					mainConfigFile: 'Website/js/src/1919kitchenandtap.main.js',
+					dir: 'Website/js/build',
+					removeCombined: true,
+					//fileExclusionRegExp: /lib/,
+					//optimize: 'none',
+					paths: {
+						jquery: "empty:",
+						TweenMax: "empty:",
+						TimelineMax: "empty:",
+						ScrollMagic: "empty:",
+						"ScrollMagic.gsap": "empty:",
+						moment: "empty:",
+						sha1: "empty:",
+						oauth: "empty:",
+						scrollTo: "empty:"
+					},
+					modules: [
+						// First set up the common build layer.
+						{
+							// module names are relative to baseUrl
+							name: 'skeletor.main'
+						},
+						// Now set up a build layer for each main layer, but exclude
+						// the common one. If you're excluding a module, the excludee
+						// must appear before the excluder in this file. Otherwise it will
+						// get confused.
+						{
+							name: 'components/mobile',
+							exclude: ['skeletor.main']
+						}
+					]
+				}
 			}
 		},
 
@@ -39,9 +79,9 @@ module.exports = function(grunt) {
 			dev: {
 				bsFiles: {
 					src : [
-						'<%= pkg.config.paths.css %>/**/*.css',
-						'<%= pkg.config.paths.js %>/**/*.js',
-						'<%= pkg.config.paths.html %>/**/*'
+						'Static/dist/css/**/*.css',
+						'Static/src/js/**/*.js',
+						'index.html'
 					]
 				},
 				options: {
@@ -55,10 +95,7 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-spritesmith');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-browser-sync');
+	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	grunt.registerTask('default', ['browserSync', 'watch']);
 }
