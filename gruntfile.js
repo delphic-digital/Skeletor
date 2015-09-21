@@ -111,6 +111,8 @@ module.exports = function(grunt) {
 
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-	grunt.registerTask('default', ['replace:dev','browserSync', 'watch']);
+	grunt.registerTask('dev', ['replace:dev','browserSync', 'watch']);
 	grunt.registerTask('build', ['requirejs','replace:build']);
+
+	grunt.registerTask('default', 'dev');
 }
