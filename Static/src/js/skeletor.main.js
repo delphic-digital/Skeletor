@@ -10,40 +10,26 @@ require.config({
 	}
 });
 
-//include jquery before everything
-
-require(['jquery'], function($){
+require(['jquery','utils/utils','components/common'], function($, utils, common){
 
 	console.log('jQuery version: '+$.fn.jquery)
-
-	require([
-	        'utils/utils',
-	        'components/common'
-	], function (
-	        utils,
-	        common
-	){
-
 
 	/**
 	 *  Init mobile only components with onMediaQuery and all common (global) components
 	 */
 
-		MQ.addQuery({
-			context: 'mobile',
-			match: function() {
-				require(['components/mobile'], function(component){
-					component.init();
-				})
-			},
-			unmatch: function() {
-				require('components/mobile').destroy(); //http://requirejs.org/docs/api.html#modulenotes-console
-			}
-		});
-
-		common.init();
-
+	MQ.addQuery({
+		context: 'mobile',
+		match: function() {
+			require(['components/mobile'], function(component){
+				component.init();
+			})
+		},
+		unmatch: function() {
+			require('components/mobile').destroy(); //http://requirejs.org/docs/api.html#modulenotes-console
+		}
 	});
 
-})
+	common.init();
 
+});

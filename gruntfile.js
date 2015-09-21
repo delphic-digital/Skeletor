@@ -39,22 +39,13 @@ module.exports = function(grunt) {
 		requirejs: {
 			compile: {
 				options: {
-					baseUrl: 'Website/js/src',
-					mainConfigFile: 'Website/js/src/1919kitchenandtap.main.js',
-					dir: 'Website/js/build',
+					baseUrl: 'Static/src/js',
+					dir: 'Static/dist/js',
 					removeCombined: true,
-					//fileExclusionRegExp: /lib/,
 					//optimize: 'none',
 					paths: {
+						//Map all CDN paths to empty so optimizer doesn't try to include them
 						jquery: "empty:",
-						TweenMax: "empty:",
-						TimelineMax: "empty:",
-						ScrollMagic: "empty:",
-						"ScrollMagic.gsap": "empty:",
-						moment: "empty:",
-						sha1: "empty:",
-						oauth: "empty:",
-						scrollTo: "empty:"
 					},
 					modules: [
 						// First set up the common build layer.
@@ -69,9 +60,32 @@ module.exports = function(grunt) {
 						{
 							name: 'components/mobile',
 							exclude: ['skeletor.main']
+						},
+						{
+							name: 'components/slider',
+							exclude: ['skeletor.main']
 						}
 					]
 				}
+			}
+		},
+
+		replace: {
+			build: {
+				src: ['index.html'],
+				overwrite: true,
+				replacements: [{
+					from: "/Static/src/js/",
+					to: "/Static/dist/js/"
+				}]
+			},
+			dev: {
+				src: ['index.html'],
+				overwrite: true,
+				replacements: [{
+					from: "/Static/dist/js/",
+					to: "/Static/src/js/"
+				}]
 			}
 		},
 
@@ -97,5 +111,6 @@ module.exports = function(grunt) {
 
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-	grunt.registerTask('default', ['browserSync', 'watch']);
+	grunt.registerTask('default', ['replace:dev','browserSync', 'watch']);
+	grunt.registerTask('build', ['requirejs','replace:build']);
 }
