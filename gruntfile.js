@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 				tasks: ['sass']
 			},
 			sprites: {
-				files: ['Static/src/sprites/*'],
+				files: ['Static/src/sprite/*'],
 				tasks: ['sprite']
 			}
 		},
@@ -30,9 +30,10 @@ module.exports = function(grunt) {
 
 		sprite:{
 			all: {
-				src: 'Static/src/sprites/*.png',
+				src: 'Static/src/sprite/*.png',
 				dest: 'Static/dist/spritesheet.png',
-				destCss: 'Static/src/scss/partials/base/_sprites.scss'
+				destCss: 'Static/src/scss/partials/base/_sprites.scss',
+				imgPath: '../spritesheet.png'
 			}
 		},
 
