@@ -5,23 +5,5 @@
  * Version: 0.1.0 (2011/12/13)
  * Released under the MIT license
  */
-define(function () {
 
-    var rParts = /^(.*)\[([^\]]*)\]$/;
-
-    return {
-
-        //example: depend!bar[jquery,lib/foo]
-        load : function(name, req, onLoad, config){
-            var parts = rParts.exec(name);
-
-            req(parts[2].split(','), function(){
-                req([parts[1]], function(mod){
-                    onLoad(mod);
-                });
-            });
-        }
-
-    };
-
-});
+define([],function(){var e=/^(.*)\[([^\]]*)\]$/;return{load:function(t,n,r,i){var s=e.exec(t);n(s[2].split(","),function(){n([s[1]],function(e){r(e)})})}}});
