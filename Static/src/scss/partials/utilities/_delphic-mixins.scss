@@ -2,7 +2,7 @@
 //Mediaqueries
 
 @mixin breakpoint($point) {
-	 @if $oldIE {
+	@if $oldIE {
 		@content;
 	}@else{
 		@each $breakpoint in $breakpoints {
@@ -12,5 +12,38 @@
 				}
 			}
 		}
+	}
+}
+
+
+// Default rules for a font icon.
+%font-icon-defaults {
+	font-family: 'fontello';
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+}
+
+/**
+ * Generate font icons via fontello icon fonts.
+ *
+ * @param  $label
+ *   The font icon content value passed as is to css content.
+ *
+ * @param  $position
+ *   (optional) The type of the pseudo-element, can be 'before' or 'after'.
+ *   Defaults to 'before'.
+ */
+
+@mixin font-icon($label, $position: 'before') {
+	&:#{$position} {
+		@extend %font-icon-defaults;
+		content: '#{map-get($icon-codes, $label)}';
+		@content;
 	}
 }

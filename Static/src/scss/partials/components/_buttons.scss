@@ -1,13 +1,17 @@
 %btn-base{
 	border-radius: 3px;
-	@include background(linear-gradient(red, green) left repeat);
 }
 
 .btn-primary{
 	@extend %btn-base;
-	@extend %icon-arrow-right;
-	@extend %pull-icon-right;
+	&:hover {
+		background: #2276af;
+	}
+}
 
+
+.btn-download{
+	@extend %btn-base;
 	&:hover {
 		background: #2276af;
 	}

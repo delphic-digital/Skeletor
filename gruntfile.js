@@ -31,9 +31,9 @@ module.exports = function(grunt) {
 		sprite:{
 			all: {
 				src: 'Static/src/sprite/*.png',
-				dest: 'Static/dist/spritesheet.png',
+				dest: 'Static/dist/img/spritesheet.png',
 				destCss: 'Static/src/scss/partials/base/_sprites.scss',
-				imgPath: '../spritesheet.png'
+				imgPath: '../img/spritesheet.png'
 			}
 		},
 
