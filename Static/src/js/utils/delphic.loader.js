@@ -2,15 +2,24 @@ define(['jquery'],function($){
 	return {
 		init: function() {
 
-			//Map out components contexts
+			/*
+				Map out components contexts.
+			*/
 			var components = $.map($('[data-component]'), function(el){
 				return {context: $(el).data('component-context') || null, name: 'components/'+$(el).data('component')};
 			});
 
-			console.info('on page components', components)
+			console.info('Components:', components)
 
+			/*
+				If multiple components have the same context, merge them into one object with comma separted names. RequireJS allows commaseparated deps.
+			*/
 			var contexts = this.mergeByContext(components);
 			var self = this;
+
+			/*
+				If component has a context, add it to the OnMediaQuery que, or else just load it.
+			*/
 
 			$.each(contexts, function(i, component){
 				if(component.context != 'null'){

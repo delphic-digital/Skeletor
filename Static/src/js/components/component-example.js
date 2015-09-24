@@ -3,11 +3,11 @@ define(function() {
 	return {
 
 		init: function() {
-			console.log('init slider')
+			console.log('init component 1')
 		},
 
 		destroy: function() {
-			console.log('destroy slider')
+			console.log('destroy component 1')
 		}
 
 	};
