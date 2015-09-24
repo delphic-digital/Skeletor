@@ -1,6 +1,12 @@
-/*! Picturefill - v3.0.0-beta1 - 2015-07-17
-* http://scottjehl.github.io/picturefill
-* Copyright (c) 2015 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT */
+/*! Picturefill - v3.0.0-rc1 - 2015-08-21
+ * http://scottjehl.github.io/picturefill
+ * Copyright (c) 2015 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT
+ */
+/*! Gecko-Picture - v1.0
+ * https://github.com/scottjehl/picturefill/tree/3.0/src/plugins/gecko-picture
+ * Firefox's early picture implementation (prior to FF41) is static and does
+ * not react to viewport changes. This tiny module fixes this.
+ */
 (function(window) {
 	/*jshint eqnull:true */
 	var ua = navigator.userAgent;
@@ -65,11 +71,12 @@
 	}
 })(window);
 
-/*! Picturefill - Responsive Images that work today.
- *  Author: Scott Jehl, Filament Group, 2012 ( new proposal implemented by Shawn Jansepar )
+/*! Picturefill - v3.0.0-beta
+ * http://scottjehl.github.io/picturefill
+ * Copyright (c) 2015 https://github.com/scottjehl/picturefill/blob/master/Authors.txt;
  *  License: MIT
- *  Spec: http://picture.responsiveimages.org/
  */
+
 (function( window, document, undefined ) {
 	// Enable strict mode
 	"use strict";
@@ -191,7 +198,7 @@
 			return string;
 		};
 
-		var buidlStr = memoize(function(css) {
+		var buildStr = memoize(function(css) {
 
 			return "return " + replace((css || "").toLowerCase(),
 				// interpret `and`
@@ -225,7 +232,7 @@
 				} else {
 					/*jshint evil:true */
 					try{
-						cssCache[css] = new Function("e", buidlStr(css))(units);
+						cssCache[css] = new Function("e", buildStr(css))(units);
 					} catch(e) {}
 					/*jshint evil:false */
 				}
@@ -952,6 +959,16 @@
 	// srcset support test
 	pf.supSrcset = "srcset" in image;
 	pf.supSizes = "sizes" in image;
+	pf.supPicture = !!window.HTMLPictureElement;
+
+	if (pf.supSrcset && pf.supPicture && !pf.supSizes) {
+		(function(image2) {
+			image.srcset = "data:,a";
+			image2.src = "data:,a";
+			pf.supSrcset = image.complete === image2.complete;
+			pf.supPicture = pf.supSrcset && pf.supPicture;
+		})(document.createElement("img"));
+	}
 
 	// using pf.qsa instead of dom traversing does scale much better,
 	// especially on sites mixing responsive and non-responsive images
@@ -1385,7 +1402,7 @@
 	};
 
 	// If picture is supported, well, that's awesome.
-	if ( window.HTMLPictureElement ) {
+	if ( pf.supPicture ) {
 		picturefill = noop;
 		pf.fillImg = noop;
 	} else {
@@ -1434,16 +1451,17 @@
 					}
 				};
 			};
-
+			var lastClientWidth = docElem.clientHeight;
 			var onResize = function() {
-				isVwDirty = true;
-				pf.fillImgs();
+				isVwDirty = Math.max(window.innerWidth || 0, docElem.clientWidth) !== units.width || docElem.clientHeight !== lastClientWidth;
+				lastClientWidth = docElem.clientHeight;
+				if ( isVwDirty ) {
+					pf.fillImgs();
+				}
 			};
 
 			on( window, "resize", debounce(onResize, 99 ) );
 			on( document, "readystatechange", run );
-
-			types[ "image/webp" ] = detectTypeSupport("image/webp", "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==" );
 		})();
 	}
 
@@ -1484,6 +1502,11 @@
 	} else if ( typeof define === "function" && define.amd ) {
 		// AMD support
 		define( "picturefill", function() { return picturefill; } );
+	}
+
+	// IE8 evals this sync, so it must be the last thing we do
+	if ( !pf.supPicture ) {
+		types[ "image/webp" ] = detectTypeSupport("image/webp", "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==" );
 	}
 
 } )( window, document );
