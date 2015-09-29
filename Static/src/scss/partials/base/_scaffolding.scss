@@ -1,0 +1,13 @@
+*, *:before, *:after {@include prefixer(box-sizing, border-box, webkit moz spec); }
+
+html {
+	font-family: "mobile";
+
+	@include breakpoint(medium) {
+	 	font-family: "tablet";
+  }
+
+	@include breakpoint(wide) {
+		font-family: "desktop";
+	}
+}

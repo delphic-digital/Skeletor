@@ -1,0 +1,79 @@
+/*doc
+---
+title: Buttons
+name: buttons
+category: Base - Buttons
+
+
+---
+
+Button styles can be applied to the following elements: anchor, button and input[type="submit"]
+
+```html_example
+<a href="/" class="btn-primary">Learn More!</a>
+```
+<table>
+<thead>
+<tr>
+<th>Preview</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><button type="button" href="" class="btn-primary">Primary</button></td>
+<td><pre>btn-primary</pre></td>
+</tr>
+<tr>
+<td><button type="button" href="" class="btn-primary lg">Primary Large</button></td>
+<td><pre>btn-primary lg</pre></td>
+</tr>
+<tr>
+<td><button type="button" href="" class="btn-secondary">Secondary</button></td>
+<td><pre>btn-secondary</pre></td>
+</tr>
+</tbody>
+</table>
+*/
+
+
+.btn-primary
+{
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  background: $blue-primary;
+  border: none;
+  transition: background 0.25s ease-in;
+
+  &.lg { padding: 6px 14px; }
+}
+
+.btn-secondary
+{
+  @extend .btn-primary;
+
+  background: $purple-primary;
+}
+
+
+
+%btn-base{
+	border-radius: 3px;
+}
+
+.btn-primary{
+	@extend %btn-base;
+	&:hover {
+		background: #2276af;
+	}
+}
+
+
+.btn-download{
+	@extend %btn-base;
+}

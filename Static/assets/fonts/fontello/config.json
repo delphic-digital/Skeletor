@@ -1,0 +1,88 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "12f4ece88e46abd864e40b35e05b11cd",
+      "css": "ok",
+      "code": 59399,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "70370693ada58ef0a60fa0984fe8d52a",
+      "css": "plus",
+      "code": 59394,
+      "src": "entypo"
+    },
+    {
+      "uid": "1256e3054823e304d7e452a589cf8bb8",
+      "css": "minus",
+      "code": 59398,
+      "src": "entypo"
+    },
+    {
+      "uid": "767fede84586366cd7d6c835be745454",
+      "css": "mobile",
+      "code": 59400,
+      "src": "entypo"
+    },
+    {
+      "uid": "w3nzesrlbezu6f30q7ytyq919p6gdlb6",
+      "css": "home",
+      "code": 59396,
+      "src": "typicons"
+    },
+    {
+      "uid": "524f670504958d3e32ef887b99d8aca2",
+      "css": "down-circle",
+      "code": 59403,
+      "src": "iconic"
+    },
+    {
+      "uid": "a263473d2d406881ea08f991c1b38694",
+      "css": "left-circle",
+      "code": 59402,
+      "src": "iconic"
+    },
+    {
+      "uid": "ccee648b9e12a533f6957967e29ebdef",
+      "css": "right-circle",
+      "code": 59401,
+      "src": "iconic"
+    },
+    {
+      "uid": "55ba7d8f711ce265df7de4ab7f148e65",
+      "css": "up-circle",
+      "code": 59404,
+      "src": "iconic"
+    },
+    {
+      "uid": "c21d309f797d3644dc8d28c4617738ce",
+      "css": "left",
+      "code": 59393,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "1d35198f5190ec004dd4ec742fbe19ca",
+      "css": "arrow-right",
+      "code": 59392,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "c91098f07ff0df45b3f8666b72b75801",
+      "css": "phone",
+      "code": 59397,
+      "src": "elusive"
+    },
+    {
+      "uid": "221947bea81f49a11b863c686a7bd235",
+      "css": "search",
+      "code": 59395,
+      "src": "websymbols"
+    }
+  ]
+}
