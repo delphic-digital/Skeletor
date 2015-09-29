@@ -11,6 +11,13 @@ module.exports = function(grunt) {
 			sprites: {
 				files: ['Static/src/sprite/*'],
 				tasks: ['sprite']
+			},
+			hologram: {
+				files: [
+					"Static/dist/css/main.css",
+					"Cortana"
+				],
+				tasks: ['hologram']
 			}
 		},
 
@@ -106,6 +113,13 @@ module.exports = function(grunt) {
 
 				}
 			}
+		},
+		hologram: {
+		  generate: {
+        options: {
+          config: 'hologram_config.yml'
+        }
+      }
 		}
 
 	});

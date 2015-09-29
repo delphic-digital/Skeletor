@@ -1,0 +1,19 @@
+# Directory to parse
+source: ./Static/src/scss
+
+# Directory to build the styleguide
+destination: ./Static/dist/styleguide
+
+# Hologram theme
+documentation_assets: ./Static/src/styleguide/Cortana
+custom_markdown: ./Static/src/styleguide/Cortana/CortanaMarkdownRenderer.rb
+
+# To have a custom index page build with your README.md
+#index: README.md
+
+# List all css to include for the styleguide render examples (path from styleguide directory)
+css_include:
+  - '../css/main.css'
+
+# String who is used to split the category name and create category wrapper
+#name_scope: ' - '
