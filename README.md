@@ -1,7 +1,7 @@
 FED Responsive Boilerplate
 ===============
 
-Front End Developer boilerplate for Delphic Digital sites.
+Front End Developer boilerplate for Delphic Digital sites. This boilerplate will allow you, the Mighty Developer to hit the ground running on a new project. This project is constantly evolving and improving as we learn more efficient ways to approach a problem. 
 
 ## Features
 
