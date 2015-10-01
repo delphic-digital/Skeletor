@@ -11,6 +11,7 @@ Front End Developer boilerplate for Delphic Digital sites.
 	* [Normalize.css](https://github.com/necolas/normalize.css).
 	* [Sass](http://sass-lang.com/).
 	* [RequireJS](http://requirejs.org/) for async module loading.
+  * [Hologram](https://github.com/trulia/hologram) for living styleguide generation.
 
 ## Documentation
 
