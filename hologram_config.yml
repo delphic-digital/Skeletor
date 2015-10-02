@@ -17,3 +17,5 @@ css_include:
 
 # String who is used to split the category name and create category wrapper
 #name_scope: ' - '
+
+exit_on_warnings: true

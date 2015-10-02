@@ -14,8 +14,8 @@ module.exports = function(grunt) {
 			},
 			hologram: {
 				files: [
-					"Static/dist/css/main.css",
-					"Cortana"
+					'Static/dist/css/main.css',
+					'Static/src/styleguide/Cortana/'
 				],
 				tasks: ['hologram']
 			}
