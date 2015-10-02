@@ -12,6 +12,7 @@ Front End Developer boilerplate for Delphic Digital sites. This boilerplate will
 	* [Sass](http://sass-lang.com/).
 	* [RequireJS](http://requirejs.org/) for async module loading.
   * [Hologram](https://github.com/trulia/hologram) for living styleguide generation.
+  * [Browsersync](http://www.browsersync.io/) for synchronized browser testing.
 
 ## Documentation
 

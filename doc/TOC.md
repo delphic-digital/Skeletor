@@ -20,7 +20,7 @@ Items needed to be installed before using the boilerplate and all it's awesomene
 3. Enter the command: `npm install`, this will download and install all the dependecies (defined in package.json) into the "node_modules" folder
 4. Run the command: `grunt dev`, this will do a few things: 
   * Set the project into "dev" mode. When in "dev", your project will use files from the `Static/src` folders. 
-  * Start BrowserSync.
+  * Start [Browsersync](http://www.browsersync.io/).
   * Runs the "watch" task in Grunt, which watches for SCSS, Sprite, and Styleguide changes.
 
 
