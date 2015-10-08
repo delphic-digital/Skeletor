@@ -37,7 +37,7 @@ main { padding: 20px; }
 	}
 }
 
-@include breakpoint(medium){
+@include breakpoint($medium){
 	.grid {
 		&__col {
 			@each $column, $column-width in $column-widths {
@@ -47,7 +47,7 @@ main { padding: 20px; }
 	}
 }
 
-@include breakpoint(wide){
+@include breakpoint($wide){
 	.grid {
 		&__col {
 			@each $column, $column-width in $column-widths {
@@ -57,7 +57,7 @@ main { padding: 20px; }
 	}
 }
 
-@include breakpoint(superwide){
+@include breakpoint($superwide){
 	.grid {
 		&__col {
 			@each $column, $column-width in $column-widths {
