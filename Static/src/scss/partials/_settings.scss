@@ -1,23 +1,10 @@
-
-$oldIE: false !default;
-
-
 // Media Queries
 // ------------------------------------------------------------------------------
 
-$breakpoints: (
-	small: 320px,
-	medium: 768px,
-	wide: 980px,
-	superwide: 1200px
-);
-
-// Fonts
-// ------------------------------------------------------------------------------
-
-$lightWeight: 300;
-$regularWeight: 400;
-$boldWeight: 600;
+$small: 320px;
+$medium: 768px,'no-query' true;
+$wide: 980px,'no-query' true;
+$superwide: 1200px,'no-query' true;
 
 
 // Colors
