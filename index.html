@@ -19,7 +19,23 @@
 	</head>
 	<body>
 		<main>
-			<div class="component-example" data-component="component-example" data-component-context="tablet,desktop"></div>
+
+			<section class="grid">
+				 <div class="grid__col grid__col--sm-12 grid__col--md-4">1. sm-2 md-4</div>
+				 <div class="grid__col grid__col--sm-12 grid__col--md-4">2. sm-4 md-4</div>
+				 <div class="grid__col grid__col--sm-12 grid__col--md-4">3. sm-6 md-4</div>
+			</section>
+
+			<section class="grid">
+				 <div class="grid__col grid__col--sm-6 grid__col--lg-5">1. sm-6 lg-3</div>
+				 <div class="grid__col grid__col--sm-6 grid__col--lg-7">2. sm-6 lg-7</div>
+			</section>
+
+			<section class="grid">
+				 <div class="grid__col grid__col--sm-12 grid__col--xlg-6">1. sm-6 lg-3</div>
+				 <div class="grid__col grid__col--sm-12 grid__col--xlg-6">2. sm-6 lg-7</div>
+			</section>
+
 		</main>
 
 		<script data-main="/Static/src/js/skeletor.main" src="/Static/src/js/lib/require.js"></script>

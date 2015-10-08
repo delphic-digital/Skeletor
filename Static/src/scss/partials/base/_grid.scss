@@ -1,0 +1,68 @@
+$column-widths: (
+	1: 8.33333333%,
+	2: 16.66666667%,
+	3: 25%,
+	4: 33.33333333%,
+	5: 41.66666667%,
+	6: 50%,
+	7: 58.33333333%,
+	8: 66.66666667%,
+	9: 75%,
+	10: 83.33333333%,
+	11: 91.66666667%,
+	12: 100%
+);
+
+main { padding: 20px; }
+
+.grid {
+	@include display(flex);
+	@include flex(0 1 auto);
+	@include flex-direction(row);
+	@include flex-wrap(wrap);
+	margin-left: -15px;
+	margin-right: -15px;
+	background: rgba(0,0,0,0.1);
+
+	&__col {
+		@include flex(1 0 auto);
+		padding: 15px;
+		background: rgba(0,0,0,0.2);
+		border: 1px solid rgba(0,0,0,0.2);
+		/* background-clip: content-box; */
+
+		@each $column, $column-width in $column-widths {
+			&--sm-#{$column} { @include flex-basis($column-width); max-width: $column-width; }
+		}
+	}
+}
+
+@include breakpoint(medium){
+	.grid {
+		&__col {
+			@each $column, $column-width in $column-widths {
+				&--md-#{$column} { @include flex-basis($column-width); max-width: $column-width; }
+			}
+		}
+	}
+}
+
+@include breakpoint(wide){
+	.grid {
+		&__col {
+			@each $column, $column-width in $column-widths {
+				&--lg-#{$column} { @include flex-basis($column-width); max-width: $column-width; }
+			}
+		}
+	}
+}
+
+@include breakpoint(superwide){
+	.grid {
+		&__col {
+			@each $column, $column-width in $column-widths {
+				&--xlg-#{$column} { @include flex-basis($column-width); max-width: $column-width; }
+			}
+		}
+	}
+}
