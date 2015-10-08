@@ -11,22 +11,22 @@ module.exports = function(grunt) {
 			sprites: {
 				files: ['Static/src/sprite/*'],
 				tasks: ['sprite']
-			},
+			}/*,
 			hologram: {
 				files: [
 					'Static/dist/css/main.css',
 					'Static/src/styleguide/Cortana/'
 				],
 				tasks: ['hologram']
-			}
+			}*/
 		},
 
 		sass: {
 			dist: {
 				options: {
-					style: 'compressed',
+					style: 'expanded',
 					loadPath: require('node-bourbon').includePaths,
-					require: ['sass-css-importer', 'sass-globbing', 'susy']
+					require: ['sass-css-importer', 'sass-globbing', 'susy', 'breakpoint']
 				},
 				files: {
 					'Static/dist/css/main.css': 'Static/src/scss/main.scss',
