@@ -524,6 +524,281 @@ th {
   font-weight: normal;
   font-style: normal;
 }
+.sm-bkg-fixed {
+  background-attachment: fixed;
+}
+
+.sm-bkg-left-top {
+  background-position: left top;
+}
+
+.sm-bkg-left-center {
+  background-position: left center;
+}
+
+.sm-bkg-left-bottom {
+  background-position: left bottom;
+}
+
+.sm-bkg-center-top {
+  background-position: center top;
+}
+
+.sm-bkg-center-center {
+  background-position: center center;
+}
+
+.sm-bkg-center-bottom {
+  background-position: center bottom;
+}
+
+.sm-bkg-right-top {
+  background-position: right top;
+}
+
+.sm-bkg-right-center {
+  background-position: right center;
+}
+
+.sm-bkg-right-bottom {
+  background-position: right bottom;
+}
+
+.sm-bkg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.sm-bkg-repeat {
+  background-repeat: repeat;
+}
+
+.sm-bkg-repeat-x {
+  background-repeat: repeat-x;
+}
+
+.sm-bkg-repeat-y {
+  background-repeat: repeat-y;
+}
+
+.sm-bkg-auto {
+  background-size: auto;
+}
+
+.sm-bkg-cover {
+  background-size: cover;
+}
+
+.sm-bkg-contain {
+  background-size: contain;
+}
+
+@media (min-width: 768px) {
+  .md-bkg-fixed {
+    background-attachment: fixed;
+  }
+
+  .md-bkg-left-top {
+    background-position: left top;
+  }
+
+  .md-bkg-left-center {
+    background-position: left center;
+  }
+
+  .md-bkg-left-bottom {
+    background-position: left bottom;
+  }
+
+  .md-bkg-center-top {
+    background-position: center top;
+  }
+
+  .md-bkg-center-center {
+    background-position: center center;
+  }
+
+  .md-bkg-center-bottom {
+    background-position: center bottom;
+  }
+
+  .md-bkg-right-top {
+    background-position: right top;
+  }
+
+  .md-bkg-right-center {
+    background-position: right center;
+  }
+
+  .md-bkg-right-bottom {
+    background-position: right bottom;
+  }
+
+  .md-bkg-no-repeat {
+    background-repeat: no-repeat;
+  }
+
+  .md-bkg-repeat {
+    background-repeat: repeat;
+  }
+
+  .md-bkg-repeat-x {
+    background-repeat: repeat-x;
+  }
+
+  .md-bkg-repeat-y {
+    background-repeat: repeat-y;
+  }
+
+  .md-bkg-auto {
+    background-size: auto;
+  }
+
+  .md-bkg-cover {
+    background-size: cover;
+  }
+
+  .md-bkg-contain {
+    background-size: contain;
+  }
+}
+@media (min-width: 980px) {
+  .lg-bkg-fixed {
+    background-attachment: fixed;
+  }
+
+  .lg-bkg-left-top {
+    background-position: left top;
+  }
+
+  .lg-bkg-left-center {
+    background-position: left center;
+  }
+
+  .lg-bkg-left-bottom {
+    background-position: left bottom;
+  }
+
+  .lg-bkg-center-top {
+    background-position: center top;
+  }
+
+  .lg-bkg-center-center {
+    background-position: center center;
+  }
+
+  .lg-bkg-center-bottom {
+    background-position: center bottom;
+  }
+
+  .lg-bkg-right-top {
+    background-position: right top;
+  }
+
+  .lg-bkg-right-center {
+    background-position: right center;
+  }
+
+  .lg-bkg-right-bottom {
+    background-position: right bottom;
+  }
+
+  .lg-bkg-no-repeat {
+    background-repeat: no-repeat;
+  }
+
+  .lg-bkg-repeat {
+    background-repeat: repeat;
+  }
+
+  .lg-bkg-repeat-x {
+    background-repeat: repeat-x;
+  }
+
+  .lg-bkg-repeat-y {
+    background-repeat: repeat-y;
+  }
+
+  .lg-bkg-auto {
+    background-size: auto;
+  }
+
+  .lg-bkg-cover {
+    background-size: cover;
+  }
+
+  .lg-bkg-contain {
+    background-size: contain;
+  }
+}
+@media (min-width: 1200px) {
+  .xlg-bkg-fixed {
+    background-attachment: fixed;
+  }
+
+  .xlg-bkg-left-top {
+    background-position: left top;
+  }
+
+  .xlg-bkg-left-center {
+    background-position: left center;
+  }
+
+  .xlg-bkg-left-bottom {
+    background-position: left bottom;
+  }
+
+  .xlg-bkg-center-top {
+    background-position: center top;
+  }
+
+  .xlg-bkg-center-center {
+    background-position: center center;
+  }
+
+  .xlg-bkg-center-bottom {
+    background-position: center bottom;
+  }
+
+  .xlg-bkg-right-top {
+    background-position: right top;
+  }
+
+  .xlg-bkg-right-center {
+    background-position: right center;
+  }
+
+  .xlg-bkg-right-bottom {
+    background-position: right bottom;
+  }
+
+  .xlg-bkg-no-repeat {
+    background-repeat: no-repeat;
+  }
+
+  .xlg-bkg-repeat {
+    background-repeat: repeat;
+  }
+
+  .xlg-bkg-repeat-x {
+    background-repeat: repeat-x;
+  }
+
+  .xlg-bkg-repeat-y {
+    background-repeat: repeat-y;
+  }
+
+  .xlg-bkg-auto {
+    background-size: auto;
+  }
+
+  .xlg-bkg-cover {
+    background-size: cover;
+  }
+
+  .xlg-bkg-contain {
+    background-size: contain;
+  }
+}
 main {
   padding: 20px;
 }

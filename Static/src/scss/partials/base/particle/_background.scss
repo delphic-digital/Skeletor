@@ -1,0 +1,58 @@
+$background-props: (
+	background-attachment: (
+		fixed
+	),
+	background-position: (
+		'left top',
+		'left center',
+		'left bottom',
+		'center top',
+		'center center',
+		'center bottom',
+		'right top',
+		'right center',
+		'right bottom'
+	),
+	background-repeat: (
+		no-repeat,
+		repeat,
+		repeat-x,
+		repeat-y
+	),
+	background-size: (
+		auto,
+		cover,
+		contain
+	)
+);
+
+
+@each $props, $background-prop in $background-props {
+	@each $prop in $background-prop {
+		.sm-bkg-#{str-replace($prop, ' ', '-')} { #{$props} : #{$prop}; }
+	}
+}
+
+@include breakpoint($medium){
+	@each $props, $background-prop in $background-props {
+		@each $prop in $background-prop {
+			.md-bkg-#{str-replace($prop, ' ', '-')} { #{$props} : #{$prop}; }
+		}
+	}
+}
+
+@include breakpoint($wide){
+	@each $props, $background-prop in $background-props {
+		@each $prop in $background-prop {
+			.lg-bkg-#{str-replace($prop, ' ', '-')} { #{$props} : #{$prop}; }
+		}
+	}
+}
+
+@include breakpoint($superwide){
+	@each $props, $background-prop in $background-props {
+		@each $prop in $background-prop {
+			.xlg-bkg-#{str-replace($prop, ' ', '-')} { #{$props} : #{$prop}; }
+		}
+	}
+}
