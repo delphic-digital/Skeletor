@@ -8,9 +8,9 @@
 //SASS functions and mixins
 @import "partials/utilities/**/*";
 
-//@import "partials/base/normalize";
+@import "partials/base/normalize";
+@import "partials/base/helpers/**/*";
 @import "partials/base/typography";
-@import "partials/base/helpers";
 @import "partials/base/grid";
 @import "partials/base/scaffolding";
 @import "partials/base/sprites";

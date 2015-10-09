@@ -1,10 +1,22 @@
 // Media Queries
 // ------------------------------------------------------------------------------
 
-$small: 320px;
-$medium: 768px,'no-query' true;
-$wide: 980px,'no-query' true;
-$superwide: 1200px,'no-query' true;
+
+$breakpoints: (
+	small: 320px,
+	medium: 768px,
+	wide: 980px,
+	superwide: 1200px
+);
+
+
+$small: map-get($breakpoints, small);
+$medium: map-get($breakpoints, medium),'no-query' true;
+$wide:  map-get($breakpoints, wide),'no-query' true;
+$superwide:  map-get($breakpoints, superwide),'no-query' true;
+$max-small: map-get($breakpoints, medium)  - 1px;
+$max-medium: map-get($breakpoints, wide)  - 1px;
+$max-large: map-get($breakpoints, superwide)  - 1px;
 
 
 // Colors
