@@ -492,7 +492,7 @@ main {
   padding: 15px;
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.2);
-  /* background-clip: content-box; */
+  background-clip: content-box;
 }
 .grid__col--sm-1 {
   -webkit-flex-basis: 8.33333%;
@@ -675,10 +675,10 @@ main {
   /* @include order($column + 1); */
 }
 .grid__col--sm-pull-0 {
-  left: auto;
+  right: auto;
 }
 .grid__col--sm-push-0 {
-  right: auto;
+  left: auto;
 }
 
 .grid__col--md-1 {
@@ -837,11 +837,11 @@ main {
 .grid__col--md-push-12 {
   left: 100%;
 }
-.grid--md-pull-0 {
-  left: auto;
-}
-.grid--md-push-0 {
+.grid__col--md-pull-0 {
   right: auto;
+}
+.grid__col--md-push-0 {
+  left: auto;
 }
 
 .grid__col--lg-1 {
@@ -1001,10 +1001,10 @@ main {
   left: 100%;
 }
 .grid__col--lg-pull-0 {
-  left: auto;
+  right: auto;
 }
 .grid__col--lg-push-0 {
-  right: auto;
+  left: auto;
 }
 
 .grid__col--xlg-1 {
@@ -1164,10 +1164,10 @@ main {
   left: 100%;
 }
 .grid__col--xlg-pull-0 {
-  left: auto;
+  right: auto;
 }
 .grid__col--xlg-push-0 {
-  right: auto;
+  left: auto;
 }
 
 *, *:before, *:after {
