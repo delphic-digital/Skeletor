@@ -2,57 +2,57 @@ $min-medium: map-get($breakpoints, medium);
 $min-large: map-get($breakpoints, wide);
 $min-xlarge: map-get($breakpoints, superwide);
 
-.visible-small,
-.visible-small-block,
-.visible-small-inline,
-.visible-small-inline-block,
-.visible-medium,
-.visible-medium-block,
-.visible-medium-inline,
-.visible-medium-inline-block,
-.visible-large,
-.visible-large-block,
-.visible-large-inline,
-.visible-large-inline-block,
-.visible-xlarge,
-.visible-xlarge-block,
-.visible-xlarge-inline,
-.visible-xlarge-inline-block {
+.visible-sm,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block,
+.visible-xlg,
+.visible-xlg-block,
+.visible-xlg-inline,
+.visible-xlg-inline-block {
   display: none !important;
 }
 
 @include breakpoint(max-width $max-small){
-	.visible-small              { display: block !important; }
-	.visible-small-block        { display: block !important; }
-	.visible-small-inline       { display: inline !important; }
-	.visible-small-inline-block { display: inline-block !important;}
+	.visible-sm              { display: block !important; }
+	.visible-sm-block        { display: block !important; }
+	.visible-sm-inline       { display: inline !important; }
+	.visible-sm-inline-block { display: inline-block !important;}
 
-	.hidden-small               { display: none; }
+	.hidden-sm               { display: none; }
 }
 
 @include breakpoint($min-medium $max-medium){
-	.visible-medium              { display: block !important; }
-	.visible-medium-block        { display: block !important; }
-	.visible-medium-inline       { display: inline !important; }
-	.visible-medium-inline-block { display: inline-block !important; }
+	.visible-md              { display: block !important; }
+	.visible-md-block        { display: block !important; }
+	.visible-md-inline       { display: inline !important; }
+	.visible-md-inline-block { display: inline-block !important; }
 
-	.hidden-medium               { display: none; }
+	.hidden-md               { display: none; }
 }
 
 @include breakpoint($min-large $max-large){
-	.visible-large              { display: block !important; }
-	.visible-large-block        { display: block !important; }
-	.visible-large-inline       { display: inline !important; }
-	.visible-large-inline-block { display: inline-block !important; }
+	.visible-lg              { display: block !important; }
+	.visible-lg-block        { display: block !important; }
+	.visible-lg-inline       { display: inline !important; }
+	.visible-lg-inline-block { display: inline-block !important; }
 
-	.hidden-large               { display: none; }
+	.hidden-lg               { display: none; }
 }
 
 @include breakpoint($min-xlarge){
-	.visible-xlarge              { display: block !important; }
-	.visible-xlarge-block        { display: block !important; }
-	.visible-xlarge-inline       { display: inline !important; }
-	.visible-xlarge-inline-block { display: inline-block !important; }
+	.visible-xlg              { display: block !important; }
+	.visible-xlg-block        { display: block !important; }
+	.visible-xlg-inline       { display: inline !important; }
+	.visible-xlg-inline-block { display: inline-block !important; }
 
-	.hidden-xlarge               { display: none; }
+	.hidden-xlg               { display: none; }
 }
