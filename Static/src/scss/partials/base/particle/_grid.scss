@@ -20,8 +20,6 @@ main { padding: 20px; }
 	@include flex(0 1 auto);
 	@include flex-direction(row);
 	@include flex-wrap(wrap);
-	margin-left: -15px;
-	margin-right: -15px;
 	background: rgba(0,0,0,0.1);
 
 	&__col {

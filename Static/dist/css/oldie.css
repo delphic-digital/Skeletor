@@ -748,8 +748,6 @@ main {
   -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
   background: rgba(0, 0, 0, 0.1);
 }
 .grid__col {
