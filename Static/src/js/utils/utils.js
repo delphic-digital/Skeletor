@@ -1,5 +1,6 @@
 define([
 	'utils/delphic.loader',
+	'utils/modernizr-flexbox', /** https://modernizr.com/download?flexbox-flexboxlegacy-flexboxtweener-setclasses **/
 	'utils/browser-update', /** http://browser-update.org/ **/
 	'utils/picturefill', /** https://github.com/scottjehl/picturefill**/
 	'utils/onmediaquery', /** https://github.com/JoshBarr/on-media-query **/
