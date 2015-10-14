@@ -1,7 +1,3 @@
-$min-medium: map-get($breakpoints, medium);
-$min-large: map-get($breakpoints, wide);
-$min-xlarge: map-get($breakpoints, superwide);
-
 .visible-sm,
 .visible-sm-block,
 .visible-sm-inline,
@@ -21,7 +17,12 @@ $min-xlarge: map-get($breakpoints, superwide);
   display: none !important;
 }
 
-@include breakpoint(max-width $max-small){
+$visibilityBreakPoint1: max-width $max-small;
+$visibilityBreakPoint2: $min-medium $max-medium;
+$visibilityBreakPoint3: $min-large $max-large;
+$visibilityBreakPoint4: $min-xlarge,'no-query' true;
+
+@include breakpoint($visibilityBreakPoint1){
 	.visible-sm              { display: block !important; }
 	.visible-sm-block        { display: block !important; }
 	.visible-sm-inline       { display: inline !important; }
@@ -30,7 +31,7 @@ $min-xlarge: map-get($breakpoints, superwide);
 	.hidden-sm               { display: none; }
 }
 
-@include breakpoint($min-medium $max-medium){
+@include breakpoint($visibilityBreakPoint2){
 	.visible-md              { display: block !important; }
 	.visible-md-block        { display: block !important; }
 	.visible-md-inline       { display: inline !important; }
@@ -39,7 +40,7 @@ $min-xlarge: map-get($breakpoints, superwide);
 	.hidden-md               { display: none; }
 }
 
-@include breakpoint($min-large $max-large){
+@include breakpoint($visibilityBreakPoint3){
 	.visible-lg              { display: block !important; }
 	.visible-lg-block        { display: block !important; }
 	.visible-lg-inline       { display: inline !important; }
@@ -48,7 +49,7 @@ $min-xlarge: map-get($breakpoints, superwide);
 	.hidden-lg               { display: none; }
 }
 
-@include breakpoint($min-xlarge){
+@include breakpoint($visibilityBreakPoint4){
 	.visible-xlg              { display: block !important; }
 	.visible-xlg-block        { display: block !important; }
 	.visible-xlg-inline       { display: inline !important; }

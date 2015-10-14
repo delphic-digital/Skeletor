@@ -9,14 +9,19 @@ $breakpoints: (
 	superwide: 1200px
 );
 
+$min-medium: map-get($breakpoints, medium);
+$min-large: map-get($breakpoints, wide);
+$min-xlarge: map-get($breakpoints, superwide);
 
-$small: map-get($breakpoints, small);
-$medium: map-get($breakpoints, medium),'no-query' true;
-$wide:  map-get($breakpoints, wide),'no-query' true;
-$superwide:  map-get($breakpoints, superwide),'no-query' true;
 $max-small: map-get($breakpoints, medium)  - 1px;
 $max-medium: map-get($breakpoints, wide)  - 1px;
 $max-large: map-get($breakpoints, superwide)  - 1px;
+
+
+$small: map-get($breakpoints, small);
+$medium: $min-medium,'no-query' true;
+$wide:  $min-large,'no-query' true;
+$superwide:  $min-xlarge,'no-query' true;
 
 
 // Colors

@@ -433,6 +433,26 @@ th {
   display: none !important;
 }
 
+.visible-xlg {
+  display: block !important;
+}
+
+.visible-xlg-block {
+  display: block !important;
+}
+
+.visible-xlg-inline {
+  display: inline !important;
+}
+
+.visible-xlg-inline-block {
+  display: inline-block !important;
+}
+
+.hidden-xlg {
+  display: none;
+}
+
 @font-face {
   font-family: "fontello";
   src: url("../../assets/fonts/fontello/fontello.eot?81278657");
@@ -748,7 +768,7 @@ main {
   -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  background: rgba(0, 0, 0, 0.1);
+  background: #0A0A0A;
 }
 .no-flexbox.no-flexboxlegacy.no-flexboxtweener .grid:after {
   content: "";
@@ -766,7 +786,7 @@ main {
   position: relative;
   padding: 15px;
   background: red;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid #333333;
   background-clip: content-box;
 }
 .grid__col--sm-pull-0 {
