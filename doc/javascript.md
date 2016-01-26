@@ -14,7 +14,6 @@ Skeletor comes with JavaScript structure using [RequireJS](http://requirejs.org)
 	* ```common``` folder contains components that are global and be concatenated to the main.js when built.
 	* ```mobile``` folder contains components that are mobile specific and will be contacted to a mobile.js and be only loaded on mobile with onMediaQuery
 	* other components will be standalone and won't be concatenated with the main (common) JS. These can be loaded directly with the HTML.
-
 * Inside ```lib``` are the require.js library files
 * Inside ```plugins``` should be any vendor or 3rd party (jQuery plugins) JavaScript dependencies for components.
 * Inside ```utils``` should be any global vendor or 3rd party JavaScript like polyfills or helpers.
