@@ -2,6 +2,7 @@
 
 Skeletor comes with JavaScript structure using [RequireJS](http://requirejs.org). See the comments in each JS for more detailed explanations. Some JS helper libraries and plugins are included:
 
+* [jQuery](https://jquery.com), version 2 is automatically loaded for browers that support it, otherwise the 1.9 branch is used.
 * [Browser Update](http://browser-update.org), tell your audience to use modern browsers!
 * [isMobile](https://github.com/kaimallea/isMobile), only if you REALLY need it, typically you should be doing [feature detetection](https://learn.jquery.com/code-organization/feature-browser-detection).
 * [onMediaQuery](https://github.com/JoshBarr/on-media-query), works great for triggering javascript for certain media queries.
