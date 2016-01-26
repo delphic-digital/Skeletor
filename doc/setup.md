@@ -12,6 +12,6 @@ Skeletor uses open source tools for its workflow. If you haven't installed these
 
 1. Fork/Clone/Download the Skeletor repository into your machine.
 2. Open a terminal and install the Node.Js dependencies by running ```npm install``` in your project directory.
-3. Install the Ruby dependencies by running bundle install.
+3. Install the Ruby dependencies by running ```bundle install```.
 3. Run ```grunt``` to automatically open a new Skeletor project running on ```localhost:3000```.
 4. From now on, just run ```grunt``` in your project directory to automatically run Skeletor's Grunt tasks.
