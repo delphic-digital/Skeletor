@@ -32,7 +32,7 @@ To load a JS component, use the sample syntax in ```component-example.js```, and
 To load a JS component for only certain media queries, add a data-component-context to the html element. For multiple states, comma separate the values. The values should match the setup values for onMediaQuery. See [```/Static/src/scss/partials/base/_scaffolding.scss```](/Static/src/scss/partials/base/_scaffolding.scss).
 
 ```HTML
-<!-- component-example.js will be loaded anytime this HTML is present on the page -->
+<!-- component-example.js will be loaded only in tablet and desktop -->
 <div class="component-example" data-component="component-example" data-component-context="tablet,desktop">
 	Lorem ipsum
 </div>
