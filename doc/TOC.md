@@ -2,4 +2,4 @@
 
 ## Getting Started
 
-1. [Setup](usage.md) -- Project setup
+1. [Setup](setup.md) -- Project setup
