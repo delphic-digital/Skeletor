@@ -26,7 +26,7 @@ Inside ```partials```
 Check out these practices in an example component here for guidance: [```src/scss/partials/components/navigation/_main.scss```](src/scss/partials/components/navigation/_main.scss/).
 
 _Notes_
-In use, we found using a traditional mobile first structure within each component partial, is easier to scan breakpoints than inlining media queries into each class.
+We found using a traditional mobile first structure within each component partial is better for maintainability than inlining media queries into each class:
 
 ```sass
 .main-nav {
@@ -51,4 +51,4 @@ instead of
 }
 ````
 
-This is also in the example component.
+which doesn't work as well on large scale sites with more complex modules. This is also in the example component.
