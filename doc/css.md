@@ -21,6 +21,7 @@ Inside ```partials```
 #### Overview of best practices for writing SASS/CSS with Skeletor
 
  * [Mobile First](http://www.zell-weekeat.com/how-to-write-mobile-first-css), mobile first approach
+ * [SMACSS](https://smacss.com), css design process
  * [BEM](https://css-tricks.com/bem-101), naming convention for CSS.
 
 Check out these practices in an example component here for guidance: [```src/scss/partials/components/navigation/_main.scss```](src/scss/partials/components/navigation/_main.scss/).
