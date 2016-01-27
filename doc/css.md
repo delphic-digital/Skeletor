@@ -26,6 +26,7 @@ Inside ```partials```
 Check out these practices in an example component here for guidance: [```src/scss/partials/components/navigation/_main.scss```](src/scss/partials/components/navigation/_main.scss/).
 
 _Notes_
+
 We found using a traditional mobile first structure within each component partial is better for maintainability than inlining media queries into each class:
 
 ```sass
