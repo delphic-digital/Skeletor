@@ -11,7 +11,7 @@ Skeletor comes with Sass and a structure setup. See the comments in each partial
 
 Inside ```partials```
 
- * ```_settings.scss``` site settings defined here, so comments in partial.
+ * ```_settings.scss``` site settings defined here, see comments in partial.
  * ```base``` holds global and base styles.
  * ```components``` holds site components styles.
  * ```layout``` holds global layout styles.
@@ -26,7 +26,7 @@ Inside ```partials```
 Check out these practices in an example component here for guidance: [```src/scss/partials/components/navigation/_main.scss```](src/scss/partials/components/navigation/_main.scss/).
 
 _Notes_
-In use, we found using a traditional mobile first structure within each partial, is easier to scan breakpoints than inlining media queries into each class.
+In use, we found using a traditional mobile first structure within each component partial, is easier to scan breakpoints than inlining media queries into each class.
 
 ```sass
 .main-nav {
