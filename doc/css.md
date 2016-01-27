@@ -17,3 +17,38 @@ Inside ```partials```
  * ```layout``` holds global layout styles.
  * ```pages``` holds any page specific styles (try and stick to components instead).
  * ```utilites``` holds mixins and SASS utilites.
+
+#### Overview of best practices for writing SASS/CSS with Skeletor
+
+ * [Mobile First](http://www.zell-weekeat.com/how-to-write-mobile-first-css), mobile first approach
+ * [BEM](https://css-tricks.com/bem-101), naming convention for CSS.
+
+Check out these practices in an example component here for guidance: [```src/scss/partials/components/navigation/_main.scss```](src/scss/partials/components/navigation/_main.scss/).
+
+_Notes_
+In use, we found using a traditional mobile first structure within each partial, is easier to scan breakpoints than inlining media queries into each class.
+
+```sass
+.main-nav {
+	/* Mobile main nav styles */
+}
+
+@include breakpoint($medium){
+	.main-nav {
+		/* Tablet main nav styles */
+	}
+}
+````
+
+instead of
+
+```sass
+.main-nav {
+	/* Mobile main nav styles */
+	@include breakpoint($medium){
+		/* Tablet main nav styles */
+	}
+}
+````
+
+This is also in the example component.

@@ -1,3 +1,7 @@
+// Scaffolding styles are declared here. e.g containers, grid
+// ------------------------------------------------------------------------------
+
+
 *, *:before, *:after {@include prefixer(box-sizing, border-box, webkit moz spec); }
 
 html {
