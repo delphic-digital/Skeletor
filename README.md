@@ -7,9 +7,9 @@ We gathered our best practices and what works best for our type of projects into
 
 ### Get started
 
-See the [docs](docs/TOC.md).
+See the [docs](doc/TOC.md).
 
 
 #### Disclaimer
-This repository gets updated as more best practices or discoveries are implemented
+This repository gets updated as more best practices or discoveries are implemented.
 
