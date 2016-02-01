@@ -25,32 +25,3 @@ Inside ```partials```
  * [BEM](https://css-tricks.com/bem-101), naming convention for CSS.
 
 Check out these practices in an example component here for guidance: [```src/scss/partials/components/navigation/_main.scss```](src/scss/partials/components/navigation/_main.scss/).
-
-_Notes_
-
-We found using a traditional mobile first structure within each component partial is better for maintainability than inlining media queries into each class:
-
-```sass
-.main-nav {
-	/* Mobile main nav styles */
-}
-
-@include breakpoint($medium){
-	.main-nav {
-		/* Tablet main nav styles */
-	}
-}
-````
-
-instead of
-
-```sass
-.main-nav {
-	/* Mobile main nav styles */
-	@include breakpoint($medium){
-		/* Tablet main nav styles */
-	}
-}
-````
-
-which doesn't work as well on large scale sites with more complex modules. This is also in the example component.
