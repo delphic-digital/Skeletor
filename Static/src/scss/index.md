@@ -1,5 +1,3 @@
-<!---
-This file is used to generate the Hologram Styleguide landing page, for now...
--->
+#This is your Super-Terrific Styleguide Title
 
-#Delphic Digital : Hologram Theme Generator!!! BOOM!
+>This is a living styleguide built for ```insert awesome project title here``` .

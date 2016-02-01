@@ -1,5 +1,6 @@
 @import "bourbon"; //http://bourbon.io/docs/
 @import "susy";    //http://susydocs.oddbird.net/en/latest/
+@import "breakpoint"; //https://github.com/at-import/breakpoint/wiki
 
 //Site settings
 @import "partials/settings";
@@ -8,10 +9,14 @@
 @import "partials/utilities/**/*";
 
 @import "partials/base/normalize";
+@import "partials/base/icons";
 @import "partials/base/typography";
 @import "partials/base/helpers";
 @import "partials/base/scaffolding";
 @import "partials/base/sprites";
+@import "partials/base/icons";
+@import "partials/base/colors";
+@import "partials/base/buttons";
 
 @import "partials/layout/**/*";
 @import "partials/components/**/*";

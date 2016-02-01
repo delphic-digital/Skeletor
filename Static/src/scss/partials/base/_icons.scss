@@ -1,0 +1,52 @@
+// Icons
+// ------------------------------------------------------------------------------
+
+/*doc
+---
+title: Icons
+name: icons
+category: Base - Icons
+---
+
+The following icons are available to the development team.
+
+
+Icon  | Class
+---------|---------
+<div class="f-icon icon-arrow-right"></div> | <pre>icon-arrow-right</pre>
+<div class="f-icon icon-arrow-left"></div> | <pre>icon-arrow-left</pre>
+<div class="f-icon icon-search"></div> | <pre>icon-search</pre>
+<div class="f-icon icon-download"></div> | <pre>icon-download</pre>
+<div class="f-icon icon-down-open"></div> | <pre>icon-down-open</pre>
+<div class="f-icon icon-up-open"></div> | <pre>icon-up-open</pre>
+<div class="f-icon icon-home"></div> | <pre>icon-home</pre>
+<div class="f-icon icon-events"></div> | <pre>icon-events</pre>
+<div class="f-icon icon-news"></div> | <pre>icon-news</pre>
+<div class="f-icon icon-right-open"></div> | <pre>icon-right-open</pre>
+<div class="f-icon icon-left-open"></div> | <pre>icon-left-open</pre>
+<div class="f-icon icon-category"></div> | <pre>icon-category</pre>
+*/
+
+$icon-codes: (
+	arrow-right: '\e800',
+	arrow-left: '\e801',
+	search: '\e802',
+	download: '\e809',
+	down-open: '\e804',
+	up-open: '\e805',
+	home: '\e806',
+	events: '\e807',
+	news: '\e808',
+	right-open: '\e803',
+	left-open: '\e80a',
+	category: '\e80b',
+);
+
+// Create icon classes / rules for each icon
+@each $name, $value in $icon-codes {
+  .icon-#{$name} {
+
+    // use our font-icon mixin!
+    @include font-icon($name);
+  }
+}

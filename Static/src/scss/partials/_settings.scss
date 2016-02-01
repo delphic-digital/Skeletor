@@ -1,3 +1,5 @@
+// Site settings
+// ------------------------------------------------------------------------------
 
 $oldIE: false !default;
 
@@ -5,44 +7,31 @@ $oldIE: false !default;
 // Media Queries
 // ------------------------------------------------------------------------------
 
+// https://responsivedesign.is/develop/browser-feature-support/media-queries-for-common-device-breakpoints
 $breakpoints: (
-	small: 320px,
-	medium: 768px,
-	wide: 980px,
-	superwide: 1200px
+	small:  320px,  /* Smartphones --------------- */
+	medium: 768px,  /* Tablets Portrait ---------- */
+	large:  1224px, /* Desktops and laptops ------ */
+	xlarge: 1824px  /* Large screens ------------- */
 );
 
-// Fonts
+$small:  map-get($breakpoints, small);
+$medium: map-get($breakpoints, medium),'no-query' true;
+$large:  map-get($breakpoints, large),'no-query' true;
+$xlarge: map-get($breakpoints, xlarge),'no-query' true;
+
+
+// Font Families
+// ------------------------------------------------------------------------------
+
+$sofia-rough: "Sofia Rough Black Two", "Papyrus", "fantasy", "serif";
+$muli: "Muli", "Tahoma", "sans-serif";
+$antonio: "Antonio", "Verdana", "sans-serif";
+
+
+// Font weights
 // ------------------------------------------------------------------------------
 
 $lightWeight: 300;
 $regularWeight: 400;
 $boldWeight: 600;
-
-
-// Colors
-// ------------------------------------------------------------------------------
-
-$blue-primary: #01add8;
-$blue-secondary: #008bc4;
-
-$purple-primary: #643e89;
-$purple-secondary: #4a2873;
-
-// Icons
-// ------------------------------------------------------------------------------
-
-$icon-codes: (
-	arrow-right: '\e800',
-	arrow-left: '\e801',
-	search: '\e802',
-	download: '\e809',
-	down-open: '\e804',
-	up-open: '\e805',
-	home: '\e806',
-	events: '\e807',
-	news: '\e808',
-	right-open: '\e803',
-	left-open: '\e80a',
-	category: '\e80b',
-);

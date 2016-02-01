@@ -1,2 +1,19 @@
+/**
+
+	This SASS file is meant for <=IE8. It will include everything in the main sass but will strip out the media queries. It will also output anything in a condtional like so:
+
+	@if $oldie {
+		body:before{
+			content: 'This is old IE'
+		}
+  }
+  @else {
+   body:before{
+			content: 'This is not old IE'
+		}
+  }
+
+**/
+
 $oldIE: true;
 @import "main.scss";
