@@ -8,7 +8,7 @@ gulp.task('sass', function () {
 		.pipe(sass({
 			importer: nodeSassGlobbing,
 			includePaths:[].concat(require('bourbon').includePaths, './node_modules/susy/sass', './node_modules/breakpoint-sass/stylesheets'),
-			outputStyle: 'compressed'
+			outputStyle: 'expanded'
 	}).on('error', sass.logError))
 	.pipe(gulp.dest('./Static/dist/css'));
 });

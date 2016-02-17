@@ -2,23 +2,6 @@
 // ------------------------------------------------------------------------------
 
 
-//Mediaqueries
-
-@mixin breakpoint($point) {
-	@if $oldIE {
-		@content;
-	}@else{
-		@each $breakpoint in $breakpoints {
-			@if $point == nth($breakpoint, 1) {
-				@media (min-width: nth($breakpoint, 2)) {
-					@content;
-				}
-			}
-		}
-	}
-}
-
-
 // Default rules for a font icon.
 %font-icon-defaults {
 	font-family: 'fontello';
