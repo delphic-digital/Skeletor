@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     nodeSassGlobbing = require('node-sass-globbing'),
     spritesmith = require('gulp.spritesmith'),
-    svgSprite = require('gulp-svg-sprite');
+    svgSprite = require('gulp-svg-sprite'),
+    replace = require('gulp-replace');
 
 //Compile SASS
 gulp.task('sass', function () {
@@ -61,6 +62,19 @@ gulp.task('browserSync', function() {
 			baseDir: "./"
 		}
 	});
+});
+
+gulp.task('replace:build', function(){
+	return gulp.src('index.html', { base : './' })
+		.pipe(replace('/Static/src/js/', '/Static/dist/js/'))
+		.pipe(gulp.dest('./'));
+});
+
+
+gulp.task('replace:dev', function(){
+	return gulp.src('index.html', { base : './' })
+		.pipe(replace('/Static/dist/js/', '/Static/src/js/'))
+		.pipe(gulp.dest('./'));
 });
 
 //Watch

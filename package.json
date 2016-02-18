@@ -7,6 +7,7 @@
     "breakpoint-sass": "^2.6.1",
     "browser-sync": "^2.11.1",
     "gulp": "gulpjs/gulp#4.0",
+    "gulp-replace": "^0.5.4",
     "gulp-ruby-sass": "^2.0.6",
     "gulp-sass": "^2.1.1",
     "gulp-svg-sprite": "^1.2.19",
