@@ -19,7 +19,7 @@ gulp.task('sass', function () {
 
 //Sprite
 gulp.task('sprite', function () {
-	var spriteData = gulp.src('./Static/src/sprites/bitmaps/*').pipe(spritesmith({
+	var spriteData = gulp.src('./Static/src/sprites/bitmaps/**/*.png').pipe(spritesmith({
 		imgName: 'spritesheet.png',
 		imgPath: '../../assets/spritesheets/spritesheet.png',
 		cssName: '_sprites.scss'
@@ -63,8 +63,10 @@ gulp.task('browserSync', function() {
 });
 
 //Watch
-gulp.task('dev',['browserSync', 'sass'], function(){
+gulp.task('watch',['browserSync', 'sass'], function(){
 	gulp.watch('./Static/src/scss/**/*.scss', ['sass']);
+	gulp.watch('./Static/src/sprites/bitmaps/**/*.png', ['sprite']);
+	gulp.watch('./Static/src/sprites/vectors/**/*.svg', ['svgSprite']);
 	gulp.watch('./*.html', browserSync.reload);
 	gulp.watch('./Static/src/js/**/*.js', browserSync.reload);
 })
