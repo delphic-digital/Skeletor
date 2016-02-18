@@ -49,7 +49,7 @@ gulp.task('svgSprite', function () {
 		}
 	}
 
-	gulp.src('**/*.svg', {cwd: './Static/src/sprites/vectors'})
+	return gulp.src('**/*.svg', {cwd: './Static/src/sprites/vectors'})
 		.pipe(svgSprite(config))
 		.pipe(gulp.dest('./Static/assets/spritesheets/'));
 });
