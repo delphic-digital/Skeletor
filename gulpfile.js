@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     merge = require('merge-stream'),
     browserSync = require('browser-sync').create(),
     sass = require('gulp-sass'),
+    nodeSassGlobbing = require('node-sass-globbing'),
     spritesmith = require('gulp.spritesmith'),
     svgSprite = require('gulp-svg-sprite');
 
@@ -9,7 +10,7 @@ var gulp = require('gulp'),
 gulp.task('sass', function () {
 	return gulp.src('./Static/src/scss/main.scss')
 		.pipe(sass({
-			importer: require('node-sass-globbing'),
+			importer: nodeSassGlobbing,
 			includePaths:[].concat(require('bourbon').includePaths, './node_modules/susy/sass', './node_modules/breakpoint-sass/stylesheets'),
 			outputStyle: 'expanded'
 	}).on('error', sass.logError))
@@ -63,10 +64,12 @@ gulp.task('browserSync', function() {
 });
 
 //Watch
-gulp.task('watch',['browserSync', 'sass'], function(){
-	gulp.watch('./Static/src/scss/**/*.scss', ['sass']);
-	gulp.watch('./Static/src/sprites/bitmaps/**/*.png', ['sprite']);
-	gulp.watch('./Static/src/sprites/vectors/**/*.svg', ['svgSprite']);
+gulp.task('watch', function(){
+	gulp.watch('./Static/src/scss/**/*.scss', gulp.series('sass'));
+	gulp.watch('./Static/src/sprites/bitmaps/**/*.png', gulp.series('sprite'));
+	gulp.watch('./Static/src/sprites/vectors/**/*.svg', gulp.series('svgSprite'));
 	gulp.watch('./*.html', browserSync.reload);
 	gulp.watch('./Static/src/js/**/*.js', browserSync.reload);
 })
+
+gulp.task('default', gulp.parallel('browserSync', 'watch'))
