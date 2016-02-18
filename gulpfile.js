@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     merge = require('merge-stream'),
     browserSync = require('browser-sync').create(),
     sass = require('gulp-sass'),
-    spritesmith = require('gulp.spritesmith');
+    spritesmith = require('gulp.spritesmith'),
+    svgSprite = require('gulp-svg-sprite');
 
 //Compile SASS
 gulp.task('sass', function () {
@@ -31,6 +32,25 @@ gulp.task('sprite', function () {
 	.pipe(gulp.dest('./Static/src/scss/partials/base/'));
 
 	return merge(imgStream, cssStream);
+});
+
+//SVG Sprite
+gulp.task('svgSprite', function () {
+	var config ={
+		mode: {
+			symbol: {
+				dest: '.',
+				sprite : 'svg.spritesheet.svg',
+				example: {
+					dest: 'svg.spritesheet.example.html'
+				}
+			}
+		}
+	}
+
+	gulp.src('**/*.svg', {cwd: './Static/src/sprites/vectors'})
+		.pipe(svgSprite(config))
+		.pipe(gulp.dest('./Static/assets/spritesheets/'));
 });
 
 //Browser Sync
