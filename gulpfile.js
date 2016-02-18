@@ -1,6 +1,8 @@
 var gulp = require('gulp'),
+    merge = require('merge-stream'),
     browserSync = require('browser-sync').create(),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    spritesmith = require('gulp.spritesmith');
 
 //Compile SASS
 gulp.task('sass', function () {
@@ -12,6 +14,23 @@ gulp.task('sass', function () {
 	}).on('error', sass.logError))
 	.pipe(gulp.dest('./Static/dist/css'))
 	.pipe(browserSync.stream());
+});
+
+//Sprite
+gulp.task('sprite', function () {
+	var spriteData = gulp.src('./Static/src/sprites/bitmaps/*').pipe(spritesmith({
+		imgName: 'spritesheet.png',
+		imgPath: '../../assets/spritesheets/spritesheet.png',
+		cssName: '_sprites.scss'
+	}));
+
+	var imgStream = spriteData.img
+	.pipe(gulp.dest('./Static/assets/spritesheets/'));
+
+	var cssStream = spriteData.css
+	.pipe(gulp.dest('./Static/src/scss/partials/base/'));
+
+	return merge(imgStream, cssStream);
 });
 
 //Browser Sync
