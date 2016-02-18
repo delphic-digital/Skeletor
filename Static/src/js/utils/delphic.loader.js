@@ -9,8 +9,6 @@ define(['jquery'],function($){
 				return {context: $(el).data('component-context') || null, name: 'components/'+$(el).data('component')};
 			});
 
-			console.info('Components:', components)
-
 			/*
 				If multiple components have the same context, merge them into one object with comma separted names. RequireJS allows commaseparated deps.
 			*/
@@ -43,6 +41,9 @@ define(['jquery'],function($){
 						$.each(arguments, function(i, component){
 							component.init();
 						})
+					},function (err) {
+						var failedId = err.requireModules && err.requireModules[0];
+						console.error(failedId + ' couldn\'t be found! Does the file exist?')
 					})
 				},
 				unmatch: function(){
@@ -61,6 +62,9 @@ define(['jquery'],function($){
 				$.each(arguments, function(i, component){
 					component.init();
 				})
+			},function (err) {
+				var failedId = err.requireModules && err.requireModules[0];
+				console.error(failedId + ' couldn\'t be found! Does the file exist?')
 			})
 		},
 
