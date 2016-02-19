@@ -1,11 +1,49 @@
 var gulp = require('gulp'),
-    merge = require('merge-stream'),
+    del = require('del'),
+    merge = require('merge'),
+    mergeStream = require('merge-stream'),
     browserSync = require('browser-sync').create(),
     sass = require('gulp-sass'),
     nodeSassGlobbing = require('node-sass-globbing'),
     spritesmith = require('gulp.spritesmith'),
     svgSprite = require('gulp-svg-sprite'),
-    replace = require('gulp-replace');
+    replace = require('gulp-replace'),
+    requirejsOptimize = require('gulp-requirejs-optimize');
+
+var paths = {
+	dirs: {
+    build: {
+    	js: './Static/dist/js'
+    }
+  },
+}
+
+var commonJsOptions  = {
+	baseUrl: 'Static/src/js',
+	mainConfigFile: 'Static/src/js/skeletor.main.js',
+	removeCombined: true,
+	optimize: 'none',
+	wrapShim: true,
+	preserveLicenseComments: false,
+	uglify2: {
+		compress: {
+			drop_console : true,
+			dead_code: true
+		}
+	},
+	paths: {
+		//Map all CDN paths to empty so optimizer doesn't try to include them
+		jquery: "empty:",
+	}
+}
+
+var moduleJsOptions = function(file) {
+	var moduleName = file.relative.split('.')[0];
+	return merge(commonJsOptions,{
+		name: 'components/'+moduleName,
+		exclude: ['skeletor.main']
+	})
+};
 
 //Compile SASS
 gulp.task('sass', function () {
@@ -33,7 +71,7 @@ gulp.task('sprite', function () {
 	var cssStream = spriteData.css
 	.pipe(gulp.dest('./Static/src/scss/partials/base/'));
 
-	return merge(imgStream, cssStream);
+	return mergeStream(imgStream, cssStream);
 });
 
 //SVG Sprite
@@ -77,6 +115,18 @@ gulp.task('replace:dev', function(){
 		.pipe(gulp.dest('./'));
 });
 
+gulp.task('scripts:main', function () {
+	return gulp.src('./Static/src/js/skeletor.main.js')
+		.pipe(requirejsOptimize(commonJsOptions))
+		.pipe(gulp.dest('./Static/dist/js'));
+});
+
+gulp.task('scripts:components', function () {
+	return gulp.src('./Static/src/js/components/*.js')
+		.pipe(requirejsOptimize(moduleJsOptions))
+		.pipe(gulp.dest('./Static/dist/js/components'));
+});
+
 //Watch
 gulp.task('watch', function(){
 	gulp.watch('./Static/src/scss/**/*.scss', gulp.series('sass'));
@@ -86,4 +136,15 @@ gulp.task('watch', function(){
 	gulp.watch('./Static/src/js/**/*.js', browserSync.reload);
 })
 
-gulp.task('default', gulp.parallel('browserSync', 'watch'))
+gulp.task('clean:js', function (cb) {
+  return del(paths.dirs.build.js, cb);
+});
+
+gulp.task('copy:requirejslib', function() {
+	return gulp.src('./Static/src/js/lib/**/*.js')
+		.pipe(gulp.dest('./Static/dist/js/lib'));
+});
+
+gulp.task('scripts', gulp.parallel('scripts:main', 'scripts:components'));
+gulp.task('default', gulp.parallel('replace:dev','browserSync', 'watch'));
+gulp.task('build', gulp.series('clean:js',gulp.parallel('replace:build','scripts:main', 'scripts:components','copy:requirejslib')));
