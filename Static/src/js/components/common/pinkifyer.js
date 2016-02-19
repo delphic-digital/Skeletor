@@ -4,7 +4,7 @@ define(['moment'],function(moment) {
 
 		init: function() {
 			document.body.style.backgroundColor = 'pink';
-			document.body.innerHTML= moment().format('MMMM Do YYYY, h:mm:ss a');
+			console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
 		},
 
 		destroy: function() {}
