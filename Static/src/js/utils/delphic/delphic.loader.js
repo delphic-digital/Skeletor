@@ -1,30 +1,19 @@
-define(['jquery'],function($){
+define(['jquery', 'utils/delphic/delphic.onmediaquery'],function($, MQ){
+
 	return {
 		init: function() {
-
-			/*
-				Map out components contexts.
-			*/
 			var components = $.map($('[data-component]'), function(el){
 				return {context: $(el).data('component-context') || null, name: 'components/'+$(el).data('component')};
 			});
-
-			/*
-				If multiple components have the same context, merge them into one object with comma separted names. RequireJS allows commaseparated deps.
-			*/
 			var contexts = this.mergeByContext(components);
-			var self = this;
-
-			/*
-				If component has a context, add it to the OnMediaQuery que, or else just load it.
-			*/
+			var _ = this;
 
 			$.each(contexts, function(i, component){
 				if(component.context != 'null'){
-					self.addContextQuery(component.context, component.name)
+					_.addContextQuery(component.context, component.name)
 				}else{
 					//component does not need a context. i.e, it's initilized on page load no matter the context;
-					self.loadComponent(component.name)
+					_.loadComponent(component.name)
 				}
 			})
 		},

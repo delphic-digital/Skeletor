@@ -1,6 +1,5 @@
 require.config({
 	paths: {
-		'async': 'lib/requirejs-plugins/src/async',
 		'utilities' : 'utils/utils',
 		'common' : 'components/common',
 		'moment' : '//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min',   // http://momentjs.com/
@@ -14,32 +13,14 @@ require.config({
 require.config({
 	paths: {
 		'jquery': (document.addEventListener) ?
-		['//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min']
-		:
-		['//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min']// https://github.com/rnsloan/requirejs-conditionally-load-jquery2
+			['//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min']
+			:
+			['//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min']// https://github.com/rnsloan/requirejs-conditionally-load-jquery2
 	}
 })
 
-require(['utilities','common'], function(utils,common){
+//Global Components
 
-	console.log('jQuery version: '+$.fn.jquery)
-
-	/**
-	 *  Init mobile only components with onMediaQuery and all common (global) components
-	 */
-
-	MQ.addQuery({
-		context: 'mobile',
-		match: function() {
-			require(['components/mobile'], function(component){
-				component.init();
-			})
-		},
-		unmatch: function() {
-			require('components/mobile').destroy(); //http://requirejs.org/docs/api.html#modulenotes-console
-		}
-	});
-
+require(['utilities','common'], function(utils, common){
 	common.init();
-
 });

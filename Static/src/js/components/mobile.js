@@ -3,14 +3,22 @@ define(['./mobile/main-menu'],function() {
 	return {
 		args: arguments,
 		init: function() {
-			$.each(this.args, function(i, component){
-				component.init();
-			})
+			var _ = this,
+			    components =  _.args;
+
+			for (var i in components) {
+				var component = components[i];
+				typeof component.init == 'function' ? component.init() : null;
+			}
 		},
 		destroy: function() {
-			$.each(this.args, function(i, component){
-				component.destroy();
-			})
+			var _ = this,
+			    components =  _.args;
+
+			for (var i in components) {
+				var component = components[i];
+				typeof component.destroy == 'function' ? component.destroy() : null;
+			}
 		}
 	};
 
