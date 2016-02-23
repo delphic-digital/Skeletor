@@ -1,22 +1,27 @@
 {
   "name": "Skeletor",
   "author": "Delphic Digital",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "devDependencies": {
     "bourbon": "^4.2.6",
+    "bower": "^1.7.7",
+    "bower-requirejs": "^1.2.0",
     "breakpoint-sass": "^2.6.1",
     "browser-sync": "^2.11.1",
     "del": "^2.2.0",
     "gulp": "gulpjs/gulp#4.0",
+    "gulp-flatten": "^0.2.0",
+    "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-requirejs-optimize": "^0.3.1",
     "gulp-ruby-sass": "^2.0.6",
     "gulp-sass": "^2.1.1",
     "gulp-svg-sprite": "^1.2.19",
     "gulp.spritesmith": "^6.2.0",
+    "main-bower-files": "^2.11.1",
     "merge-stream": "^1.0.0",
     "node-bourbon": "^4.2.3",
     "node-sass-globbing": "0.0.23",
-    "susy": "^2.2.12"
+    "susy": "^2.2.12",
   }
 }

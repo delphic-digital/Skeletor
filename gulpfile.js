@@ -8,7 +8,10 @@ var gulp = require('gulp'),
     spritesmith = require('gulp.spritesmith'),
     svgSprite = require('gulp-svg-sprite'),
     replace = require('gulp-replace'),
-    requirejsOptimize = require('gulp-requirejs-optimize');
+    requirejsOptimize = require('gulp-requirejs-optimize'),
+    mainBowerFiles = require('main-bower-files'),
+    flatten = require('gulp-flatten'),
+    rename = require("gulp-rename");
 
 var paths = {
 	dirs: {
@@ -16,6 +19,10 @@ var paths = {
     	js: './Static/dist/js'
     }
   },
+  bower: {
+  	js : mainBowerFiles({filter: /.*\.js$/i}),
+  	css : mainBowerFiles({filter: /.*\.css$/i}),
+  }
 }
 
 var commonJsOptions  = {
@@ -143,6 +150,28 @@ gulp.task('clean:js', function (cb) {
 gulp.task('copy:requirejslib', function() {
 	return gulp.src('./Static/src/js/lib/**/*.js')
 		.pipe(gulp.dest('./Static/dist/js/lib'));
+});
+
+gulp.task('bower:process', function() {
+
+	//console.log(paths.bower.js)
+	//console.log(paths.bower.css)
+
+	var jsStream = gulp.src(paths.bower.js)
+		.pipe(flatten())
+		.pipe(gulp.dest('./Static/src/js/plugins'));
+
+	var cssStream = gulp.src(paths.bower.css)
+		.pipe(flatten())
+		.pipe(rename({
+			prefix: "_",
+			extname: ".scss"
+		}))
+		.pipe(gulp.dest('./Static/src/scss/partials/plugins'));
+
+
+	return mergeStream(jsStream, cssStream);
+
 });
 
 gulp.task('scripts', gulp.parallel('scripts:main', 'scripts:components'));

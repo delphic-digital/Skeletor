@@ -1,0 +1,24 @@
+{
+  "name": "Skeletor",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Delphic Digital"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/delphic-digital/Skeletor",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "slick-carousel": "https://github.com/kenwheeler/slick.git#master",
+    "jquery-storage-api": "jQuery-Storage-API#^1.8.1",
+    "jquery.cookie": "^1.4.1"
+  }
+}

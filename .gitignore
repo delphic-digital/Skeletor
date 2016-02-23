@@ -2,3 +2,4 @@ node_modules
 .sass-cache
 Static/dist/**/*
 Static/dist/**
+bower_components
