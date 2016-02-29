@@ -52,7 +52,7 @@ var moduleJsOptions = function(file) {
 	})
 };
 
-//Compile SASS
+
 gulp.task('sass', function () {
 	return gulp.src('./Static/src/scss/main.scss')
 		.pipe(sass({
@@ -64,7 +64,7 @@ gulp.task('sass', function () {
 	.pipe(browserSync.stream());
 });
 
-//Sprite
+
 gulp.task('sprite', function () {
 	var spriteData = gulp.src('./Static/src/sprites/bitmaps/**/*.png').pipe(spritesmith({
 		imgName: 'spritesheet.png',
@@ -81,7 +81,6 @@ gulp.task('sprite', function () {
 	return mergeStream(imgStream, cssStream);
 });
 
-//SVG Sprite
 gulp.task('svgSprite', function () {
 	var config ={
 		mode: {
@@ -100,7 +99,6 @@ gulp.task('svgSprite', function () {
 		.pipe(gulp.dest('./Static/assets/spritesheets/'));
 });
 
-//Browser Sync
 gulp.task('browserSync', function() {
 	browserSync.init({
 		server: {
@@ -134,7 +132,6 @@ gulp.task('scripts:components', function () {
 		.pipe(gulp.dest('./Static/dist/js/components'));
 });
 
-//Watch
 gulp.task('watch', function(){
 	gulp.watch('./Static/src/scss/**/*.scss', gulp.series('sass'));
 	gulp.watch('./Static/src/sprites/bitmaps/**/*.png', gulp.series('sprite'));
