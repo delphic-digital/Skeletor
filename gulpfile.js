@@ -140,8 +140,8 @@ gulp.task('watch', function(){
 	gulp.watch('./Static/src/js/**/*.js', browserSync.reload);
 })
 
-gulp.task('clean:js', function (cb) {
-  return del(paths.dirs.build.js, cb);
+gulp.task('clean:js', function () {
+  return del(paths.dirs.build.js);
 });
 
 gulp.task('copy:requirejslib', function() {
