@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     requirejsOptimize = require('gulp-requirejs-optimize'),
     mainBowerFiles = require('main-bower-files'),
     flatten = require('gulp-flatten'),
-    rename = require("gulp-rename");
+    rename = require("gulp-rename"),
+    styleguide = require('sc5-styleguide');
 
 var paths = {
 	dirs: {
@@ -58,7 +59,7 @@ gulp.task('sass', function () {
 		.pipe(sass({
 			importer: nodeSassGlobbing,
 			includePaths:[].concat(require('bourbon').includePaths, './node_modules/susy/sass', './node_modules/breakpoint-sass/stylesheets'),
-			outputStyle: 'expanded'
+			outputStyle: 'compressed'
 	}).on('error', sass.logError))
 	.pipe(gulp.dest('./Static/dist/css'))
 	.pipe(browserSync.stream());
@@ -171,6 +172,32 @@ gulp.task('bower:process', function() {
 
 });
 
-gulp.task('scripts', gulp.parallel('scripts:main', 'scripts:components'));
+gulp.task('styleguide:generate', function() {
+	return gulp.src('./Static/src/scss/**/*.scss')
+		.pipe(styleguide.generate({
+			title: 'Skeletor Styleguide',
+			server: false,
+			port: 4000,
+			disableHtml5Mode: true,
+			appRoot: '.',
+			rootPath: './Static/dist/styleguide',
+			overviewPath: 'README.md'
+		}))
+		.pipe(gulp.dest('./Static/dist/styleguide'));
+});
+
+gulp.task('styleguide:applystyles', function() {
+  return gulp.src('./Static/src/scss/main.scss')
+		.pipe(sass({
+			importer: nodeSassGlobbing,
+			includePaths:[].concat(require('bourbon').includePaths, './node_modules/susy/sass', './node_modules/breakpoint-sass/stylesheets'),
+			outputStyle: 'compressed'
+		}))
+		.pipe(styleguide.applyStyles())
+		.pipe(gulp.dest('./Static/dist/styleguide'));
+});
+
 gulp.task('default', gulp.parallel('replace:dev','browserSync', 'watch'));
+gulp.task('styleguide', gulp.series('styleguide:generate', 'styleguide:applystyles'));
+gulp.task('scripts', gulp.parallel('scripts:main', 'scripts:components'));
 gulp.task('build', gulp.series('clean:js',gulp.parallel('replace:build','scripts:main', 'scripts:components','copy:requirejslib')));

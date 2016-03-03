@@ -1,13 +1,5 @@
-// Site settings
-// ------------------------------------------------------------------------------
-
 $oldIE: false !default;
 
-
-// Media Queries
-// ------------------------------------------------------------------------------
-
-// https://responsivedesign.is/develop/browser-feature-support/media-queries-for-common-device-breakpoints
 $breakpoints: (
 	small:  320px,  /* Smartphones --------------- */
 	medium: 768px,  /* Tablets Portrait ---------- */
@@ -15,23 +7,31 @@ $breakpoints: (
 	xlarge: 1824px  /* Large screens ------------- */
 );
 
-$small:  map-get($breakpoints, small);
-$medium: map-get($breakpoints, medium),'no-query' true;
-$large:  map-get($breakpoints, large),'no-query' true;
-$xlarge: map-get($breakpoints, xlarge),'no-query' true;
+$min-medium: map-get($breakpoints, medium);
+$min-large: map-get($breakpoints, large);
+$min-xlarge: map-get($breakpoints, xlarge);
+
+$max-small: map-get($breakpoints, medium)  - 1px;
+$max-medium: map-get($breakpoints, large)  - 1px;
+$max-large: map-get($breakpoints, xlarge)  - 1px;
 
 
-// Font Families
+$small: map-get($breakpoints, small);
+$medium: $min-medium,'no-query' true;
+$large:  $min-large,'no-query' true;
+$xlarge:  $min-xlarge,'no-query' true;
+
+
+// Susy
 // ------------------------------------------------------------------------------
 
-$sofia-rough: "Sofia Rough Black Two", "Papyrus", "fantasy", "serif";
-$muli: "Muli", "Tahoma", "sans-serif";
-$antonio: "Antonio", "Verdana", "sans-serif";
+$susy: (
+  columns: 12,
+  gutters: .25,
+  container: 1020px,
+  global-box-sizing: border-box,
+  //debug: (image:show)
+);
 
-
-// Font weights
+// Fonts
 // ------------------------------------------------------------------------------
-
-$lightWeight: 300;
-$regularWeight: 400;
-$boldWeight: 600;

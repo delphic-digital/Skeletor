@@ -1,8 +1,60 @@
-// Typography styles go here.
-// ------------------------------------------------------------------------------
+/*
+Typography
+
+This section describes headings, paragraphs, quotes, etc...
+
+Styleguide 1.2
+*/
+
+/*
+Headings
+
+These are our headings
+
+markup:
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+
+Styleguide 1.2.1
+*/
 
 @import "fonts";
 
 h1 {}
 h2 {}
 h3 {}
+
+/*
+Body Text
+
+Paragraphs.
+
+markup:
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa ipsum, tincidunt vel convallis in, suscipit et risus. Morbi erat dolor, mattis
+
+Styleguide 1.2.3
+*/
+
+body {}
+
+p {}
+
+
+/*
+Lists
+
+These are our lists.
+
+markup:
+<ul>
+	<li>Lorem Ipsum</li>
+	<li>dolor</li>
+</ul>
+
+Styleguide 1.2.4
+*/
+
+ul {}

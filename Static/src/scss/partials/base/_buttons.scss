@@ -1,55 +1,32 @@
-// Buttons
-// ------------------------------------------------------------------------------
+/*
+Buttons
 
-/*doc
----
-title: Buttons
-name: buttons
-category: Base - Buttons
----
+Your standard button suitable for clicking.
 
-Button styles can be applied to the following elements: anchor, button and input[type="submit"]
+.btn-primary - Primary button
 
-```html_example
-<a href="/" class="btn-primary">Primary</a>
-```
+markup:
+<button class="{$modifiers}">Button text</button>
 
-Preview  | Class
----------|---------
-<button type="button" href="" class="btn-primary">Primary</button>| <pre>btn-primary</pre>
-<button type="button" href="" class="btn-secondary">More</button>| <pre>btn-secondary</pre>
+Styleguide 2.2
 */
 
-.btn-primary
-{
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 12px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #fff;
-  background: $blue-primary;
-  border: none;
-  transition: background 0.25s ease-in;
-
-  &.lg { padding: 6px 14px; }
-}
-
-.btn-secondary
-{
-  @extend .btn-primary;
-
-  background: $purple-primary;
-}
-
 %btn-base {
-	border-radius: 3px;
+	display: inline-block;
+	padding: 10px 15px;
+	font-size: 18px;
+	line-height: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	border: none;
+	transition: background .45s;
+
+	&:hover {
+		text-decoration: none;
+		color: $link-hover-color;
+	}
 }
 
 .btn-primary {
 	@extend %btn-base;
-	&:hover {
-		background: #2276af;
-	}
 }

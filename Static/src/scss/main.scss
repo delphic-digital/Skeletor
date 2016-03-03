@@ -1,23 +1,57 @@
-@import "bourbon"; //http://bourbon.io/docs/
-@import "susy";    //http://susydocs.oddbird.net/en/latest/
-@import "breakpoint"; //https://github.com/at-import/breakpoint/wiki
+// styleguide:ignore:start
+@import "bourbon";
+@import "susy";
+@import "breakpoint";
 
-//Site settings
-@import "partials/settings";
-
-//SASS functions and mixins
 @import "partials/utilities/**/*";
-
-@import "partials/base/normalize";
-@import "partials/base/icons";
-@import "partials/base/typography";
+@import "partials/settings";
 @import "partials/base/helpers";
-@import "partials/base/scaffolding";
-@import "partials/base/sprites";
-@import "partials/base/icons";
-@import "partials/base/colors";
-@import "partials/base/buttons";
+@import "partials/base/normalize";
+// styleguide:ignore:end
 
+/*
+Colors and Typography
+
+This section describes base colors and typography
+
+Styleguide 1.0
+*/
+
+@import "partials/base/colors";
+@import "partials/base/typography";
+
+/*
+Structure
+
+This section describes site structure
+
+Styleguide 3.0
+*/
+
+@import "partials/base/scaffolding";
+
+/*
+Icons
+
+This section describes sprites created by Gulp
+
+Styleguide 4.0
+*/
+@import "partials/base/sprites";
+
+/*
+Buttons and Inputs
+
+This section describes buttons and inputs
+
+Styleguide 2.0
+*/
+@import "partials/base/links";
+@import "partials/base/buttons";
+@import "partials/base/inputs";
+
+// styleguide:ignore:start
 @import "partials/layout/**/*";
 @import "partials/components/**/*";
 @import "partials/pages/**/*";
+// styleguide:ignore:end
