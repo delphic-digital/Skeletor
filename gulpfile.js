@@ -82,6 +82,21 @@ gulp.task('sprite', function () {
 	return mergeStream(imgStream, cssStream);
 });
 
+gulp.task('sprite:bitmap:example', function () {
+	var spriteData = gulp.src('./Static/src/sprites/bitmaps/**/*.png').pipe(spritesmith({
+		imgName: 'spritesheet.png',
+		imgPath: '/Static/assets/spritesheets/spritesheet.png',
+		cssTemplate: './Static/src/sprites/png.spritesheet.example.handlebars',
+		cssFormat: 'css',
+		cssName: 'png.spritesheet.example.html'
+	}));
+
+	var htmlStream = spriteData.css
+	.pipe(gulp.dest('./Static/assets/spritesheets/'));
+
+	return htmlStream;
+});
+
 gulp.task('svgSprite', function () {
 	var config ={
 		mode: {
