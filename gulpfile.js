@@ -59,7 +59,7 @@ gulp.task('sass', function () {
 		.pipe(sass({
 			importer: nodeSassGlobbing,
 			includePaths:[].concat(require('bourbon').includePaths, './node_modules/susy/sass', './node_modules/breakpoint-sass/stylesheets'),
-			outputStyle: 'compressed'
+			outputStyle: 'expanded'
 	}).on('error', sass.logError))
 	.pipe(gulp.dest('./Static/dist/css'))
 	.pipe(browserSync.stream());
@@ -68,8 +68,11 @@ gulp.task('sass', function () {
 
 gulp.task('sprite', function () {
 	var spriteData = gulp.src('./Static/src/sprites/bitmaps/**/*.png').pipe(spritesmith({
+		retinaSrcFilter: './Static/src/sprites/bitmaps/**/*@2x.png',
 		imgName: 'spritesheet.png',
+	 	retinaImgName: 'spritesheet@2x.png',
 		imgPath: '../../assets/spritesheets/spritesheet.png',
+		retinaImgPath : '../../assets/spritesheets/spritesheet@2x.png',
 		cssName: '_sprites.scss'
 	}));
 
