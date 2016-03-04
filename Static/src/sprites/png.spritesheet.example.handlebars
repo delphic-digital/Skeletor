@@ -22,6 +22,16 @@
 		height: {{px.height}};
 		}
 	{{/sprites}}
+
+	{{#retina_groups}}
+	.icon-retina-{{name}} {
+		width: {{normal.px.width}};
+  height: {{normal.px.height}};
+		background-image: url({{{retina.escaped_image}}});
+		background-position: {{normal.px.offset_x}} {{normal.px.offset_y}};
+    background-size: {{normal.px.total_width}} {{normal.px.total_height}};
+	}
+	{{/retina_groups}}
 </style>
 </head>
 <body>
@@ -37,6 +47,16 @@
 					<code class="svg-name">{{name}}</code>
 				</li>
 			{{/sprites}}
+
+			{{#retina_groups}}
+				<li title="{{name}}">
+					<div class="icon-box">
+						<!-- {{name}} -->
+						<div class="icon-retina-{{name}}"></div>
+					</div>
+					<code class="svg-name">{{retina.name}}</code>
+				</li>
+			{{/retina_groups}}
 		</ul>
 	</section>
 

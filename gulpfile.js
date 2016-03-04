@@ -65,7 +65,6 @@ gulp.task('sass', function () {
 	.pipe(browserSync.stream());
 });
 
-
 gulp.task('sprite', function () {
 	var spriteData = gulp.src('./Static/src/sprites/bitmaps/**/*.png').pipe(spritesmith({
 		retinaSrcFilter: './Static/src/sprites/bitmaps/**/*@2x.png',
@@ -87,8 +86,11 @@ gulp.task('sprite', function () {
 
 gulp.task('sprite:bitmap:example', function () {
 	var spriteData = gulp.src('./Static/src/sprites/bitmaps/**/*.png').pipe(spritesmith({
+		retinaSrcFilter: './Static/src/sprites/bitmaps/**/*@2x.png',
 		imgName: 'spritesheet.png',
+	 	retinaImgName: 'spritesheet@2x.png',
 		imgPath: '/Static/assets/spritesheets/spritesheet.png',
+		retinaImgPath : '../../assets/spritesheets/spritesheet@2x.png',
 		cssTemplate: './Static/src/sprites/png.spritesheet.example.handlebars',
 		cssFormat: 'css',
 		cssName: 'png.spritesheet.example.html'
