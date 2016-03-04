@@ -89,6 +89,7 @@ gulp.task('svgSprite', function () {
 				dest: '.',
 				sprite : 'svg.spritesheet.svg',
 				example: {
+					template: './Static/src/sprites/svg.spritesheet.example.html',
 					dest: 'svg.spritesheet.example.html'
 				}
 			}
