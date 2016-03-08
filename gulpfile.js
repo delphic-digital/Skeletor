@@ -89,7 +89,7 @@ gulp.task('sprite:bitmap:example', function () {
 		retinaSrcFilter: './Static/src/sprites/bitmaps/**/*@2x.png',
 		imgName: 'spritesheet.png',
 	 	retinaImgName: 'spritesheet@2x.png',
-		imgPath: '/Static/assets/spritesheets/spritesheet.png',
+		imgPath: '../../assets/spritesheets/spritesheet.png',
 		retinaImgPath : '../../assets/spritesheets/spritesheet@2x.png',
 		cssTemplate: './Static/src/sprites/png.spritesheet.example.handlebars',
 		cssFormat: 'css',
@@ -193,11 +193,13 @@ gulp.task('bower:process', function() {
 
 });
 
+//Styleguide tasks
+
 gulp.task('styleguide:generate', function() {
 	return gulp.src('./Static/src/scss/**/*.scss')
 		.pipe(styleguide.generate({
 			title: 'Skeletor Styleguide',
-			server: false,
+			server: true,
 			port: 4000,
 			disableHtml5Mode: true,
 			appRoot: '.',
@@ -218,7 +220,17 @@ gulp.task('styleguide:applystyles', function() {
 		.pipe(gulp.dest('./Static/dist/styleguide'));
 });
 
+gulp.task('styleguide:assets', function() {
+  return gulp.src(['./Static/assets/spritesheets/**/*'])
+  	.pipe(gulp.dest('./Static/dist/styleguide/assets/spritesheets'));
+});
+
+gulp.task('watch:styleguide', function(){
+	gulp.watch('./Static/src/scss/**/*.scss', gulp.series('sass','styleguide'));
+})
+
+
 gulp.task('default', gulp.parallel('replace:dev','browserSync', 'watch'));
-gulp.task('styleguide', gulp.series('styleguide:generate', 'styleguide:applystyles'));
+gulp.task('styleguide', gulp.series('styleguide:generate', 'styleguide:applystyles','styleguide:assets'));
 gulp.task('scripts', gulp.parallel('scripts:main', 'scripts:components'));
 gulp.task('build', gulp.series('clean:js',gulp.parallel('replace:build','scripts:main', 'scripts:components','copy:requirejslib')));

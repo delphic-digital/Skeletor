@@ -20,22 +20,17 @@ Styleguide 1.0
 @import "partials/base/colors";
 @import "partials/base/typography";
 
-/*
-Structure
 
-This section describes site structure
-
-Styleguide 3.0
-*/
-
+// styleguide:ignore:start
 @import "partials/base/scaffolding";
+// styleguide:ignore:end
 
 /*
 Icons
 
 This section describes icons used
 
-Styleguide 4.0
+Styleguide 3.0
 */
 @import "partials/base/sprites";
 
@@ -47,7 +42,7 @@ This section describes icons used in SVG format
 markup:
 ../../assets/spritesheets/svg.spritesheet.example.html
 
-Styleguide 4.1
+Styleguide 3.1
 */
 
 /*
@@ -59,7 +54,7 @@ markup:
 ../../assets/spritesheets/png.spritesheet.example.html
 
 
-Styleguide 4.2
+Styleguide 3.2
 */
 
 /*
@@ -75,6 +70,14 @@ Styleguide 2.0
 
 // styleguide:ignore:start
 @import "partials/layout/**/*";
-@import "partials/components/**/*";
-@import "partials/pages/**/*";
 // styleguide:ignore:end
+
+
+/*
+Components
+
+This section describes components used
+
+Styleguide 4.0
+*/
+@import "partials/components/**/*";
