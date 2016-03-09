@@ -199,12 +199,14 @@ gulp.task('styleguide:generate', function() {
 	return gulp.src('./Static/src/scss/**/*.scss')
 		.pipe(styleguide.generate({
 			title: 'Skeletor Styleguide',
-			server: true,
+			server: false,
 			port: 4000,
 			disableHtml5Mode: true,
 			appRoot: '.',
 			rootPath: './Static/dist/styleguide',
-			overviewPath: 'README.md'
+			overviewPath: 'README.md',
+			extraHead: '<link href=" http://fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet" type="text/css"><link href="/Static/src/styleguide/styleguide_overrides.css" rel="stylesheet" type="text/css">',
+			customColors: './Static/src/styleguide/styleguide_variables.css'
 		}))
 		.pipe(gulp.dest('./Static/dist/styleguide'));
 });
@@ -231,6 +233,6 @@ gulp.task('watch:styleguide', function(){
 
 
 gulp.task('default', gulp.parallel('replace:dev','browserSync', 'watch'));
-gulp.task('styleguide', gulp.series('styleguide:generate', 'styleguide:applystyles','styleguide:assets'));
 gulp.task('scripts', gulp.parallel('scripts:main', 'scripts:components'));
 gulp.task('build', gulp.series('clean:js',gulp.parallel('replace:build','scripts:main', 'scripts:components','copy:requirejslib')));
+gulp.task('styleguide', gulp.series('styleguide:generate', 'styleguide:applystyles','styleguide:assets'));
