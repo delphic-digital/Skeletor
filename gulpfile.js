@@ -91,9 +91,9 @@ gulp.task('sprite:bitmap:example', function () {
 	 	retinaImgName: 'spritesheet@2x.png',
 		imgPath: '../../assets/spritesheets/spritesheet.png',
 		retinaImgPath : '../../assets/spritesheets/spritesheet@2x.png',
-		cssTemplate: './Static/src/sprites/png.spritesheet.example.handlebars',
+		cssTemplate: './Static/src/sprites/bitmap.example.handlebars',
 		cssFormat: 'css',
-		cssName: 'png.spritesheet.example.html'
+		cssName: 'bitmap.example.html'
 	}));
 
 	var htmlStream = spriteData.css
@@ -109,8 +109,8 @@ gulp.task('svgSprite', function () {
 				dest: '.',
 				sprite : 'svg.spritesheet.svg',
 				example: {
-					template: './Static/src/sprites/svg.spritesheet.example.html',
-					dest: 'svg.spritesheet.example.html'
+					template: './Static/src/sprites/vector.example.html',
+					dest: 'vector.example.html'
 				}
 			}
 		}
