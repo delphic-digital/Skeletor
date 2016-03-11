@@ -65,13 +65,13 @@ gulp.task('sass', function () {
 	.pipe(browserSync.stream());
 });
 
-gulp.task('sprite', function () {
+gulp.task('sprite:bitmap', function () {
 	var spriteData = gulp.src('./Static/src/sprites/bitmaps/**/*.png').pipe(spritesmith({
 		retinaSrcFilter: './Static/src/sprites/bitmaps/**/*@2x.png',
-		imgName: 'spritesheet.png',
-	 	retinaImgName: 'spritesheet@2x.png',
-		imgPath: '../../assets/spritesheets/spritesheet.png',
-		retinaImgPath : '../../assets/spritesheets/spritesheet@2x.png',
+		imgName: 'bitmap.spritesheet.png',
+	 	retinaImgName: 'bitmap.spritesheet@2x.png',
+		imgPath: '../../assets/spritesheets/bitmap.spritesheet.png',
+		retinaImgPath : '../../assets/spritesheets/bitmap.spritesheet@2x.png',
 		cssName: '_sprites.scss'
 	}));
 
@@ -87,10 +87,10 @@ gulp.task('sprite', function () {
 gulp.task('sprite:bitmap:example', function () {
 	var spriteData = gulp.src('./Static/src/sprites/bitmaps/**/*.png').pipe(spritesmith({
 		retinaSrcFilter: './Static/src/sprites/bitmaps/**/*@2x.png',
-		imgName: 'spritesheet.png',
-	 	retinaImgName: 'spritesheet@2x.png',
-		imgPath: '../../assets/spritesheets/spritesheet.png',
-		retinaImgPath : '../../assets/spritesheets/spritesheet@2x.png',
+		imgName: 'bitmap.spritesheet.png',
+	 	retinaImgName: 'bitmap.spritesheet@2x.png',
+		imgPath: '../../assets/spritesheets/bitmap.spritesheet.png',
+		retinaImgPath : '../../assets/spritesheets/bitmap.spritesheet@2x.png',
 		cssTemplate: './Static/src/sprites/bitmap.example.handlebars',
 		cssFormat: 'css',
 		cssName: 'bitmap.example.html'
@@ -102,12 +102,12 @@ gulp.task('sprite:bitmap:example', function () {
 	return htmlStream;
 });
 
-gulp.task('svgSprite', function () {
+gulp.task('sprite:vector', function () {
 	var config ={
 		mode: {
 			symbol: {
 				dest: '.',
-				sprite : 'svg.spritesheet.svg',
+				sprite : 'vector.spritesheet.svg',
 				example: {
 					template: './Static/src/sprites/vector.example.html',
 					dest: 'vector.example.html'
@@ -156,8 +156,8 @@ gulp.task('scripts:components', function () {
 
 gulp.task('watch', function(){
 	gulp.watch('./Static/src/scss/**/*.scss', gulp.series('sass'));
-	gulp.watch('./Static/src/sprites/bitmaps/**/*.png', gulp.series('sprite'));
-	gulp.watch('./Static/src/sprites/vectors/**/*.svg', gulp.series('svgSprite'));
+	gulp.watch('./Static/src/sprites/bitmaps/**/*.png', gulp.series('sprite:bitmap'));
+	gulp.watch('./Static/src/sprites/vectors/**/*.svg', gulp.series('sprite:vector'));
 	gulp.watch('./*.html', browserSync.reload);
 	gulp.watch('./Static/src/js/**/*.js', browserSync.reload);
 })
@@ -173,8 +173,8 @@ gulp.task('copy:requirejslib', function() {
 
 gulp.task('bower:process', function() {
 
-	//console.log(paths.bower.js)
-	//console.log(paths.bower.css)
+	console.log(paths.bower.js)
+	console.log(paths.bower.css)
 
 	var jsStream = gulp.src(paths.bower.js)
 		.pipe(flatten())
@@ -202,10 +202,12 @@ gulp.task('styleguide:generate', function() {
 			server: false,
 			port: 4000,
 			disableHtml5Mode: true,
+			disableEncapsulation: true,
 			appRoot: '.',
 			rootPath: './Static/dist/styleguide',
 			overviewPath: 'README.md',
 			extraHead: '<link href=" http://fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet" type="text/css"><link href="/Static/src/styleguide/styleguide_overrides.css" rel="stylesheet" type="text/css">',
+			afterBody:'<script data-main="/Static/src/js/skeletor.main" src="/Static/src/js/lib/require.js"></script>',
 			customColors: './Static/src/styleguide/styleguide_variables.css'
 		}))
 		.pipe(gulp.dest('./Static/dist/styleguide'));
@@ -235,4 +237,4 @@ gulp.task('watch:styleguide', function(){
 gulp.task('default', gulp.parallel('replace:dev','browserSync', 'watch'));
 gulp.task('scripts', gulp.parallel('scripts:main', 'scripts:components'));
 gulp.task('build', gulp.series('clean:js',gulp.parallel('replace:build','scripts:main', 'scripts:components','copy:requirejslib')));
-gulp.task('styleguide', gulp.series('styleguide:generate', 'styleguide:applystyles','styleguide:assets'));
+gulp.task('styleguide', gulp.series('sprite:bitmap:example','styleguide:generate','styleguide:applystyles','styleguide:assets'));

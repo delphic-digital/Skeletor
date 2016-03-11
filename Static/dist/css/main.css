@@ -684,6 +684,52 @@ Styleguide 4.0
   background: #ffeedd;
 }
 
+/*
+Skeletor
+
+This is the skeletor avatar
+
+markup:
+<div class="skeletor-component js-skeletor-guy"></div>
+
+Styleguide 4.1
+*/
+.skeletor-component {
+  background-image: url(../../assets/spritesheets/bitmap.spritesheet.png);
+  background-position: -314px 0px;
+  width: 220px;
+  height: 242px;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  -webkit-transform: perspective(600px) rotateY(0deg);
+  -moz-transform: perspective(600px) rotateY(0deg);
+  -ms-transform: perspective(600px) rotateY(0deg);
+  -o-transform: perspective(600px) rotateY(0deg);
+  transform: perspective(600px) rotateY(0deg);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .skeletor-component {
+    background-image: url(../../assets/spritesheets/bitmap.spritesheet@2x.png);
+    background-size: 534px 636px;
+  }
+}
+
+.skeletor-component.flipped {
+  -webkit-transform: perspective(600px) rotateY(180deg);
+  -moz-transform: perspective(600px) rotateY(180deg);
+  -ms-transform: perspective(600px) rotateY(180deg);
+  -o-transform: perspective(600px) rotateY(180deg);
+  transform: perspective(600px) rotateY(180deg);
+}
+
 /* Mobile main nav styles */
 @media (min-width: 768px) {
   .main-nav {

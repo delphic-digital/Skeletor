@@ -1,0 +1,26 @@
+/*
+Skeletor
+
+This is the skeletor avatar
+
+markup:
+<div class="skeletor-component js-skeletor-guy"></div>
+
+Styleguide 4.1
+*/
+
+.skeletor-component {
+	//$block: &; this doesn't work in the styleguide generator for some reason
+
+	@include retina-sprite($skeletor-group);
+
+	@include transition-property(transform);
+	@include transition-duration(300ms);
+	@include transition-timing-function(ease-in);
+
+	@include transform(perspective(600px) rotateY(0deg))
+
+	&.flipped {
+		@include transform(perspective(600px) rotateY(180deg))
+	}
+}

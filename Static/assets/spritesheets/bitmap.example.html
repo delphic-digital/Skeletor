@@ -13,23 +13,30 @@
   padding: 0.1em 0.3em;
 			}</style>
 <style>
-	{{#sprites}}
-	.icon-{{name}} {
+	.icon-skeletor {
 		display: block;
-		background-image: url({{{escaped_image}}});
-		background-position: {{px.offset_x}} {{px.offset_y}};
-		width: {{px.width}};
-		height: {{px.height}};
+		background-image: url(../../assets/spritesheets/bitmap.spritesheet.png);
+		background-position: -314px 0px;
+		width: 220px;
+		height: 242px;
 		}
-	{{/sprites}}
+	.icon-skeletor_tall {
+		display: block;
+		background-image: url(../../assets/spritesheets/bitmap.spritesheet.png);
+		background-position: 0px 0px;
+		width: 314px;
+		height: 636px;
+		}
 
 	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-		{{#retina_groups}}
-		.icon-{{name}} {
-			background-image: url({{{retina.escaped_image}}});
-	    background-size: {{normal.px.total_width}} {{normal.px.total_height}};
+		.icon-skeletor {
+			background-image: url(../../assets/spritesheets/bitmap.spritesheet@2x.png);
+	    background-size: 534px 636px;
 		}
-		{{/retina_groups}}
+		.icon-skeletor_tall {
+			background-image: url(../../assets/spritesheets/bitmap.spritesheet@2x.png);
+	    background-size: 534px 636px;
+		}
 	}
 </style>
 </head>
@@ -37,15 +44,20 @@
 
 	<main>
 		<ul>
-			{{#sprites}}
-				<li title="{{name}}">
+				<li title="skeletor">
 					<div class="icon-box">
-						<!-- {{name}} -->
-						<div class="icon-{{name}}"></div>
+						<!-- skeletor -->
+						<div class="icon-skeletor"></div>
 					</div>
-					<code class="svg-name">{{name}}</code>
+					<code class="svg-name">skeletor</code>
 				</li>
-			{{/sprites}}
+				<li title="skeletor_tall">
+					<div class="icon-box">
+						<!-- skeletor_tall -->
+						<div class="icon-skeletor_tall"></div>
+					</div>
+					<code class="svg-name">skeletor_tall</code>
+				</li>
 		</ul>
 	</main>
 
