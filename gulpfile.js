@@ -20,10 +20,7 @@ var paths = {
     	js: './Static/dist/js'
     }
   },
-  bower: {
-  	js : mainBowerFiles({filter: /.*\.js$/i}),
-  	css : mainBowerFiles({filter: /.*\.css$/i}),
-  }
+  bower: {}
 }
 
 var commonJsOptions  = {
@@ -172,6 +169,9 @@ gulp.task('copy:requirejslib', function() {
 });
 
 gulp.task('bower:process', function() {
+
+	paths.bower.js = mainBowerFiles({filter: /.*\.js$/i});
+	paths.bower.css = mainBowerFiles({filter: /.*\.css$/i});
 
 	//console.log(paths.bower.js)
 	//console.log(paths.bower.css)
