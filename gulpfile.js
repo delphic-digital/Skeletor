@@ -173,8 +173,8 @@ gulp.task('copy:requirejslib', function() {
 
 gulp.task('bower:process', function() {
 
-	console.log(paths.bower.js)
-	console.log(paths.bower.css)
+	//console.log(paths.bower.js)
+	//console.log(paths.bower.css)
 
 	var jsStream = gulp.src(paths.bower.js)
 		.pipe(flatten())
