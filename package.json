@@ -19,6 +19,7 @@
     "gulp-svg-sprite": "^1.2.19",
     "gulp.spritesmith": "^6.2.0",
     "main-bower-files": "^2.11.1",
+    "merge": "^1.2.0",
     "merge-stream": "^1.0.0",
     "node-bourbon": "^4.2.3",
     "node-sass-globbing": "0.0.23",
