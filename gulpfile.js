@@ -14,13 +14,30 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
     styleguide = require('sc5-styleguide');
 
+var config = {
+	localUrl: '',
+	baseLayoutDir: './',
+	baseLayoutFile: 'index.html',
+	viewsDir: './',
+}
+
+var browserSyncConfig = {
+	server: {
+		baseDir: "./"
+	}
+}
+
 var paths = {
-	dirs: {
-    build: {
-    	js: './Static/dist/js'
-    }
-  },
-  bower: {}
+	source: {
+		js: './Static/src/js',
+		scss: './Static/src/scss',
+		sprites: './Static/src/sprites',
+	},
+	build: {
+		js: './Static/dist/js',
+		css: './Static/dist/css',
+		sprites: './Static/assets/spritesheets',
+	}
 }
 
 var commonJsOptions  = {
@@ -52,19 +69,19 @@ var moduleJsOptions = function(file) {
 
 
 gulp.task('sass', function () {
-	return gulp.src('./Static/src/scss/main.scss')
+	return gulp.src(paths.source.scss+'/main.scss')
 		.pipe(sass({
 			importer: nodeSassGlobbing,
 			includePaths:[].concat(require('bourbon').includePaths, './node_modules/susy/sass', './node_modules/breakpoint-sass/stylesheets'),
 			outputStyle: 'expanded'
 	}).on('error', sass.logError))
-	.pipe(gulp.dest('./Static/dist/css'))
+	.pipe(gulp.dest(paths.build.css))
 	.pipe(browserSync.stream());
 });
 
 gulp.task('sprite:bitmap', function () {
-	var spriteData = gulp.src('./Static/src/sprites/bitmaps/**/*.png').pipe(spritesmith({
-		retinaSrcFilter: './Static/src/sprites/bitmaps/**/*@2x.png',
+	var spriteData = gulp.src(paths.source.sprites+'/bitmaps/**/*.png').pipe(spritesmith({
+		retinaSrcFilter: paths.source.sprites+'/bitmaps/**/*@2x.png',
 		imgName: 'bitmap.spritesheet.png',
 	 	retinaImgName: 'bitmap.spritesheet@2x.png',
 		imgPath: '../../assets/spritesheets/bitmap.spritesheet.png',
@@ -73,28 +90,28 @@ gulp.task('sprite:bitmap', function () {
 	}));
 
 	var imgStream = spriteData.img
-	.pipe(gulp.dest('./Static/assets/spritesheets/'));
+	.pipe(gulp.dest(paths.build.sprites));
 
 	var cssStream = spriteData.css
-	.pipe(gulp.dest('./Static/src/scss/partials/base/'));
+	.pipe(gulp.dest(paths.source.scss+'/partials/base/'));
 
 	return mergeStream(imgStream, cssStream);
 });
 
 gulp.task('sprite:bitmap:example', function () {
-	var spriteData = gulp.src('./Static/src/sprites/bitmaps/**/*.png').pipe(spritesmith({
-		retinaSrcFilter: './Static/src/sprites/bitmaps/**/*@2x.png',
+	var spriteData = gulp.src(paths.source.sprites+'/bitmaps/**/*.png').pipe(spritesmith({
+		retinaSrcFilter: paths.source.sprites+'/bitmaps/**/*@2x.png',
 		imgName: 'bitmap.spritesheet.png',
 	 	retinaImgName: 'bitmap.spritesheet@2x.png',
 		imgPath: '../../assets/spritesheets/bitmap.spritesheet.png',
 		retinaImgPath : '../../assets/spritesheets/bitmap.spritesheet@2x.png',
-		cssTemplate: './Static/src/sprites/bitmap.example.handlebars',
+		cssTemplate: paths.source.sprites+'/bitmap.example.handlebars',
 		cssFormat: 'css',
 		cssName: 'bitmap.example.html'
 	}));
 
 	var htmlStream = spriteData.css
-	.pipe(gulp.dest('./Static/assets/spritesheets/'));
+	.pipe(gulp.dest(paths.build.sprites));
 
 	return htmlStream;
 });
@@ -106,66 +123,62 @@ gulp.task('sprite:vector', function () {
 				dest: '.',
 				sprite : 'vector.spritesheet.svg',
 				example: {
-					template: './Static/src/sprites/vector.example.html',
+					template: paths.source.sprites+'/vector.example.html',
 					dest: 'vector.example.html'
 				}
 			}
 		}
 	}
 
-	return gulp.src('**/*.svg', {cwd: './Static/src/sprites/vectors'})
+	return gulp.src('**/*.svg', {cwd: paths.source.sprites+'/vectors'})
 		.pipe(svgSprite(config))
-		.pipe(gulp.dest('./Static/assets/spritesheets/'));
+		.pipe(gulp.dest(paths.build.sprites));
 });
 
 gulp.task('browserSync', function() {
-	browserSync.init({
-		server: {
-			baseDir: "./"
-		}
-	});
+	browserSync.init(browserSyncConfig);
 });
 
 gulp.task('replace:build', function(){
-	return gulp.src('index.html', { base : './' })
+	return gulp.src(config.baseLayoutFile, { base : config.baseLayoutDir })
 		.pipe(replace('/Static/src/js/', '/Static/dist/js/'))
-		.pipe(gulp.dest('./'));
+		.pipe(gulp.dest(config.baseLayoutDir));
 });
 
 
 gulp.task('replace:dev', function(){
-	return gulp.src('index.html', { base : './' })
+	return gulp.src(config.baseLayoutFile, { base : config.baseLayoutDir })
 		.pipe(replace('/Static/dist/js/', '/Static/src/js/'))
-		.pipe(gulp.dest('./'));
+		.pipe(gulp.dest(config.baseLayoutDir));
 });
 
 gulp.task('scripts:main', function () {
-	return gulp.src('./Static/src/js/skeletor.main.js')
+	return gulp.src(paths.source.js+'/skeletor.main.js')
 		.pipe(requirejsOptimize(commonJsOptions))
-		.pipe(gulp.dest('./Static/dist/js'));
+		.pipe(gulp.dest(paths.build.js));
 });
 
 gulp.task('scripts:components', function () {
-	return gulp.src('./Static/src/js/components/*.js')
+	return gulp.src(paths.source.js+'/components/*.js')
 		.pipe(requirejsOptimize(moduleJsOptions))
-		.pipe(gulp.dest('./Static/dist/js/components'));
+		.pipe(gulp.dest(paths.build.js+'/components'));
 });
 
 gulp.task('watch', function(){
-	gulp.watch('./Static/src/scss/**/*.scss', gulp.series('sass'));
-	gulp.watch('./Static/src/sprites/bitmaps/**/*.png', gulp.series('sprite:bitmap'));
-	gulp.watch('./Static/src/sprites/vectors/**/*.svg', gulp.series('sprite:vector'));
+	gulp.watch(paths.source.scss+'/**/*.scss', gulp.series('sass'));
+	gulp.watch(paths.source.sprites+'/bitmaps/**/*.png', gulp.series('sprite:bitmap'));
+	gulp.watch(paths.source.sprites+'/vectors/**/*.svg', gulp.series('sprite:vector'));
 	gulp.watch('./*.html', browserSync.reload);
-	gulp.watch('./Static/src/js/**/*.js', browserSync.reload);
+	gulp.watch(paths.source.js+'/**/*.js', browserSync.reload);
 })
 
 gulp.task('clean:js', function () {
-  return del(paths.dirs.build.js);
+  return del(paths.build.js);
 });
 
 gulp.task('copy:requirejslib', function() {
-	return gulp.src('./Static/src/js/lib/**/*.js')
-		.pipe(gulp.dest('./Static/dist/js/lib'));
+	return gulp.src(paths.source.js+'/lib/**/*.js')
+		.pipe(gulp.dest(paths.build.js+'/lib'));
 });
 
 gulp.task('bower:process', function() {
@@ -178,7 +191,7 @@ gulp.task('bower:process', function() {
 
 	var jsStream = gulp.src(paths.bower.js)
 		.pipe(flatten())
-		.pipe(gulp.dest('./Static/src/js/plugins'));
+		.pipe(gulp.dest(paths.source.js+'/plugins'));
 
 	var cssStream = gulp.src(paths.bower.css)
 		.pipe(flatten())
@@ -186,7 +199,7 @@ gulp.task('bower:process', function() {
 			prefix: "_",
 			extname: ".scss"
 		}))
-		.pipe(gulp.dest('./Static/src/scss/partials/plugins'));
+		.pipe(gulp.dest(paths.source.scss+'/partials/plugins'));
 
 
 	return mergeStream(jsStream, cssStream);
@@ -196,7 +209,7 @@ gulp.task('bower:process', function() {
 //Styleguide tasks
 
 gulp.task('styleguide:generate', function() {
-	return gulp.src('./Static/src/scss/**/*.scss')
+	return gulp.src(paths.source.scss+'/**/*.scss')
 		.pipe(styleguide.generate({
 			title: 'Skeletor Styleguide',
 			server: false,
@@ -214,7 +227,7 @@ gulp.task('styleguide:generate', function() {
 });
 
 gulp.task('styleguide:applystyles', function() {
-  return gulp.src('./Static/src/scss/main.scss')
+  return gulp.src(paths.source.scss+'/main.scss')
 		.pipe(sass({
 			importer: nodeSassGlobbing,
 			includePaths:[].concat(require('bourbon').includePaths, './node_modules/susy/sass', './node_modules/breakpoint-sass/stylesheets'),
@@ -225,12 +238,12 @@ gulp.task('styleguide:applystyles', function() {
 });
 
 gulp.task('styleguide:assets', function() {
-  return gulp.src(['./Static/assets/spritesheets/**/*'])
+  return gulp.src([paths.build.sprites+'/**/*'])
   	.pipe(gulp.dest('./Static/dist/styleguide/assets/spritesheets'));
 });
 
 gulp.task('watch:styleguide', function(){
-	gulp.watch('./Static/src/scss/**/*.scss', gulp.series('sass','styleguide'));
+	gulp.watch(paths.source.scss+'/**/*.scss', gulp.series('sass','styleguide'));
 })
 
 
