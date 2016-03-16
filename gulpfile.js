@@ -19,11 +19,13 @@ var config = {
 	baseLayoutDir: './',
 	baseLayoutFile: 'index.html',
 	viewsDir: './',
-}
-
-var browserSyncConfig = {
-	server: {
-		baseDir: "./"
+	browserSync: {
+		server: {
+			baseDir: "./"
+		}
+	},
+	styleguide:{
+		server:true
 	}
 }
 
@@ -136,7 +138,7 @@ gulp.task('sprite:vector', function () {
 });
 
 gulp.task('browserSync', function() {
-	browserSync.init(browserSyncConfig);
+	browserSync.init(config.browserSync);
 });
 
 gulp.task('replace:build', function(){
@@ -176,6 +178,10 @@ gulp.task('clean:js', function () {
   return del(paths.build.js);
 });
 
+gulp.task('clean:styleguide', function () {
+  return del('./Static/dist/styleguide');
+});
+
 gulp.task('copy:requirejslib', function() {
 	return gulp.src(paths.source.js+'/lib/**/*.js')
 		.pipe(gulp.dest(paths.build.js+'/lib'));
@@ -212,7 +218,7 @@ gulp.task('styleguide:generate', function() {
 	return gulp.src(paths.source.scss+'/**/*.scss')
 		.pipe(styleguide.generate({
 			title: 'Skeletor Styleguide',
-			server: false,
+			server: config.styleguide.server,
 			port: 4000,
 			disableHtml5Mode: true,
 			disableEncapsulation: true,
@@ -237,9 +243,19 @@ gulp.task('styleguide:applystyles', function() {
 		.pipe(gulp.dest('./Static/dist/styleguide'));
 });
 
-gulp.task('styleguide:assets', function() {
+gulp.task('styleguide:assets:sprites', function() {
   return gulp.src([paths.build.sprites+'/**/*'])
   	.pipe(gulp.dest('./Static/dist/styleguide/assets/spritesheets'));
+});
+
+gulp.task('styleguide:assets:js', function() {
+  return gulp.src([paths.source.js+'/**/*'])
+  	.pipe(gulp.dest('./Static/dist/styleguide/Static/src/js'));
+});
+
+gulp.task('styleguide:assets:css', function() {
+  return gulp.src('./Static/src/styleguide/styleguide_overrides.css')
+  	.pipe(gulp.dest('./Static/dist/styleguide/Static/src/styleguide'));
 });
 
 gulp.task('watch:styleguide', function(){
@@ -250,4 +266,4 @@ gulp.task('watch:styleguide', function(){
 gulp.task('default', gulp.parallel('replace:dev','browserSync', 'watch'));
 gulp.task('scripts', gulp.parallel('scripts:main', 'scripts:components'));
 gulp.task('build', gulp.series('clean:js',gulp.parallel('replace:build','scripts:main', 'scripts:components','copy:requirejslib')));
-gulp.task('styleguide', gulp.series('sprite:bitmap:example','styleguide:generate','styleguide:applystyles','styleguide:assets'));
+gulp.task('styleguide', gulp.series('clean:styleguide','sprite:bitmap:example','styleguide:generate','styleguide:applystyles',gulp.parallel('styleguide:assets:sprites','styleguide:assets:js', 'styleguide:assets:css')));
