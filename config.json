@@ -1,0 +1,14 @@
+{
+	"localUrl": "",
+	"baseLayoutDir": "./",
+	"baseLayoutFile": "index.html",
+	"viewsDir": "./",
+	"browserSync": {
+		"server": {
+			"baseDir": "./"
+		}
+	},
+	"styleguide":{
+		"server":true
+	}
+}

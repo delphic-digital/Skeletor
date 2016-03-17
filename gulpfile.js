@@ -14,20 +14,8 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
     styleguide = require('sc5-styleguide');
 
-var config = {
-	localUrl: '',
-	baseLayoutDir: './',
-	baseLayoutFile: 'index.html',
-	viewsDir: './',
-	browserSync: {
-		server: {
-			baseDir: "./"
-		}
-	},
-	styleguide:{
-		server:true
-	}
-}
+var config = require('./config.json');
+
 
 var paths = {
 	source: {
