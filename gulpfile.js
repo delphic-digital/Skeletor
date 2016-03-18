@@ -158,7 +158,7 @@ gulp.task('watch', function(){
 	gulp.watch(paths.source.scss+'/**/*.scss', gulp.series('sass'));
 	gulp.watch(paths.source.sprites+'/bitmaps/**/*.png', gulp.series('sprite:bitmap'));
 	gulp.watch(paths.source.sprites+'/vectors/**/*.svg', gulp.series('sprite:vector'));
-	gulp.watch('./*.html', browserSync.reload);
+	gulp.watch(config.viewsDir, browserSync.reload);
 	gulp.watch(paths.source.js+'/**/*.js', browserSync.reload);
 })
 
