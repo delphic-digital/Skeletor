@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     sass = require('gulp-sass'),
     nodeSassGlobbing = require('node-sass-globbing'),
+    sourcemaps = require('gulp-sourcemaps'),
     spritesmith = require('gulp.spritesmith'),
     svgSprite = require('gulp-svg-sprite'),
     replace = require('gulp-replace'),
@@ -60,11 +61,13 @@ var moduleJsOptions = function(file) {
 
 gulp.task('sass', function () {
 	return gulp.src(paths.source.scss+'/main.scss')
+		.pipe(sourcemaps.init())
 		.pipe(sass({
 			importer: nodeSassGlobbing,
 			includePaths:[].concat(require('bourbon').includePaths, './node_modules/susy/sass', './node_modules/breakpoint-sass/stylesheets'),
 			outputStyle: 'expanded'
 	}).on('error', sass.logError))
+	.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest(paths.build.css))
 	.pipe(browserSync.stream());
 });
