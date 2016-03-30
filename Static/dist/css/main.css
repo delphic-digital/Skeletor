@@ -419,6 +419,18 @@ markup:
 Styleguide 1.1
 */
 /*
+Gradients
+
+Main Gradient
+
+
+markup:
+<sg-insert>1.1-4</sg-insert>
+
+
+Styleguide 1.1.1
+*/
+/*
 Typography
 
 This section describes headings, paragraphs, quotes, etc...
@@ -742,3 +754,5 @@ Styleguide 4.1
     /* Desktop main nav styles */
   }
 }
+
+/*# sourceMappingURL=main.css.map */

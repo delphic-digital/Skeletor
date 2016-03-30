@@ -4,16 +4,19 @@ var gulp = require('gulp'),
     mergeStream = require('merge-stream'),
     browserSync = require('browser-sync').create(),
     sass = require('gulp-sass'),
-    nodeSassGlobbing = require('node-sass-globbing'),
     sourcemaps = require('gulp-sourcemaps'),
+    nodeSassGlobbing = require('node-sass-globbing'),
     spritesmith = require('gulp.spritesmith'),
     svgSprite = require('gulp-svg-sprite'),
+    svgmin = require('gulp-svgmin'),
     replace = require('gulp-replace'),
     requirejsOptimize = require('gulp-requirejs-optimize'),
     mainBowerFiles = require('main-bower-files'),
     flatten = require('gulp-flatten'),
     rename = require("gulp-rename"),
-    styleguide = require('sc5-styleguide');
+    styleguide = require('sc5-styleguide'),
+    ssi = require('browsersync-ssi'),
+    inlineSvg = require("gulp-inline-svg");
 
 var config = require('./config.json');
 
@@ -125,11 +128,27 @@ gulp.task('sprite:vector', function () {
 
 	return gulp.src('**/*.svg', {cwd: paths.source.sprites+'/vectors'})
 		.pipe(svgSprite(config))
+		//.pipe(svgmin())
 		.pipe(gulp.dest(paths.build.sprites));
 });
 
+gulp.task('svg:inline', function() {
+	var config = {
+		template: paths.source.sprites+'/inline.mustache'
+	}
+
+	return gulp.src('**/*.svg', {cwd: paths.source.sprites+'/inline'})
+		.pipe(inlineSvg(config))
+		.pipe(gulp.dest(paths.source.scss+'/partials/base/'));
+});
+
 gulp.task('browserSync', function() {
-	browserSync.init(config.browserSync);
+	browserSync.init({
+		server: {
+			baseDir: "./",
+			middleware: ssi({baseDir: __dirname, ext: '.html'})
+		}
+	});
 });
 
 gulp.task('replace:build', function(){
@@ -161,6 +180,7 @@ gulp.task('watch', function(){
 	gulp.watch(paths.source.scss+'/**/*.scss', gulp.series('sass'));
 	gulp.watch(paths.source.sprites+'/bitmaps/**/*.png', gulp.series('sprite:bitmap'));
 	gulp.watch(paths.source.sprites+'/vectors/**/*.svg', gulp.series('sprite:vector'));
+	gulp.watch(paths.source.sprites+'/inline/**/*.svg', gulp.series('svg:inline'));
 	gulp.watch(config.viewsDir, browserSync.reload);
 	gulp.watch(paths.source.js+'/**/*.js', browserSync.reload);
 })
@@ -234,9 +254,9 @@ gulp.task('styleguide:applystyles', function() {
 		.pipe(gulp.dest('./Static/dist/styleguide'));
 });
 
-gulp.task('styleguide:assets:sprites', function() {
-  return gulp.src([paths.build.sprites+'/**/*'])
-  	.pipe(gulp.dest('./Static/dist/styleguide/assets/spritesheets'));
+gulp.task('styleguide:assets', function() {
+  return gulp.src(['./Static/assets/**/*'])
+  	.pipe(gulp.dest('./Static/dist/styleguide/assets'));
 });
 
 gulp.task('styleguide:assets:js', function() {
@@ -257,4 +277,4 @@ gulp.task('watch:styleguide', function(){
 gulp.task('default', gulp.parallel('replace:dev','browserSync', 'watch'));
 gulp.task('scripts', gulp.parallel('scripts:main', 'scripts:components'));
 gulp.task('build', gulp.series('clean:js',gulp.parallel('replace:build','scripts:main', 'scripts:components','copy:requirejslib')));
-gulp.task('styleguide', gulp.series('clean:styleguide','sprite:bitmap:example','styleguide:generate','styleguide:applystyles',gulp.parallel('styleguide:assets:sprites','styleguide:assets:js', 'styleguide:assets:css')));
+gulp.task('styleguide', gulp.series('clean:styleguide','sprite:bitmap:example','styleguide:generate','styleguide:applystyles',gulp.parallel('styleguide:assets','styleguide:assets:js', 'styleguide:assets:css')));
