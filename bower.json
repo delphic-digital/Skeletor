@@ -15,5 +15,20 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "onMediaQuery": "on-media-query#^0.2.0",
+    "picturefill": "^3.0.2",
+    "svg4everybody": "^2.0.3",
+    "delphic.loader": "git://github.com/delphic-digital/delphic.loader",
+    "delphic.browserupdate": "git://github.com/delphic-digital/delphic.browserupdate"
+  },
+  "overrides": {
+    "onMediaQuery": {
+      "main": "js/onmediaquery.js"
+    },
+    "svg4everybody": {
+      "main": "dist/svg4everybody.js"
+    }
+  }
 }

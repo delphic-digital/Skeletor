@@ -1,8 +1,16 @@
 require.config({
 	paths: {
-		'utilities' : 'utils/utils',
-		'common' : 'components/common',
-		'moment' : '//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min',   // http://momentjs.com/
+		"delphic.browserupdate": "../../../bower_components/delphic.browserupdate/delphic.browserupdate",
+		"delphic.loader": "../../../bower_components/delphic.loader/delphic.loader",
+		onMediaQuery: "../../../bower_components/onMediaQuery/js/onmediaquery",
+		picturefill: "../../../bower_components/picturefill/dist/picturefill",
+		svg4everybody: "../../../bower_components/svg4everybody/dist/svg4everybody"
+	},
+	packages: [
+
+	],
+	shim: {
+
 	}
 });
 
@@ -17,8 +25,22 @@ require.config({
 	}
 })
 
-//Global Components
+require([
+	'delphic.loader',
+	'delphic.browserupdate',   // http://browser-update.org/
+	'svg4everybody',           // https://github.com/jonathantneal/svg4everybody
+	'picturefill',             // https://github.com/scottjehl/picturefill
+	'./components/common'
+], function (
+	loader,
+	browserupdate,
+	svg4everybody,
+	picturefill,
+	commonComponents
+){
+	svg4everybody();
+	browserupdate.init();
+	loader.init();
 
-require(['utilities','common'], function(utils, common){
-	common.init();
+	commonComponents.init();
 });

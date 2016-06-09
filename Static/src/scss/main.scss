@@ -1,85 +1,25 @@
-// styleguide:ignore:start
 @import "bourbon";
 @import "susy";
 @import "breakpoint";
 
-@import "partials/utilities/**/*";
+@import "partials/utilities/**/*"; //Mixins
 @import "partials/settings";
 @import "partials/base/helpers";
-@import "partials/base/normalize";
+@import "bower/normalize";
 @import "partials/plugins/**/*";
-// styleguide:ignore:end
-
-/*
-Colors and Typography
-
-This section describes base colors and typography
-
-Styleguide 1.0
-*/
 
 @import "partials/base/colors";
 @import "partials/base/typography";
 @import "partials/base/svg";
 
-
-// styleguide:ignore:start
 @import "partials/base/scaffolding";
-// styleguide:ignore:end
 
-/*
-Icons
-
-This section describes icons used
-
-Styleguide 3.0
-*/
 @import "partials/base/sprites";
 
-/*
-Vector
-
-This section describes icons used in SVG format
-
-markup:
-../../assets/spritesheets/vector.example.html
-
-Styleguide 3.1
-*/
-
-/*
-Bitmap
-
-This section describes icons used in PNG format
-
-markup:
-../../assets/spritesheets/bitmap.example.html
-
-
-Styleguide 3.2
-*/
-
-/*
-Buttons and Inputs
-
-This section describes buttons and inputs
-
-Styleguide 2.0
-*/
 @import "partials/base/links";
 @import "partials/base/buttons";
 @import "partials/base/inputs";
 
-// styleguide:ignore:start
 @import "partials/layout/**/*";
-// styleguide:ignore:end
 
-
-/*
-Components
-
-This section describes components used
-
-Styleguide 4.0
-*/
 @import "partials/components/**/*";

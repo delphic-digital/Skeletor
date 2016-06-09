@@ -31,5 +31,8 @@
     "require-dir": "^0.3.0",
     "sc5-styleguide": "^0.3.43",
     "susy": "^2.2.12"
+  },
+  "dependencies": {
+    "bower-requirejs": "^1.2.0"
   }
 }

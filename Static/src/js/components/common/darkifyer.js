@@ -1,4 +1,4 @@
-define(function(moment) {
+define(function() {
 
 	return {
 

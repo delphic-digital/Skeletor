@@ -1,6 +1,7 @@
 {
 	"analytics": false,
+	"save": true,
 	"scripts": {
-		"postinstall": "gulp bower:process"
+		"postinstall": "gulp bower:install"
 	}
 }
