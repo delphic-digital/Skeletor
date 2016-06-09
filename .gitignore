@@ -1,4 +1,6 @@
 node_modules
 .sass-cache
+Static/dist/**/*
+Static/dist/**
 *.sublime-project
 *.sublime-workspace
