@@ -18,3 +18,4 @@ require('require-dir')('./gulp/tasks', { recurse: true })
 //Move main command tasks here so they are loaded after all the dependent tasks
 gulp.task('default', gulp.parallel('browserSync:static', 'watch'));
 gulp.task('scripts', gulp.parallel('scripts:main', 'scripts:components'));
+gulp.task('bower:wire', gulp.parallel('bower:styles', 'bower:scripts'));

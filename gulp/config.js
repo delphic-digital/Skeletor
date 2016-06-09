@@ -97,7 +97,7 @@ module.exports = {
 				}
 			},
 			paths: {
-				//Map CDN paths to empty so optimizer doesn't try to include them
+				//Map all CDN paths to empty so optimizer doesn't try to include them
 				jquery: "empty:",
 			}
 		}

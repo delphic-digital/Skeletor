@@ -2,6 +2,7 @@
 	"analytics": false,
 	"save": true,
 	"scripts": {
-		"postinstall": "gulp bower:install"
+		"postinstall": "gulp bower:wire",
+		"postuninstall": "gulp bower:wire"
 	}
 }

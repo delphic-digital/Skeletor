@@ -2,10 +2,18 @@
 @import "susy";
 @import "breakpoint";
 
+// Automatically injected Bower CSS dependencies via wiredep (never manually edit this block)
+// bower:css
+// endbower
+
+// Automatically injected Bower SCSS dependencies via wiredep (never manually edit this block)
+// bower:scss
+// endbower
+
+
 @import "partials/utilities/**/*"; //Mixins
 @import "partials/settings";
 @import "partials/base/helpers";
-@import "bower/normalize";
 @import "partials/plugins/**/*";
 
 @import "partials/base/colors";

@@ -21,7 +21,8 @@
     "picturefill": "^3.0.2",
     "svg4everybody": "^2.0.3",
     "delphic.loader": "git://github.com/delphic-digital/delphic.loader",
-    "delphic.browserupdate": "git://github.com/delphic-digital/delphic.browserupdate"
+    "delphic.browserupdate": "git://github.com/delphic-digital/delphic.browserupdate",
+    "normalize-css": "normalize.css#^4.1.1",
   },
   "overrides": {
     "onMediaQuery": {
@@ -29,6 +30,12 @@
     },
     "svg4everybody": {
       "main": "dist/svg4everybody.js"
+    },
+    "slick-carousel": {
+      "main": [
+        "slick/slick.js",
+        "slick/slick.scss"
+      ]
     }
   }
 }
