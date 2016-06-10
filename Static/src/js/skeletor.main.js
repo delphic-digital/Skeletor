@@ -17,7 +17,7 @@ require.config({
 		'jquery': (document.addEventListener) ?
 			['//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min']
 			:
-			['//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min']// https://github.com/rnsloan/requirejs-conditionally-load-jquery2
+			['//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min'] // https://github.com/rnsloan/requirejs-conditionally-load-jquery2
 	}
 })
 
@@ -28,7 +28,7 @@ define(function (require){
 	    svg4everybody    = require('svg4everybody'),
 	    picturefill      = require('picturefill'),
 	    commonComponent  = require('./components/common');
-	
+
 	svg4everybody();
 	browserupdate.init();
 	loader.init();
