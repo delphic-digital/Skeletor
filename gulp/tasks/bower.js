@@ -5,8 +5,7 @@ var gulp = require('gulp'),
 		flatten = require('gulp-flatten'),
 		rename = require("gulp-rename"),
 		bowerRequireJS = require('bower-requirejs'),
-		wiredep = require('wiredep').stream,
-		moduleImporter  = require('sass-module-importer');
+		wiredep = require('wiredep').stream;
 
 gulp.task('bower:styles', function() {
 
@@ -26,7 +25,7 @@ gulp.task('bower:scripts', function(cb) {
 		transitive: true
 	};
 
- 	bowerRequireJS(options, function (rjsConfigFromBower) {
+	bowerRequireJS(options, function (rjsConfigFromBower) {
 		console.info('------> Updated paths config in '+options.config);
 		cb();
 	})

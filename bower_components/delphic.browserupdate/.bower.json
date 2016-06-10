@@ -1,0 +1,27 @@
+{
+  "name": "delphic.browserupdate",
+  "main": "delphic.browserupdate.js",
+  "homepage": "https://github.com/delphic-digital/delphic.browserupdate",
+  "authors": [
+    "Jeff <jmills@delphicdigital.com>"
+  ],
+  "description": "Wrapper for browser-update.org",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "f46a197477",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f46a1974777e6452ff1bacc920fc7f8061119331"
+  },
+  "_source": "git://github.com/delphic-digital/delphic.browserupdate.git",
+  "_target": "*",
+  "_originalSource": "git://github.com/delphic-digital/delphic.browserupdate"
+}

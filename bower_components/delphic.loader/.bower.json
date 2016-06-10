@@ -1,0 +1,27 @@
+{
+  "name": "delphic.loader",
+  "main": "delphic.loader.js",
+  "homepage": "https://github.com/delphic-digital/delphic.loader",
+  "authors": [
+    "Jeff <jmills@delphicdigital.com>"
+  ],
+  "description": "JS component loader",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "7fc08236e7",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "7fc08236e7cfa2d828cdfd094ae3549551080c74"
+  },
+  "_source": "git://github.com/delphic-digital/delphic.loader.git",
+  "_target": "*",
+  "_originalSource": "git://github.com/delphic-digital/delphic.loader"
+}
