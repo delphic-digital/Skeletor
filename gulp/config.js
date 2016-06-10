@@ -1,11 +1,18 @@
 var localHostname = 'localhost.com',
     siteShortname = 'skeletor',
+    baseLayoutDir = "./",
+		baseLayoutFile = "index.html",
     views = './*.html',
     src = './Static/src',
     dist = './Static/dist',
     assets = './Static/assets'
 
 module.exports = {
+
+	base: {
+		baseLayoutDir: baseLayoutDir,
+		baseLayoutFile: baseLayoutFile
+	},
 
 	browserSync: {
 		static : {
