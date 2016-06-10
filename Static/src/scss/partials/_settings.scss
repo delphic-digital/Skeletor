@@ -1,5 +1,8 @@
 $oldIE: false !default;
 
+// Breakpoints
+// ------------------------------------------------------------------------------
+
 $breakpoints: (
 	small:  320px,  /* Smartphones --------------- */
 	medium: 768px,  /* Tablets Portrait ---------- */
@@ -33,5 +36,17 @@ $susy: (
   //debug: (image:show)
 );
 
+
 // Fonts
 // ------------------------------------------------------------------------------
+
+$helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Colors
+// ------------------------------------------------------------------------------
+
+$heading-color: #7CB0A1;
+$secondary-heading-color: #517C66;
+$body-copy-color: #444;
+$link-color: #AF8F2C;
+$link-hover-color: #F8B853;

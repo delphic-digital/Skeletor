@@ -9,6 +9,7 @@ require.config({
 
 	}
 });
+// endbower
 
 //Need a second config so the optimizer doesn't try and evaluate the browser only jquery conditional.
 
@@ -23,11 +24,11 @@ require.config({
 
 define(function (require){
 
-	var loader           = require('delphic.loader'),
-	    browserupdate    = require('delphic.browserupdate'),
-	    svg4everybody    = require('svg4everybody'),
-	    picturefill      = require('picturefill'),
-	    commonComponent  = require('./components/common');
+	var loader            = require('delphic.loader'),
+	    browserupdate     = require('delphic.browserupdate'),
+	    svg4everybody     = require('svg4everybody'),
+	    picturefill       = require('picturefill'),
+	    commonComponents  = require('./components/common');
 
 	svg4everybody();
 	browserupdate.init();

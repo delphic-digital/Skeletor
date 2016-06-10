@@ -10,7 +10,7 @@ Styleguide 4.1
 */
 
 .skeletor-component {
-	//$block: &; this doesn't work in the styleguide generator for some reason
+	$block: &;;
 
 	@include retina-sprite($skeletor-group);
 
@@ -19,6 +19,8 @@ Styleguide 4.1
 	@include transition-timing-function(ease-in);
 
 	@include transform(perspective(600px) rotateY(0deg))
+
+	@include center
 
 	&.flipped {
 		@include transform(perspective(600px) rotateY(180deg))

@@ -2,6 +2,8 @@
 @import "susy";
 @import "breakpoint";
 
+@import "partials/settings";
+
 // Automatically injected Bower CSS dependencies via wiredep (never manually edit this block)
 // bower:css
 // endbower
@@ -10,21 +12,10 @@
 // bower:scss
 // endbower
 
-
-@import "partials/utilities/**/*"; //Mixins
-@import "partials/settings";
-@import "partials/base/helpers";
-@import "partials/plugins/**/*";
-
-@import "partials/base/colors";
+@import "partials/base/svg"; //Auto generated from inline svg gulp task
+@import "partials/base/sprites";  //Auto generated from sprite gulp task
 @import "partials/base/typography";
-@import "partials/base/svg";
-
 @import "partials/base/scaffolding";
-
-@import "partials/base/sprites";
-
-@import "partials/base/links";
 @import "partials/base/buttons";
 @import "partials/base/inputs";
 

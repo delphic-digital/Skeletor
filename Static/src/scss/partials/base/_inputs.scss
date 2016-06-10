@@ -1,27 +1,22 @@
-/*
-Input boxes
+%input {
+	@include transition(all 100ms ease-in-out);
+	display: block;
+	position: relative;
+	padding: em(10) em(10);
+	width: 100%;
 
-Styles for input boxes
+	border: 0;
+	border-bottom: 1px solid #CCC;
+}
 
-default - Default input
-:hover - Hovered input
+@include input_text_types() {
+	@extend %input;
+}
 
-markup:
-<input class="{$modifiers}" type="text" value="Default text box">
-<input class="{$modifiers}" type="text" placeholder="Default placeholder">
-<input class="{$modifiers}" type="search" value="Search text box">
 
-Styleguide 2.3
-*/
+//Active states
 
-input {
-	margin: 8px;
-	padding: 8px;
-	border: 1px solid #000;
-
-	&:focus {
-		//background-color: var(--tertiary-color);
-	//	background-color: $tertiary-color;
-		border: 1px solid #CCC;
-	}
+@include input_text_types(true) {
+	outline: 0;
+	border-bottom-color: #000;
 }
