@@ -21,22 +21,17 @@ require.config({
 	}
 })
 
-require([
-	'delphic.loader',
-	'delphic.browserupdate',   // http://browser-update.org/
-	'svg4everybody',           // https://github.com/jonathantneal/svg4everybody
-	'picturefill',             // https://github.com/scottjehl/picturefill
-	'./components/common'
-], function (
-	loader,
-	browserupdate,
-	svg4everybody,
-	picturefill,
-	commonComponents
-){
+require(function (require){
+
+	var loader           = require('delphic.loader'),
+	    browserupdate    = require('delphic.browserupdate'),
+	    svg4everybody    = require('svg4everybody),
+	    picturefill      = require('picturefill'),
+	    commonComponent  = require('./components/common'),
+	
 	svg4everybody();
 	browserupdate.init();
 	loader.init();
-
 	commonComponents.init();
+
 });
