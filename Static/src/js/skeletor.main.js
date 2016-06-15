@@ -24,15 +24,13 @@ require.config({
 
 define(function (require){
 
-	var loader            = require('delphic.loader'),
-	    browserupdate     = require('delphic.browserupdate'),
+	var componentLoader   = require('skeletor.component-loader'),
+	    browsehappy       = require('skeletor.browsehappy'),
 	    svg4everybody     = require('svg4everybody'),
 	    picturefill       = require('picturefill'),
-	    commonComponents  = require('./components/common');
+	    commonComponents  = require('./components/common/index');
 
 	svg4everybody();
-	browserupdate.init();
-	loader.init();
 	commonComponents.init();
 
 });
