@@ -20,11 +20,11 @@
     "onMediaQuery": "on-media-query#^0.2.0",
     "picturefill": "^3.0.2",
     "svg4everybody": "^2.0.3",
-    "delphic.loader": "git://github.com/delphic-digital/delphic.loader",
-    "delphic.browserupdate": "git://github.com/delphic-digital/delphic.browserupdate",
     "normalize-css": "normalize.css#^4.1.1",
     "delphic.sass-utilities": "https://github.com/delphic-digital/delphic.sass-utilities.git",
-    "delphic.sass-helpers": "git://github.com/delphic-digital/delphic.sass-helpers"
+    "delphic.sass-helpers": "git://github.com/delphic-digital/delphic.sass-helpers",
+    "skeletor.component-loader": "*",
+    "skeletor.browsehappy": "*"
   },
   "overrides": {
     "onMediaQuery": {
