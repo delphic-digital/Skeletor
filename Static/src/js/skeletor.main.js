@@ -28,7 +28,7 @@ define(function (require){
 	    browsehappy       = require('skeletor.browsehappy'),
 	    svg4everybody     = require('svg4everybody'),
 	    picturefill       = require('picturefill'),
-	    commonComponents  = require('./components/common/index');
+	    commonComponents  = require('./components/common');
 
 	svg4everybody();
 	commonComponents.init();

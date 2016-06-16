@@ -1,4 +1,4 @@
-define(['./darkifyer'], function() {
+define(['./common/darkifyer'], function() {
 
 	return {
 		args: arguments,
