@@ -16,9 +16,9 @@ require.config({
 require.config({
 	paths: {
 		'jquery': (document.addEventListener) ?
-			['//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min']
+			['//code.jquery.com/jquery-3.0.0.min']
 			:
-			['//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min'] // https://github.com/rnsloan/requirejs-conditionally-load-jquery2
+			['//code.jquery.com/jquery-1.12.4.min'] // https://github.com/rnsloan/requirejs-conditionally-load-jquery2
 	}
 })
 
