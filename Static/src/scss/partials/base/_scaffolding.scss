@@ -7,11 +7,11 @@
 html {
 	font-family: "mobile";
 
-	@include breakpoint(medium) {
+	@include breakpoint($medium) {
 	 	font-family: "tablet";
   }
 
-	@include breakpoint(wide) {
+	@include breakpoint($large) {
 		font-family: "desktop";
 	}
 }

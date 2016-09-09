@@ -1,0 +1,43 @@
+{
+  "name": "Skeletor",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Delphic Digital"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/delphic-digital/Skeletor",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "onMediaQuery": "on-media-query#^0.2.0",
+    "picturefill": "^3.0.2",
+    "svg4everybody": "^2.0.3",
+    "normalize-css": "normalize.css#^4.1.1",
+    "skeletor.browsehappy": "*",
+    "skeletor.sass.utilities": "*",
+    "skeletor.sass.helpers": "*",
+    "skeletor.util.componentLoader": "*"
+  },
+  "overrides": {
+    "onMediaQuery": {
+      "main": "js/onmediaquery.js"
+    },
+    "svg4everybody": {
+      "main": "dist/svg4everybody.js"
+    },
+    "slick-carousel": {
+      "main": [
+        "slick/slick.js",
+        "slick/slick.scss"
+      ]
+    }
+  }
+}

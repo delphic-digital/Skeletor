@@ -1,35 +1,36 @@
-//Requirejs confif
+// Automatically injected Bower JS dependencies via bowerRequireJS
+require.config({
+	paths: {
+	},
+	packages: [
+
+	],
+	shim: {
+
+	}
+});
+// endbower
+
+//Need a second config so the optimizer doesn't try and evaluate the browser only jquery conditional.
 
 require.config({
 	paths: {
-			//https://github.com/rnsloan/requirejs-conditionally-load-jquery2
-		 "jquery": (document.addEventListener) ?
-		 	['//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min','jquery-2.0.2.min']
-		 	:
-		 	['//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min','jquery-1.10.1.min']
+		'jquery': (document.addEventListener) ?
+			['//code.jquery.com/jquery-3.0.0.min']
+			:
+			['//code.jquery.com/jquery-1.12.4.min'] // https://github.com/rnsloan/requirejs-conditionally-load-jquery2
 	}
-});
+})
 
-require(['jquery','utils/utils','components/common'], function($, utils, common){
+define(function (require){
 
-	console.log('jQuery version: '+$.fn.jquery)
+	var componentLoader   = require('skeletor.util.componentLoader'),
+	    browsehappy       = require('skeletor.browsehappy'),
+	    svg4everybody     = require('svg4everybody'),
+	    picturefill       = require('picturefill'),
+	    commonComponents  = require('./components/common');
 
-	/**
-	 *  Init mobile only components with onMediaQuery and all common (global) components
-	 */
-
-	MQ.addQuery({
-		context: 'mobile',
-		match: function() {
-			require(['components/mobile'], function(component){
-				component.init();
-			})
-		},
-		unmatch: function() {
-			require('components/mobile').destroy(); //http://requirejs.org/docs/api.html#modulenotes-console
-		}
-	});
-
-	common.init();
+	svg4everybody();
+	commonComponents.init();
 
 });

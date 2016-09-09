@@ -7,22 +7,19 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!--[if (gt IE 8) | (IEMobile)]><!-->
-			<link rel="stylesheet" href="/Static/dist/css/main.css" />
-		<!--<![endif]-->
+		<link rel="stylesheet" href="/Static/dist/css/main.css" />
 
 		<!--[if lt IE 9]>
-			<link rel="stylesheet" href="/Static/dist/css/oldie.css"  />
 			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
 	</head>
 	<body>
-		<main>
-			<div class="component-example" data-component="component-example" data-component-context="tablet,desktop"></div>
+		<main class="hidden-sm">
+			<div class="skeletor-component js-skeletor-guy" data-component="skeletor-guy"></div>
 		</main>
 
-		<script data-main="/Static/src/js/skeletor.main" src="/Static/src/js/lib/require.js"></script>
+		<script data-main="/Static/src/js/skeletor.main" src="/Static/dist/js/lib/require.js"></script>
 
 	</body>
 </html>

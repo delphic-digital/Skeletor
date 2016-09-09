@@ -1,23 +1,24 @@
-@import "bourbon"; //http://bourbon.io/docs/
-@import "susy";    //http://susydocs.oddbird.net/en/latest/
-@import "breakpoint"; //https://github.com/at-import/breakpoint/wiki
+@import "bourbon";
+@import "susy";
+@import "breakpoint";
 
-//Site settings
 @import "partials/settings";
 
-//SASS functions and mixins
-@import "partials/utilities/**/*";
+// Automatically injected Bower CSS dependencies via wiredep (never manually edit this block)
+// bower:css
+// endbower
 
-@import "partials/base/normalize";
-@import "partials/base/icons";
+// Automatically injected Bower SCSS dependencies via wiredep (never manually edit this block)
+// bower:scss
+// endbower
+
+@import "partials/base/svg"; //Auto generated from inline svg gulp task
+@import "partials/base/sprites";  //Auto generated from sprite gulp task
 @import "partials/base/typography";
-@import "partials/base/helpers";
 @import "partials/base/scaffolding";
-@import "partials/base/sprites";
-@import "partials/base/icons";
-@import "partials/base/colors";
 @import "partials/base/buttons";
+@import "partials/base/inputs";
 
 @import "partials/layout/**/*";
+
 @import "partials/components/**/*";
-@import "partials/pages/**/*";
