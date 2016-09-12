@@ -21,7 +21,6 @@
     "picturefill": "^3.0.2",
     "svg4everybody": "^2.0.3",
     "normalize-css": "normalize.css#^4.1.1",
-    "skeletor.browsehappy": "*",
     "skeletor.sass.utilities": "*",
     "skeletor.sass.helpers": "*",
     "skeletor.util.componentLoader": "*"

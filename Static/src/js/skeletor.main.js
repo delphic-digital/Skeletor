@@ -25,7 +25,6 @@ require.config({
 define(function (require){
 
 	var componentLoader   = require('skeletor.util.componentLoader'),
-	    browsehappy       = require('skeletor.browsehappy'),
 	    svg4everybody     = require('svg4everybody'),
 	    picturefill       = require('picturefill'),
 	    commonComponents  = require('./components/common');
