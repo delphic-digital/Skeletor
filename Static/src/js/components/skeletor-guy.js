@@ -6,10 +6,9 @@ define(['jquery'],function($) {
 		},
 
 		init: function() {
-			var _ = this;
 			console.log('init skeletor guy.')
 
-			_.settings.$elm.click(function(){
+			this.settings.$elm.click(function(){
 				$(this).toggleClass('flipped')
 			})
 		},
