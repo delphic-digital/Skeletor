@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Skeletor Component Loader Component</title>
+</head>
+<body>
+	<p>Skeletor Component Loader Component</p>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script>
+	<script>
+		require.config({
+			paths: {
+				'jquery': '//code.jquery.com/jquery-3.0.0.min',
+				'skeletor.core': '//rawgit.com/delphic-digital/Skeletor.core/master/skeletor.core',
+				'onMediaQuery': '//rawgit.com/JoshBarr/on-media-query/master/js/onmediaquery.min',
+			}
+		})
+		require(['skeletor.util.componentLoader'])
+	</script>
+</body>
+</html>

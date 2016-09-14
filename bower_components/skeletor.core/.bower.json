@@ -1,0 +1,32 @@
+{
+  "name": "skeletor.core",
+  "main": "skeletor.core.js",
+  "homepage": "https://github.com/delphic-digital/Skeletor.core",
+  "authors": [
+    "Jeff <jmills@delphicdigital.com>"
+  ],
+  "description": "Skeletor core framework is base for all skeletor components",
+  "keywords": [
+    "delphic",
+    "skeletor",
+    "core"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "0.2.1",
+  "_release": "0.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.1",
+    "commit": "95f51cc2c884e3570810bd9a0bb3a20b26c4d94f"
+  },
+  "_source": "https://github.com/delphic-digital/Skeletor.core.git",
+  "_target": "*",
+  "_originalSource": "skeletor.core"
+}

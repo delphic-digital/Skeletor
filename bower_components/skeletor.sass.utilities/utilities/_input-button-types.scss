@@ -1,0 +1,15 @@
+@mixin input_button_types( $focus:false ) {
+	@if $focus {
+	  input[type=reset]:focus,
+	  input[type=button]:focus,
+	  input[type=submit]:focus {
+			@content;
+	  }
+	} @else {
+		input[type=reset],
+		input[type=button],
+		input[type=submit]{
+		  @content;
+		}
+	}
+}

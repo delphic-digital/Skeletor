@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Skeletor Core</title>
+</head>
+<body>
+	<p>Skeletor Core</p>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script>
+	<script>
+		require.config({
+			paths: {
+				'jquery': '//code.jquery.com/jquery-3.0.0.min',
+				'skeletor.core': 'skeletor.core',
+			}
+		})
+
+		require(['jquery', 'skeletor.core'],function ($, Skeletor){
+			console.log(Skeletor)
+		});
+	</script>
+</body>
+</html>

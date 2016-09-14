@@ -1,0 +1,59 @@
+.visible-sm,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block,
+.visible-xlg,
+.visible-xlg-block,
+.visible-xlg-inline,
+.visible-xlg-inline-block {
+  display: none !important;
+}
+
+$visibilityBreakPoint1: max-width $max-small;
+$visibilityBreakPoint2: $min-medium $max-medium;
+$visibilityBreakPoint3: $min-large $max-large;
+$visibilityBreakPoint4: $min-xlarge,'no-query' true;
+
+@include breakpoint($visibilityBreakPoint1){
+	.visible-sm              { display: block !important; }
+	.visible-sm-block        { display: block !important; }
+	.visible-sm-inline       { display: inline !important; }
+	.visible-sm-inline-block { display: inline-block !important;}
+
+	.hidden-sm               { display: none; }
+}
+
+@include breakpoint($visibilityBreakPoint2){
+	.visible-md              { display: block !important; }
+	.visible-md-block        { display: block !important; }
+	.visible-md-inline       { display: inline !important; }
+	.visible-md-inline-block { display: inline-block !important; }
+
+	.hidden-md               { display: none; }
+}
+
+@include breakpoint($visibilityBreakPoint3){
+	.visible-lg              { display: block !important; }
+	.visible-lg-block        { display: block !important; }
+	.visible-lg-inline       { display: inline !important; }
+	.visible-lg-inline-block { display: inline-block !important; }
+
+	.hidden-lg               { display: none; }
+}
+
+@include breakpoint($visibilityBreakPoint4){
+	.visible-xlg              { display: block !important; }
+	.visible-xlg-block        { display: block !important; }
+	.visible-xlg-inline       { display: inline !important; }
+	.visible-xlg-inline-block { display: inline-block !important; }
+
+	.hidden-xlg               { display: none; }
+}

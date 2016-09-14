@@ -1,0 +1,34 @@
+{
+  "name": "skeletor.util.componentLoader",
+  "main": "skeletor.util.componentLoader.js",
+  "homepage": "https://github.com/delphic-digital/Skeletor.util.componentLoader",
+  "authors": [
+    "Jeff <jmills@delphicdigital.com>"
+  ],
+  "description": "Component loader for Skeletor framework",
+  "keywords": [
+    "delphic",
+    "skeletor"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "skeletor.core": "*"
+  },
+  "version": "0.2.0",
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.0",
+    "commit": "8c1249aefad5f99e283e02bc8d48ca59d7ba08b9"
+  },
+  "_source": "https://github.com/delphic-digital/Skeletor.util.componentLoader.git",
+  "_target": "*",
+  "_originalSource": "skeletor.util.componentLoader"
+}

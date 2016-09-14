@@ -1,0 +1,26 @@
+{
+  "name": "skeletor.sass.utilities",
+  "homepage": "https://github.com/delphic-digital/skeletor.sass.utilities",
+  "authors": [
+    "Jeff <jmills@delphicdigital.com>"
+  ],
+  "description": "Bunch of sass mixins",
+  "main": "skeletor.sass.utilities.scss",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "a6af8339de",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a6af8339dea82d19eefe993a4b06d74127800723"
+  },
+  "_source": "https://github.com/delphic-digital/Skeletor.sass.utilities.git",
+  "_target": "*",
+  "_originalSource": "skeletor.sass.utilities"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "skeletor.sass.helpers",
+  "homepage": "https://github.com/delphic-digital/skeletor.sass.helpers",
+  "authors": [
+    "Jeff <jmills@delphicdigital.com>"
+  ],
+  "description": "Bunch of sass helper classes",
+  "main": "skeletor.sass.helpers.scss",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "aca353a95f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "aca353a95fcb0a2033de35948bfd71c32ed394d7"
+  },
+  "_source": "https://github.com/delphic-digital/Skeletor.sass.helpers.git",
+  "_target": "*",
+  "_originalSource": "skeletor.sass.helpers"
+}
