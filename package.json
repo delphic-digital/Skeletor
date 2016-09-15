@@ -1,7 +1,7 @@
 {
   "name": "Skeletor",
   "author": "Delphic Digital",
-  "version": "3.0.0",
+  "version": "0.15.2",
   "devDependencies": {
     "bourbon": "^4.2.6",
     "bower": "^1.7.7",
@@ -31,7 +31,6 @@
     "require-dir": "^0.3.0",
     "sc5-styleguide": "^0.3.43",
     "susy": "^2.2.12",
-    "bower-requirejs": "^1.2.0",
     "wiredep": "^4.0.0"
   }
 }
