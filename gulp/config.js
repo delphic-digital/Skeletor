@@ -92,6 +92,7 @@ module.exports = {
 
 		settings : {
 			baseUrl: src+'/js',
+			name: siteShortname+'.main',
 			mainConfigFile: src+'/js/'+siteShortname+'.main.js',
 			removeCombined: true,
 			optimize: 'none',
