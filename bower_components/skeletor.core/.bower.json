@@ -19,12 +19,12 @@
     "test",
     "tests"
   ],
-  "version": "0.2.1",
-  "_release": "0.2.1",
+  "version": "0.2.2",
+  "_release": "0.2.2",
   "_resolution": {
     "type": "version",
-    "tag": "v0.2.1",
-    "commit": "95f51cc2c884e3570810bd9a0bb3a20b26c4d94f"
+    "tag": "v0.2.2",
+    "commit": "73a6a43d91f78bef092764665d7101a5f2815d13"
   },
   "_source": "https://github.com/delphic-digital/Skeletor.core.git",
   "_target": "*",

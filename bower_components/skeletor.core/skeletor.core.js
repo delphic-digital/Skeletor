@@ -8,7 +8,7 @@ define(['jquery'],function ($){
 	// Global Skeletor object
 
 	var Skeletor = {
-		VERSION: '0.2.0',
+		VERSION: '0.2.2',
 		_plugins: {},
 		_uuids: [],
 		Plugin: Plugin
@@ -44,7 +44,7 @@ define(['jquery'],function ($){
 				throw new ReferenceError("We're sorry, '" + method + "' is not an available method for " + (plugClass ? functionName(plugClass) : 'this element') + '.');
 			}
 		}else{ //error for invalid argument type
-				throw new TypeError(`We're sorry, ${type} is not a valid parameter. You must use a string representing the method you wish to invoke.`);
+				throw new TypeError("We're sorry," + type + "is not a valid parameter. You must use a string representing the method you wish to invoke.");
 			}
 		return this;
 	}
