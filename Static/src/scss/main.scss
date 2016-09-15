@@ -6,13 +6,13 @@
 
 // Automatically injected Bower CSS dependencies via wiredep (never manually edit this block)
 // bower:css
-@import "../../../bower_components/normalize-css/normalize.css";
+@import "../../../bower_components/normalize-css/normalize";
 // endbower
 
 // Automatically injected Bower SCSS dependencies via wiredep (never manually edit this block)
 // bower:scss
-@import "../../../bower_components/skeletor.sass.utilities/skeletor.sass.utilities.scss";
-@import "../../../bower_components/skeletor.sass.helpers/skeletor.sass.helpers.scss";
+@import "../../../bower_components/skeletor.sass.utilities/skeletor.sass.utilities";
+@import "../../../bower_components/skeletor.sass.helpers/skeletor.sass.helpers";
 // endbower
 
 @import "partials/base/svg"; //Auto generated from inline svg gulp task
