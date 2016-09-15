@@ -12,6 +12,23 @@ gulp.task('bower:styles', function() {
 	return gulp.src(config.sass.src)
 		.pipe(wiredep({
 			exclude: ['jquery'],
+			fileTypes: {
+				scss: {
+					block: /(([ \t]*)\/\/\s*bower:*(\S*))(\n|\r|.)*?(\/\/\s*endbower)/gi,
+					detect: {
+						css: /@import\s['"](.+css)['"]/gi,
+						scss: /@import\s['"](.+scss)['"]/gi
+					},
+					replace: {
+						css: function (filePath) {
+							return '@import "' + filePath.substr(0, filePath.lastIndexOf('.')) + '";';
+						},
+						scss: function (filePath) {
+							return '@import "' + filePath.substr(0, filePath.lastIndexOf('.')) + '";';
+						},
+					}
+    		}
+    	},
 		}))
 		.pipe(gulp.dest(config.sass.srcPath))
 });
