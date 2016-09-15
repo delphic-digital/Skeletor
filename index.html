@@ -3,20 +3,23 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title></title>
+		<title>The Skeletor Project</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700,700italic,400italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 
 		<link rel="stylesheet" href="/Static/dist/css/main.css" />
 
-		<!--[if lt IE 9]>
-			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
 	</head>
 	<body>
-		<main class="hidden-sm">
-			<div class="skeletor-component js-skeletor-guy" data-component="skeletor-guy"></div>
+		<!--#include file="Views/partials/_header.html" -->
+		<main>
+			<!--#include file="Views/partials/_nav.html" -->
+			<section class="page-section">
+				<p>This a demo site for the Skeletor front end framework</p>
+				<div class="skeletor-component js-skeletor-guy" data-component="skeletor-guy"></div>
+			</section>
 		</main>
 
 		<script data-main="/Static/src/js/skeletor.main" src="/Static/dist/js/lib/require.js"></script>

@@ -1,2 +1,18 @@
-// Header content styles
-// ------------------------------------------------------------------------------
+.site-header {
+	position: fixed;
+	top: 0;
+	z-index: 90;
+	padding: 20px;
+	width: 100%;
+	color: #fff;
+	background: $skeletor-purple;
+	box-shadow: 0 1.5px 3px rgba(0,0,0,.24),0 3px 8px rgba(0,0,0,.05);
+
+	&__content {
+		display: block;
+		margin: 0 auto;
+		padding: 0 40px;
+		max-width: 1200px;
+	}
+}
+

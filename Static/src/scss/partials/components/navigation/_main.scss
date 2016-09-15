@@ -1,22 +1,54 @@
-// Main Nav
-// ------------------------------------------------------------------------------
 
-//	<div class="main-nav">
-//		<ul class="main-nav__list">
-//			<li class="main-nav__item">
-//				<a class="main-nav__link main-nav__link--active"></a>
-//				<a class="main-nav__link"></a>
-//			</li>
-//		</ul>
-//	</div>11
-//
-
-/* Mobile main nav styles */
 .main-nav {
-	&__list{}
+	position: fixed;
+	overflow-y: auto;
+	margin-top: 100px;
+	width: 260px;
+	height: 100%;
+
+	&__list{
+		@include reset-list();
+	}
 	&__item{}
+
 	&__link{
-		&--active {}
+		display: block;
+		padding: 10px 0 10px 10px;
+		font-size: 16px;
+		font-weight: 400;
+		text-decoration: none;
+		color: $off-white;
+		outline: none;
+		white-space: nowrap;
+		@include transition(all 0.3s ease);
+
+	}
+
+	&__sublist {
+		@include reset-list();
+		//display: none;
+		position: relative;
+
+	}
+
+	&__subitem{
+		position: relative;
+		margin: 0 0 0 10px;
+		font-size: rem(16);
+		line-height: 1;
+	}
+
+	&__sublink {
+		display: block;
+		padding: 0 0 0 20px;
+		height: 35px;
+		font-size: 14px;
+		line-height: 35px;
+		text-decoration: none;
+		color: $off-grey;
+		border-left: 2px solid $skeletor-purple-lite;
+
+		@include transition(all 0.3s ease);
 	}
 }
 
