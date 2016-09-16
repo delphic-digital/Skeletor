@@ -1,5 +1,5 @@
 {
-  "name": "Skeletor",
+  "name": "skeletor",
   "description": "",
   "main": "",
   "authors": [
@@ -23,7 +23,9 @@
     "normalize-css": "normalize.css#^4.1.1",
     "skeletor.sass.utilities": "*",
     "skeletor.sass.helpers": "*",
-    "skeletor.util.componentLoader": "*"
+    "skeletor.util.componentLoader": "*",
+    "include-fragment-element": "^2.0.0",
+    "webcomponentsjs": "^0.7.22"
   },
   "overrides": {
     "onMediaQuery": {
@@ -31,6 +33,9 @@
     },
     "svg4everybody": {
       "main": "dist/svg4everybody.js"
+    },
+    "webcomponentsjs": {
+      "main": "webcomponents-lite"
     },
     "slick-carousel": {
       "main": [

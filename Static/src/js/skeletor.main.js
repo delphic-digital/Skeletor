@@ -1,3 +1,5 @@
+'use strict';
+
 // Automatically injected Bower JS dependencies via bowerRequireJS
 require.config({
 	paths: {
@@ -5,13 +7,23 @@ require.config({
 		picturefill: "../../../bower_components/picturefill/dist/picturefill",
 		"skeletor.util.componentLoader": "../../../bower_components/skeletor.util.componentLoader/skeletor.util.componentLoader",
 		"skeletor.core": "../../../bower_components/skeletor.core/skeletor.core",
-		svg4everybody: "../../../bower_components/svg4everybody/dist/svg4everybody"
+		svg4everybody: "../../../bower_components/svg4everybody/dist/svg4everybody",
+		"include-fragment-element": "../../../bower_components/include-fragment-element/include-fragment-element",
+		webcomponentsjs: "../../../bower_components/webcomponentsjs/webcomponents-lite"
 	},
 	packages: [
 
 	],
 	shim: {
-
+		"skeletor.util.componentLoader": {
+			deps: [
+				"skeletor.core"
+			]
+		},"include-fragment-element": {
+			deps: [
+				"webcomponentsjs"
+			]
+		}
 	}
 });
 // endbower
@@ -29,7 +41,9 @@ require.config({
 
 define(function (require){
 
-	var componentLoader   = require('skeletor.util.componentLoader'),
+	//var webcomponentsjs   = require('webcomponentsjs'),
+	var include           = require('include-fragment-element'),
+	    componentLoader   = require('skeletor.util.componentLoader'),
 	    svg4everybody     = require('svg4everybody'),
 	    picturefill       = require('picturefill'),
 	    commonComponents  = require('./components/common');

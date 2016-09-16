@@ -39,7 +39,9 @@ gulp.task('bower:scripts', function(cb) {
 		baseURL: config.scripts.srcPath,
 		config:  config.scripts.src,
 		exclude: ['jquery'],
-		transitive: true
+		transitive: true,
+		shim: true,
+		"exclude-dev": true
 	};
 
 	bowerRequireJS(options, function (rjsConfigFromBower) {
