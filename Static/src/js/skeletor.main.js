@@ -41,7 +41,6 @@ require.config({
 
 define(function (require){
 
-	//var webcomponentsjs   = require('webcomponentsjs'),
 	var include           = require('include-fragment-element'),
 	    componentLoader   = require('skeletor.util.componentLoader'),
 	    svg4everybody     = require('svg4everybody'),

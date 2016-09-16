@@ -95,7 +95,7 @@ module.exports = {
 			name: siteShortname+'.main',
 			mainConfigFile: src+'/js/'+siteShortname+'.main.js',
 			removeCombined: true,
-			optimize: 'none',
+			optimize: 'uglify2',
 			wrapShim: true,
 			preserveLicenseComments: false,
 			uglify2: {
