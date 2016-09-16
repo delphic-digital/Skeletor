@@ -18,32 +18,8 @@ gulp.task("browserSync:reload", function(done) {
 });
 
 gulp.task('browserSync:static', function() {
-	//config.static.server.middleware = ssi({baseDir: path.resolve(__dirname, '..', '..'), ext: '.html'});
-
+	config.static.server.middleware = ssi({baseDir: path.resolve(__dirname, '..', '..'), ext: '.html'});
 	config.static.open=false;
-
-	config.static.server.middleware = function (req, res, next) {
-		var fs = require('fs');
-		var ext = '.html';
-		var baseDir = path.resolve(__dirname, '..', '..');
-		var file = req.url === '/' ? ('/index' + ext) : req.url;
-    var pathname = path.join(baseDir, require('url').parse(file).pathname);
-
-    if (path.extname(pathname) === ext && fs.existsSync(pathname)) {
-     // var contents = fs.readFileSync(pathname).toString();console.log(contents)
-      engine.fileSystem.readTemplateFile('index').then(function (src) {
-				var context = {};
-				engine.parseAndRender(src, context).then(function(result) {
-	 		 	 res.write(result);
-	     	 res.end();
-	 		 })
-			});
-
-    } else {
-      next();
-    }
-	};
-
 	global.browserSync.init(config.static);
 });
 
