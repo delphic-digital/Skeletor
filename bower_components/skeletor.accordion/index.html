@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Skeletor Documentation">
+
+		<title>Skeletor - Skeletor.accordion</title>
+
+		<link href='https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700,700italic,400italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+
+		<!-- Base template styles -->
+		<style>.header-content-wrap,main{margin:0 auto;max-width:1200px}body,html,main{height:100%}*,:after,:before{box-sizing:border-box}body{font-family:Roboto,sans-serif;font-size:14px;line-height:2;color:#e8e8e9;background:#263238}.site-header{position:fixed;top:0;z-index:90;width:100%;color:#fff;background:#673ab7;box-shadow:0 1.5px 3px rgba(0,0,0,.24),0 3px 8px rgba(0,0,0,.05)}.site-header h1{padding:0;font-size:26px;font-weight:400;line-height:1}.header-content-wrap{display:block;padding:0 40px}main{position:relative}.content-section{position:relative;padding:120px 40px;min-height:100%;background:#37474f;box-shadow:0 1.5px 3px rgba(0,0,0,.3),0 3px 8px rgba(0,0,0,.1)}</style>
+		<!-- /Base template styles -->
+
+
+		<!-- Core plugin styles -->
+		<link rel="stylesheet" type="text/css" href="skeletor.accordion.css">
+		<!-- /Core plugin styles -->
+
+	</head>
+
+	<body>
+
+		<header class="site-header">
+			<div class="header-content-wrap">
+				<h1 class="page-title">Skeletor.accordion</h1>
+			</div>
+		</header>
+
+		<main>
+
+			<section class="content-section">
+
+				<div class="accordion js-accordion">
+					<div class="accordion__item">
+						<header class="accordion__header">
+							Lorem ipsum dolor sit amet
+						</header>
+						<section class="accordion__section">
+							<div class="accordion__body">
+								Qui offendit convenire ea. Vis eirmod graecis mentitum in. Scripta delectus an quo. Equidem elaboraret nam et,
+							</div>
+						</section>
+					</div>
+					<div class="accordion__item">
+						<header class="accordion__header">
+							Tota lucilius abhorreant nam et
+						</header>
+						<section class="accordion__section">
+							<div class="accordion__body">
+								Quem delectus reprimique eum ut. Labore admodum accommodare ut cum, has soluta assentior at. Reque placerat definitionem cum ea. Eos in facer mundi virtute, liber noluisse suscipit eam cu. Per quidam delectus at, et vel case pertinax vulputate, lobortis adipiscing eu vim.
+							</div>
+						</section>
+					</div>
+					<div class="accordion__item">
+						<header class="accordion__header">
+							Mollis diceret necessitatibus eu eum
+						</header>
+						<section class="accordion__section">
+							<div class="accordion__body">
+								Quo persequeris appellantur ex. Stet graece latine ex nec, tota illum explicari nam ne. Ne timeam mediocrem disputando vis. Et sea quem nusquam detracto. Vix ad agam omnes honestatis. Nam vitae eirmod no.
+							</div>
+						</section>
+					</div>
+				</div>
+
+				<div class="accordion js-accordion">
+					<div class="accordion__item">
+						<header class="accordion__header">
+							Lorem ipsum dolor sit amet
+						</header>
+						<section class="accordion__section">
+							<div class="accordion__body">
+								Qui offendit convenire ea. Vis eirmod graecis mentitum in. Scripta delectus an quo. Equidem elaboraret nam et,
+							</div>
+						</section>
+					</div>
+					<div class="accordion__item">
+						<header class="accordion__header">
+							Tota lucilius abhorreant nam et
+						</header>
+						<section class="accordion__section">
+							<div class="accordion__body">
+								Quem delectus reprimique eum ut. Labore admodum accommodare ut cum, has soluta assentior at. Reque placerat definitionem cum ea. Eos in facer mundi virtute, liber noluisse suscipit eam cu. Per quidam delectus at, et vel case pertinax vulputate, lobortis adipiscing eu vim.
+							</div>
+						</section>
+					</div>
+				</div>
+
+				<div class="accordion js-accordion-another">
+					<div class="accordion__item">
+						<header class="accordion__header">
+							Lorem ipsum dolor sit amet
+						</header>
+						<section class="accordion__section">
+							<div class="accordion__body">
+								Qui offendit convenire ea. Vis eirmod graecis mentitum in. Scripta delectus an quo. Equidem elaboraret nam et,
+							</div>
+						</section>
+					</div>
+					<div class="accordion__item">
+						<header class="accordion__header">
+							Tota lucilius abhorreant nam et
+						</header>
+						<section class="accordion__section">
+							<div class="accordion__body">
+								Quem delectus reprimique eum ut. Labore admodum accommodare ut cum, has soluta assentior at. Reque placerat definitionem cum ea. Eos in facer mundi virtute, liber noluisse suscipit eam cu. Per quidam delectus at, et vel case pertinax vulputate, lobortis adipiscing eu vim.
+							</div>
+						</section>
+					</div>
+				</div>
+
+			</section>
+
+		</main>
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script>
+		<script>
+
+			require.config({
+				paths: {
+					'jquery': '//code.jquery.com/jquery-3.0.0.min',
+					'velocity': '//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min',
+					'skeletor.core': '../../skeletor.core/skeletor.core',
+				}
+			})
+
+			require(['skeletor.accordion'], function(){
+				$('.js-accordion').each(function(){
+					new Skeletor.Accordion($(this));
+				})
+
+				new Skeletor.Accordion($('.js-accordion-another'),{singleOpen: false});
+
+				//$('.js-accordion:eq(1)').skeletor('open',1)
+			})
+
+		</script>
+
+	</body>
+</html>

@@ -729,6 +729,35 @@ textarea {
   }
 }
 
+:focus {
+  outline: 1px solid red;
+}
+
+.accordion {
+  margin: 0 0 40px;
+}
+
+.accordion__header {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.accordion__header:focus {
+  outline: 1px solid red;
+}
+
+.accordion__item:focus {
+  outline: 1px solid red;
+}
+
+.accordion__item:not(.accordion__item--opened) > .accordion__section {
+  display: none;
+}
+
+.accordion__body {
+  padding: 20px 0;
+}
+
 /*
 SCSS variables are information about icon's compiled state, stored under its original file name
 
@@ -903,7 +932,6 @@ input[type=tel]:focus {
 .site-header__content {
   display: block;
   margin: 0 auto;
-  padding: 0 40px;
   max-width: 1200px;
 }
 

@@ -25,7 +25,8 @@
     "skeletor.sass.helpers": "*",
     "skeletor.util.componentLoader": "*",
     "include-fragment-element": "^2.0.0",
-    "webcomponentsjs": "^0.7.22"
+    "webcomponentsjs": "^0.7.22",
+    "skeletor.accordion": "^0.2.0"
   },
   "overrides": {
     "onMediaQuery": {

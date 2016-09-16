@@ -1,0 +1,28 @@
+:focus { outline: 1px solid red;}
+.accordion {
+
+	margin: 0 0 40px;
+
+	&__header {
+		font-size: 1.5em;
+		cursor: pointer;
+		&:focus {
+			outline: 1px solid red;
+		}
+	}
+
+	&__item{
+		&:focus {
+			outline: 1px solid red;
+		}
+
+		&:not(.accordion__item--opened) > .accordion__section {
+			display: none;
+		}
+	}
+
+	&__body {
+		padding: 20px 0;
+	}
+
+}
