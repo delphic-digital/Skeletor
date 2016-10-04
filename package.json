@@ -5,7 +5,7 @@
   "main": "index.js",
   "jspm": {
     "name": "skeletor",
-    "main": "skeletor.js",
+    "main": "main.js",
     "dependencies": {
       "jquery": "npm:jquery@^3.1.1"
     },
@@ -32,10 +32,13 @@
     "url": "https://github.com/delphic-digital/Skeletor/issues"
   },
   "homepage": "http://skele.to/r",
-  "scripts": {
-    "server": "browser-sync start --server --files Static/src/**/*.js --no-open"
-  },
   "devDependencies": {
-    "jspm": "^0.17.0-beta.29"
+    "jspm": "^0.17.0-beta.29",
+    "npm-run-all": "^3.1.0"
+  },
+  "scripts": {
+    "start": "npm-run-all --parallel server watch:js",
+    "server": "browser-sync start --server --files Static/dist/**/* --no-open",
+    "watch:js": "jspm bundle Static/src/js/main.js Static/dist/js/main.js -wid"
   }
 }
