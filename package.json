@@ -1,0 +1,30 @@
+{
+  "name": "skeletor",
+  "version": "3.0.0",
+  "description": "Extensible front-end framework",
+  "main": "index.js",
+  "jspm": {
+    "name": "skeletor",
+    "main": "skeletor.js",
+    "devDependencies": {
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.16"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delphic-digital/Skeletor.git"
+  },
+  "keywords": [
+    "skeletor",
+    "delphic"
+  ],
+  "author": "delphic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/delphic-digital/Skeletor/issues"
+  },
+  "homepage": "https://github.com/delphic-digital/Skeletor#readme"
+}
