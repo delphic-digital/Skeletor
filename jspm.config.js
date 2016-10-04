@@ -1,17 +1,10 @@
 SystemJS.config({
   paths: {
-    "npm:": "jspm_packages/npm/"
+    "npm:": "jspm_packages/npm/",
+    "skeletor/": "Static/src/js/"
   },
   browserConfig: {
-    "baseURL": "/",
-    "paths": {
-      "skeletor/": "src/"
-    }
-  },
-  nodeConfig: {
-    "paths": {
-      "skeletor/": "Static/src/js/"
-    }
+    "baseURL": "/"
   },
   devConfig: {
     "map": {
@@ -21,7 +14,7 @@ SystemJS.config({
   transpiler: "plugin-babel",
   packages: {
     "skeletor": {
-      "main": "skeletor.js",
+      "main": "main.js",
       "meta": {
         "*.js": {
           "loader": "plugin-babel"
@@ -36,6 +29,8 @@ SystemJS.config({
     "npm:@*/*.json",
     "npm:*.json"
   ],
-  map: {},
+  map: {
+    "jquery": "npm:jquery@3.1.1"
+  },
   packages: {}
 });

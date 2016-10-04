@@ -6,12 +6,17 @@
   "jspm": {
     "name": "skeletor",
     "main": "skeletor.js",
+    "dependencies": {
+      "jquery": "npm:jquery@^3.1.1"
+    },
     "devDependencies": {
       "plugin-babel": "npm:systemjs-plugin-babel@^0.0.16"
+    },
+    "overrides": {
+      "npm:jquery@3.1.1": {
+        "format": "amd"
+      }
     }
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -26,5 +31,11 @@
   "bugs": {
     "url": "https://github.com/delphic-digital/Skeletor/issues"
   },
-  "homepage": "https://github.com/delphic-digital/Skeletor#readme"
+  "homepage": "http://skele.to/r",
+  "scripts": {
+    "server": "browser-sync start --server --files Static/src/**/*.js --no-open"
+  },
+  "devDependencies": {
+    "jspm": "^0.17.0-beta.29"
+  }
 }
