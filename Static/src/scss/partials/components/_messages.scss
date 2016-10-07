@@ -1,0 +1,28 @@
+// Form validation messages
+// ------------------------------------------------------------------------------
+
+
+%msg{
+	clear: both;
+	display: block;
+	margin: 5px 0 15px 0;
+	padding: 10px;
+}
+
+.msg-positive {
+	@extend %msg;
+	color: #089b58;
+	background: #e2fbf0
+}
+
+.msg-neutral {
+	@extend %msg;
+	color: #666600;
+	background: #ffffcc;
+}
+
+.msg-negative {
+	@extend %msg;
+	color: #b30006;
+	background: #ffeedd;
+}

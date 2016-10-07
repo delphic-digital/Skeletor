@@ -4,14 +4,7 @@ SystemJS.config({
     "skeletor/": "Static/src/js/"
   },
   browserConfig: {
-    "baseURL": "/",
-    "bundles": {
-      "Static/dist/js/main.js": [
-        "skeletor/main.js",
-        "npm:jquery@3.1.1/dist/jquery.js",
-        "npm:jquery@3.1.1.json"
-      ]
-    }
+    "baseURL": "/"
   },
   devConfig: {
     "map": {

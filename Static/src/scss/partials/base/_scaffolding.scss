@@ -1,0 +1,17 @@
+// Scaffolding styles are declared here. e.g containers, grid
+// ------------------------------------------------------------------------------
+
+
+*, *:before, *:after {@include prefixer(box-sizing, border-box, webkit moz spec); }
+
+html {
+	font-family: "mobile";
+
+	@include breakpoint($medium) {
+	 	font-family: "tablet";
+  }
+
+	@include breakpoint($large) {
+		font-family: "desktop";
+	}
+}
