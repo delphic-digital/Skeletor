@@ -1,4 +1,13 @@
-@import "normalize.css";
-@import "breakpoint-sass";
+//https://github.com/maoberlehner/node-sass-package-importer#path-resolving
+@import "~normalize-scss";
 
-@import "partials/components/**/*";
+//https://github.com/JohnAlbin/normalize-scss#how-to-use-it
+@include normalize();
+
+@import "~breakpoint-sass";
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~susy";
+
+@import "partials/layout/**/*.scss";
+
+@import "partials/components/**/*.scss";
