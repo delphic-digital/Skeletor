@@ -268,11 +268,27 @@
 	"buffers":
 	[
 		{
-			"file": ".editorconfig",
+			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 188,
-				"line_ending": "Windows"
+				"buffer_size": 1759,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Static/src/js/main.js",
+			"settings":
+			{
+				"buffer_size": 51,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Static/src/scss/main.scss",
+			"settings":
+			{
+				"buffer_size": 128,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -283,10 +299,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 357.0,
-		"last_filter": "",
+		"height": 385.0,
+		"last_filter": "instal",
 		"selected_items":
 		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
 			[
 				"ins",
 				"Package Control: Install Package"
@@ -309,10 +329,6 @@
 			],
 			[
 				"in",
-				"Package Control: Install Package"
-			],
-			[
-				"instal",
 				"Package Control: Install Package"
 			],
 			[
@@ -392,7 +408,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 462.0
+		"width": 534.0
 	},
 	"console":
 	{
@@ -413,11 +429,57 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Users/jmills/Code/Skeletor"
+		"/D/Users/jmills/Code/Skeletor",
+		"/D/Users/jmills/Code/Skeletor/Static",
+		"/D/Users/jmills/Code/Skeletor/Static/src/js",
+		"/D/Users/jmills/Code/Skeletor/Static/src/scss",
+		"/D/Users/jmills/Code/Skeletor/Static/src/scss/partials/base"
 	],
 	"file_history":
 	[
+		"/D/Users/jmills/Code/Skeletor/jspm.config.js",
+		"/D/Users/jmills/Code/Skeletor/Static/dist/css/main.css",
+		"/D/Users/jmills/Code/Skeletor/node_modules/slick-carousel/package.json",
+		"/D/Users/jmills/Code/Skeletor/Static/src/js/main.js",
+		"/D/Users/jmills/Code/Skeletor/Static/src/scss/partials/components/_skeletor-avatar.scss",
+		"/D/Users/jmills/Code/Skeletor/node_modules/node-sass-import/lib/node-sass-import.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/npm-sass/index.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/bourbon/package.json",
+		"/D/Users/jmills/Code/Skeletor/node_modules/bourbon/eyeglass-exports.js",
+		"/D/Users/jmills/Code/Skeletor/Static/src/scss/partials/components/navigation/_main.scss",
+		"/D/Users/jmills/Code/Skeletor/Static/src/scss/partials/components/navigation/_sub.scss",
+		"/D/Users/jmills/Code/Skeletor/node_modules/slick-carousel/bower.json",
+		"/D/Users/jmills/Code/Skeletor/Static/src/scss/partials/components/_messages.scss",
+		"/D/Users/jmills/Code/Skeletor/node_modules/node-sass-import/index.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/sass-module-importer/lib/index.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/breakpoint-sass/package.json",
+		"/D/Users/jmills/Code/Skeletor/node_modules/normalize.css/normalize.css",
+		"/D/Users/jmills/Code/Skeletor/node_modules/sassy-npm-importer/index.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/node-sass-json-importer/dist/node-sass-json-importer.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/sass-module-importer/fixtures/node_modules/test-normalize/package.json",
+		"/D/Users/jmills/Code/Skeletor/node_modules/.bin/run-s",
+		"/D/Users/jmills/Code/Skeletor/node_modules/normalize.css/package.json",
+		"/D/Users/jmills/Code/Skeletor/node_modules/sass-module-importer/package.json",
 		"/D/Users/jmills/Code/Skeletor/index.html",
+		"/D/Users/jmills/Code/Skeletor/node_modules/node-bourbon/index.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/node-bourbon/package.json",
+		"/D/Users/jmills/Code/Skeletor/node_modules/susy/package.json",
+		"/D/Users/jmills/Code/Skeletor/node_modules/susy/sass/_susy.scss",
+		"/D/Users/jmills/Code/Skeletor/node_modules/breakpoint-sass/bower.json",
+		"/D/Users/jmills/Code/Skeletor/package.json",
+		"/D/Users/jmills/Code/Skeletor/node_modules/bourbon/index.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/bourbon/app/assets/stylesheets/_bourbon.scss",
+		"/D/Users/jmills/Code/Skeletor/node_modules/eyeglass/lib/importers/FSImporter.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/eyeglass/lib/functions/index.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/eyeglass/lib/eyeglass-exports.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/eyeglass/lib/index.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/node-bourbon/node_modules/bourbon/index.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/breakpoint-sass/eyeglass-exports.js",
+		"/D/Users/jmills/Code/Skeletor/node_modules/susy/eyeglass-exports.js",
+		"/D/Users/jmills/Code/Skeletor/Static/dist/js/main.js",
+		"/D/Users/jmills/Code/Skeletor/jspm_packages/system.js",
+		"/D/Users/jmills/Code/Skeletor/readme.md",
+		"/D/Users/jmills/Code/Skeletor/.editorconfig",
 		"/D/Users/jmills/Code/Skeletor/Static/src/js/skeletor.main.js",
 		"/D/Users/jmills/Code/Skeletor/gulp/config.js",
 		"/D/Users/jmills/Code/Skeletor/gulpfile.js",
@@ -431,7 +493,6 @@
 		"/D/Users/jmills/Code/Skeletor/r/accordion/index.html",
 		"/D/Users/jmills/Code/Skeletor/Static/src/scss/main.scss",
 		"/D/Users/jmills/Code/Skeletor/Static/src/scss/partials/layout/_header.scss",
-		"/D/Users/jmills/Code/Skeletor/Static/src/scss/partials/components/navigation/_main.scss",
 		"/D/Users/jmills/Code/Skeletor/Static/src/scss/partials/components/_accordion.scss",
 		"/D/Users/jmills/Code/Skeletor/r/!fragments/nav.html",
 		"/D/Users/jmills/Code/Skeletor/Static/src/js/components/accordion.js",
@@ -459,7 +520,6 @@
 		"/D/Users/jmills/Code/Skeletor/gulp/tasks/bower.js",
 		"/D/Users/jmills/Code/Skeletor/node_modules/gulp-liquid/index.js",
 		"/D/Users/jmills/Code/Skeletor/r/_partials/_footer.html",
-		"/D/Users/jmills/Code/Skeletor/.editorconfig",
 		"/D/Users/jmills/Code/Skeletor/CNAME",
 		"/D/Users/jmills/Code/Skeletor/Views/partials/_nav.html",
 		"/D/Users/jmills/Code/Skeletor/Pages/demo1.html",
@@ -479,7 +539,6 @@
 		"/D/Users/jmills/Code/Skeletor/Static/src/scss/test.css",
 		"/D/Users/jmills/Code/Skeletor/Views/test.html",
 		"/D/Users/jmills/Code/Skeletor/Views/partials",
-		"/D/Users/jmills/Code/Skeletor/package.json",
 		"/D/Users/jmills/Code/Skeletor/bower_components/skeletor.core/skeletor.core.js",
 		"/D/Users/jmills/Code/Skeletor/node_modules/browsersync-ssi/browsersync-ssi.js",
 		"/D/Users/jmills/Code/Skeletor/node_modules/browsersync-ssi/node_modules/ssi/index.js",
@@ -488,7 +547,6 @@
 		"/D/Users/jmills/Code/Skeletor/Static/dist/js/skeletor-main.js",
 		"/D/Users/jmills/Code/Skeletor/gulp/tasks/sass.js",
 		"/D/Users/jmills/Code/Skeletor/.gitignore",
-		"/D/Users/jmills/Code/Skeletor/Static/dist/css/main.css",
 		"/D/Users/jmills/Code/Skeletor/gulp/tasks/sprites.js",
 		"/D/Users/jmills/Code/Skeletor/gulp/tasks/styleguide.js",
 		"/D/Users/jmills/Code/Skeletor/gulp/tasks/clean.js",
@@ -498,7 +556,6 @@
 		"/D/Users/jmills/Code/Skeletor/bower_components/skeletor.util.debug/skeletor.util.debug.js",
 		"/D/Users/jmills/Code/Skeletor/bower_components/skeletor.util.debug/.bower.json",
 		"/D/Users/jmills/Code/Skeletor/bower_components/skeletor.util.debug/index.debug",
-		"/D/Users/jmills/Code/Skeletor/node_modules/bourbon/package.json",
 		"/D/Users/jmills/Code/Skeletor/node_modules/bower/package.json",
 		"/D/Users/jmills/Code/Skeletor/node_modules/gulp.spritesmith/package.json",
 		"/D/Users/jmills/Code/Skeletor/bower_components/skeletor.core/bower.json",
@@ -507,48 +564,11 @@
 		"/D/Users/jmills/Code/Skeletor/Static/src/js/components/index.js",
 		"/D/Users/jmills/Code/Skeletor/Static/src/js/components/common/index.js",
 		"/D/Users/jmills/Code/Skeletor/bower_components/onMediaQuery/.bower.json",
-		"/D/Users/jmills/Code/Skeletor/bower_components/svg4everybody/bower.json",
-		"/D/Users/jmills/Code/Skeletor/bower_components/delphic.browserupdate/delphic.browserupdate.js",
-		"/D/Users/jmills/Code/Skeletor/bower_components/delphic.loader/delphic.loader.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/.bowerrc",
-		"/C/Users/jmills/AppData/Roaming/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/bower_components/onMediaQuery/bower.json",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/bower_components/svg4everybody/bower.json",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/bower_components/svg4everybody/.bower.json",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/bower.json",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/Static/src/scss/partials/components/navigation/_main.scss",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/bower_components/slick-carousel/bower.json",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/Static/src/js/components/skeletor-guy.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/package.json",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/index.html",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/gulp/tasks/bower.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/gulpfile.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/gulp/config.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/gulp/tasks/sass.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/gulp/tasks/sprites.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/Static/src/scss/main.scss",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/Static/src/js/skeletor.main.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/Static/src/js/components/common.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/bower_components/delphic.browserupdate/delphic.browserupdate.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/bower_components/delphic.loader/delphic.loader.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/bower_components/delphic.sass-utilities/utilities/_resets.scss",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/bower_components/delphic.sass-helpers/helpers/_visibility.scss",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/gulp/tasks/styleguide.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/Static/dist/js/components/skeletor-guy.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/gulp/tasks/clean.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/gulpfile.bak.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/gulp/tasks/replace.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/Static/src/scss/partials/_settings.scss",
-		"/D/Users/jmills/Code/delphic.sass-helpers/helpers/_visibility.scss",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/Static/dist/css/main.css",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/Static/dist/js/components/common.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/Static/dist/js/require.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/Static/dist/js/lib/require.js",
-		"/D/Users/jmills/Code/delphic-library/Skeletor/Static/src/scss/partials/base/_typography.scss"
+		"/D/Users/jmills/Code/Skeletor/bower_components/svg4everybody/bower.json"
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 48.0
 	},
 	"find_in_files":
 	{
@@ -576,6 +596,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pathFilter",
 			"loadComponent",
 			"push",
 			"require",
@@ -702,8 +723,7 @@
 			"cd",
 			"self",
 			"GitHub",
-			"this",
-			"var"
+			"this"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -733,24 +753,153 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": ".editorconfig",
+					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 188,
+						"buffer_size": 1759,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								188,
-								188
+								623,
+								623
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1757,
+										1758
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"",
+										"comment"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"bs_sintax": "npm json",
+							"buffer_scroll_name": "4d079d3d",
+							"color_scheme": "Packages/User/Color Highlighter/themes/gruvbox (Dark) (Medium).tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"spell_check": false,
+							"synced": false,
+							"syntax": "Packages/Theme - Afterglow/Prefs/Langs/npm JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Static/src/js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 51,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								51,
+								51
 							]
 						],
 						"settings":
@@ -773,36 +922,31 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -813,33 +957,39 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
+								"bh_square_content"
 							],
-							"bs_sintax": "editorconfig",
-							"buffer_scroll_name": "a33e3727",
+							"bs_sintax": "javascript (babel)",
+							"buffer_scroll_name": "ba8dccf0",
+							"color_scheme": "Packages/User/Color Highlighter/themes/gruvbox (Dark) (Medium).tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"spell_check": false,
 							"synced": false,
-							"syntax": "Packages/EditorConfig/EditorConfig.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"trim_trailing_white_space_on_save": true
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -851,8 +1001,123 @@
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 2,
+					"file": "Static/src/scss/main.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								128,
+								128
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"bs_sintax": "sass",
+							"buffer_scroll_name": "9c185460",
+							"color_scheme": "Packages/User/Color Highlighter/themes/gruvbox (Dark) (Medium).tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"incomplete_sync": null,
+							"open_with_edit": true,
+							"remote_loading": false,
+							"spell_check": false,
+							"synced": false,
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -884,7 +1149,7 @@
 		"cols":
 		[
 			0.0,
-			0.532002871411,
+			0.571978445589,
 			1.0
 		],
 		"rows":
@@ -933,9 +1198,25 @@
 	"select_project":
 	{
 		"height": 530.0,
-		"last_filter": "fram",
+		"last_filter": "skele",
 		"selected_items":
 		[
+			[
+				"skele",
+				"D:\\Users\\jmills\\Code\\Skeletor.framework\\Skeletor.framework.sublime-project"
+			],
+			[
+				"frame",
+				"D:\\Users\\jmills\\Code\\Skeletor.framework\\Skeletor.framework.sublime-project"
+			],
+			[
+				"amer",
+				"C:\\inetpub\\wwwroot\\american-standard-static-cdn\\americanstandard-sites-asus.sublime-project"
+			],
+			[
+				"rea",
+				"D:\\Users\\jmills\\Code\\react-webpack\\react-sandbox.sublime-project"
+			],
 			[
 				"fram",
 				"D:\\Users\\jmills\\Code\\Skeletor.framework\\Skeletor.framework.sublime-project"
@@ -967,14 +1248,6 @@
 			[
 				"skeletor.f",
 				"D:\\Users\\jmills\\Code\\Skeletor.framework\\Skeletor.framework.sublime-project"
-			],
-			[
-				"skele",
-				"D:\\Users\\jmills\\Code\\Skeletor.docs\\Skeletor.docs.sublime-project"
-			],
-			[
-				"amer",
-				"C:\\inetpub\\wwwroot\\american-standard-static-cdn\\americanstandard-sites-asus.sublime-project"
 			],
 			[
 				"fed",
@@ -1148,7 +1421,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 249.0,
+	"side_bar_width": 224.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

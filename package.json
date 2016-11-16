@@ -41,18 +41,19 @@
     "normalize-scss": "^6.0.0",
     "npm-run-all": "^3.1.0",
     "sane": "^1.4.1",
+    "sass-watch": "^0.1.0",
     "slick-carousel": "^1.6.0",
     "susy": "^2.2.12"
   },
   "scripts": {
     "start": "npm-run-all --parallel server unbundle watch",
     "watch": "npm-run-all watch:*",
-    	"watch:js": "echo 'watching js'",
-    	"watch:css": "sane \"npm run build:css\" Static/src/scss --glob=\"**/*.scss\"",
-    	"watch:static": "echo 'watching static'",
+   	 "watch:js": "echo 'watching js'",
+   	 "watch:css": "sane \".\\bin\\build-css.bat\" Static/src/scss --glob=\"**/*.scss\"",
+   	 "watch:static": "echo 'watching static'",
     "build": "npm-run-all build:*",
-    	"build:js": "jspm bundle Static/src/js/main.js Static/dist/js/main.js --inject",
-    	"build:css": "node-sass Static/src/scss/main.scss Static/dist/css/main.css --output-style compact --importer node_modules/node-sass-magic-importer/dist/cli.js",
+   		"build:js": "jspm bundle Static/src/js/main.js Static/dist/js/main.js --inject",
+    	"build:css": "node-sass Static/src/scss/main.scss Static/dist/css/main.css --importer node_modules/node-sass-magic-importer/dist/cli.js",
     "server": "browser-sync start --server --files *.html, Static/dist/css/*.css, Static/src/js/*.js --no-open",
     "unbundle": "jspm unbundle Static/src/js/main.js"
   }
