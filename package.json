@@ -47,13 +47,11 @@
     "touch-cli": "0.0.1"
   },
   "scripts": {
-    "start": "npm-run-all --parallel server unbundle watch",
-    	"watch": "npm-run-all --parallel watch:*",
-    		"watch:css":"npm run build:css -- \"--source-map true\" \"--output-style expanded\" \"-wr\"",
-    		"watch:scss-partials": "sane \"touch Static/src/scss/main.scss\" Static/src/scss --glob=\"!main.scss\"",
+    "start": "npm-run-all --parallel server unbundle watch:css",
+    "watch:css": "sane \"npm run build:css -- --source-map true --output-style expanded\" Static/src/scss --glob=**/*.scss",
     "build": "npm-run-all build:*",
-    "build:js": "jspm bundle Static/src/js/main.js Static/dist/js/main.js --inject",
-    "build:css": "node-sass Static/src/scss -o Static/dist/css --importer node_modules/node-sass-magic-importer/dist/cli.js",
+    	"build:js": "jspm bundle Static/src/js/main.js Static/dist/js/main.js --inject",
+    	"build:css": "node-sass Static/src/scss -o Static/dist/css --importer node_modules/node-sass-magic-importer/dist/cli.js --output-style compressed",
     "server": "browser-sync start --server --files *.html, Static/dist/css/*.css, Static/src/js/*.js --no-open",
     "unbundle": "jspm unbundle Static/src/js/main.js"
   }

@@ -1,9 +1,8 @@
 //https://github.com/maoberlehner/node-sass-package-importer#path-resolving
-@import "~normalize-scss/sass/normalize/import-now";
+@import "~normalize-scss";
+@include normalize();
 
 //https://github.com/JohnAlbin/normalize-scss#how-to-use-it
-
-
 @import "~breakpoint-sass";
 @import "~bourbon/app/assets/stylesheets/bourbon";
 @import "~susy";
