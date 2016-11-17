@@ -1,5 +1,29 @@
-import './lib/pollyfills.js'
+import polyfills  from './lib/polyfills';
+import { logger } from './lib/utils/index';
 
-import $ from 'jquery';
+import * as common from './components/common/index';
 
-console.log($.fn.jquery)
+
+//TODO: Get all components on the page and init them.
+
+
+class SkeletorSite{
+
+	constructor() {
+		this.initPolyfills();
+		this.initCommonComponents();
+	}
+
+	initPolyfills(){
+		polyfills();
+	}
+
+	initCommonComponents(){
+		for (var key of Object.keys(common)) {
+			let component = common[key];
+			new component();
+		}
+	}
+}
+
+new SkeletorSite();
