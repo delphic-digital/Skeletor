@@ -1,5 +1,6 @@
 import polyfills  from './lib/polyfills';
 import { logger } from './lib/utils/index';
+import './lib/skeletor/skeletor.core';
 
 import * as common from './components/common/index';
 

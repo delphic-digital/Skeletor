@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import NavigationDrawer from '../../lib/skeletor/skeletor.navigation-drawer';
 
 class SampleCommonComponent {
 
@@ -7,7 +8,9 @@ class SampleCommonComponent {
 	}
 
 	init(){
-		console.log('init sample shared component')
+		var nav = new NavigationDrawer($('p'),{option3: 10});
+		nav.init();
+	//	console.log('init sample shared component')
 	}
 }
 

@@ -3,7 +3,7 @@ import svg4everybody from 'svg4everybody';
 
 
 export default function polyfills(){
-	console.log('Init polyfills')
+	//console.log('Init polyfills')
 	svg4everybody();
 }
 
