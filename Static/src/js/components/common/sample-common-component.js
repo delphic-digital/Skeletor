@@ -8,7 +8,7 @@ class SampleCommonComponent {
 	}
 
 	init(){
-		console.log('init sample shared component')
+		//init nav drawer settings
 	}
 }
 

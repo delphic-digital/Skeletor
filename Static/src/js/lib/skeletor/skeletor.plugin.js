@@ -1,11 +1,13 @@
+import $ from 'jquery';
 import skeletor from './skeletor.core';
 
-class SkeletorPlugin {
+class SkeletorPlugin extends HTMLElement {
 
 	constructor(element, options){
+		super();
 		this.NAME = this.constructor.name;
 		this.UUID = SkeletorPlugin.getYoDigits(6, this.constructor.name)
-		this.$element = element || $(document);
+		this.$element = $(this) || $(document);
 		this.options = options;
 
 		//Store plugin on element for later retrievel
@@ -15,8 +17,17 @@ class SkeletorPlugin {
 		skeletor.registerInstance(this.UUID);
 	}
 
-	static register(){
-		skeletor.registerPlugin(this);
+	//web component v1 spec
+	connectedCallback() {
+		this.init();
+	};
+
+	init(){
+		console.log('connected:',this);
+	}
+
+	static register(elementName){
+		skeletor.registerPlugin(this, elementName);
 	}
 
 	static getYoDigits(length, namespace) {

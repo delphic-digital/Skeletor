@@ -449,4 +449,10 @@ skeletor-guy {
   height: 100px;
   background: red; }
 
+skeletor-nav-drawer {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background: blue; }
+
 /*# sourceMappingURL=main.css.map */

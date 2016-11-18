@@ -14,7 +14,7 @@ class NavigationDrawer extends SkeletorPlugin {
 	}
 
 	init(){
-		console.log('init the navigation drawer')
+		super.init();
 	}
 
 	open(value){
@@ -22,6 +22,8 @@ class NavigationDrawer extends SkeletorPlugin {
 	}
 }
 
-NavigationDrawer.register();
+//register with skeletor framework and create the element
+NavigationDrawer.register("skeletor-nav-drawer");
+
 
 export default NavigationDrawer;

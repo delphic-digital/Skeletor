@@ -3,7 +3,7 @@ import $ from 'jquery';
 //Needs a shim to workaround es6 code this transpiled to es5 for web components v1
 //https://github.com/webcomponents/custom-elements#user-content-known-issues
 
-class SkeletorGuy extends HTMLElement {
+/*class SkeletorGuy extends HTMLElement {
 
 	constructor() {
 
@@ -17,7 +17,7 @@ class SkeletorGuy extends HTMLElement {
 	// Fires when an instance of the element is created.
 	connectedCallback() {
 		//run setup code, such as fetching resources or rendering
-		console.log('created skeletor-guy')
+		console.log('created skeletor-guy');
 	};
 
 	disconnectedCallback() {
@@ -32,4 +32,4 @@ class SkeletorGuy extends HTMLElement {
 }
 
 customElements.define("skeletor-guy", SkeletorGuy);
-
+*/

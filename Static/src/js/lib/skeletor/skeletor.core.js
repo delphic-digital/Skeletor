@@ -39,13 +39,15 @@ class Skeletor {
 		return this;
 	}
 
-	registerPlugin(plugin){
+	registerPlugin(plugin, elementName){
 
 		Object.defineProperty(Skeletor.prototype, plugin.name, {
 			get: function() {
 				return plugin;
 			}
 		})
+
+		customElements.define(elementName, plugin);
 
 		console.info(`successfully registered skeletor plugin: ${plugin.name}`)
 	}
