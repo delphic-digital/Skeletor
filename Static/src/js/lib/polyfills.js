@@ -1,4 +1,4 @@
-import picturefill from 'picturefill';
+import 'picturefill';
 import svg4everybody from 'svg4everybody';
 
 

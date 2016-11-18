@@ -443,7 +443,10 @@ markup:
 
 Styleguide 4.1
 */
-body {
+skeletor-guy {
+  display: block;
+  width: 100px;
+  height: 100px;
   background: red; }
 
 /*# sourceMappingURL=main.css.map */

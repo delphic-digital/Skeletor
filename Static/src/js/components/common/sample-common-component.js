@@ -8,9 +8,7 @@ class SampleCommonComponent {
 	}
 
 	init(){
-		var nav = new NavigationDrawer($('p'),{option3: 10});
-		nav.init();
-	//	console.log('init sample shared component')
+		console.log('init sample shared component')
 	}
 }
 

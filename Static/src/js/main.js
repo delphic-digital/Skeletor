@@ -4,8 +4,9 @@ import './lib/skeletor/skeletor.core';
 
 import * as common from './components/common/index';
 
-
 //TODO: Get all components on the page and init them.
+
+import './components/skeletor-guy';
 
 
 class SkeletorSite{

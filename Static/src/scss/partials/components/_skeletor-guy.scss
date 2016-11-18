@@ -9,8 +9,12 @@ markup:
 Styleguide 4.1
 */
 
-.skeletor-component {
+skeletor-guy {
 	$block: &;
+
+	display: block;
+	width: 100px;
+	height: 100px;
+	background: red;
 }
 
-body { background: red;}
