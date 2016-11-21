@@ -1,4 +1,4 @@
-import SampleCommonComponent from './sample-common-component';
+import NavDrawer from './nav-drawer';
 
 
-export { SampleCommonComponent };
+export { NavDrawer };
