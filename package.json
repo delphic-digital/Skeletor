@@ -17,8 +17,8 @@
       "plugin-babel": "npm:systemjs-plugin-babel@^0.0.16"
     },
     "peerDependencies": {
-      "child_process": "github:jspm/nodelibs-child_process@^0.2.0-alpha",
-      "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
+      "child_process": "npm:jspm-nodelibs-child_process@^0.2.0",
+      "process": "npm:jspm-nodelibs-process@^0.2.0"
     },
     "overrides": {
       "npm:jquery@3.1.1": {
@@ -50,7 +50,8 @@
     "npm-run-all": "^3.1.0",
     "sane": "^1.4.1",
     "sass-watch": "^0.1.0",
-    "slick-carousel": "^1.6.0",
+    "sprity": "^1.0.8",
+    "sprity-cli": "^1.0.1",
     "susy": "^2.2.12",
     "touch-cli": "0.0.1"
   },
@@ -60,7 +61,11 @@
     "build": "npm-run-all build:*",
     "build:js": "jspm bundle Static/src/js/main.js Static/dist/js/main.js --inject",
     "build:css": "node-sass Static/src/scss -o Static/dist/css --importer node_modules/node-sass-magic-importer/dist/cli.js --output-style compressed",
+    "build:sprite": "sprity create Static/assets/spritesheets/ Static/src/sprites/bitmaps/*.png -s ../../src/scss/partials/base/_sprites.scss -c ../../assets/spritesheets -d 1:72 -d 2:192 -p sass --style-type scss --engine gm",
     "server": "browser-sync start --server --files *.html, Static/dist/css/*.css, Static/src/js/**/*.js --no-open",
     "unbundle": "jspm unbundle Static/src/js/main.js"
+  },
+  "dependencies": {
+    "sprity-scss": "^1.0.1"
   }
 }

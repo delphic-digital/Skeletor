@@ -1,20 +1,17 @@
 /*
-Skeletor
+	TODO: Create sprity SASS mixins so we don't have to extend here.
 
-This is the skeletor avatar
+	https://github.com/sprity/sprity/wiki/Available-variable-in-custom-templates
+	https://github.com/twolfson/spritesheet-templates/blob/master/lib/templates/sass_retina.template.handlebars
+	https://github.com/sprity/sprity-sass/blob/master/template/scss.hbs
 
-markup:
-<div class="skeletor-component js-skeletor-guy"></div>
-
-Styleguide 4.1
 */
 
 skeletor-guy {
+	@extend .icon;
 	$block: &;
 
 	display: block;
-	width: 100px;
-	height: 100px;
-	background: red;
+	@include sprite($skeletor);
 }
 

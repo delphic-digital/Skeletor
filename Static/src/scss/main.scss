@@ -7,6 +7,8 @@
 @import "~bourbon/app/assets/stylesheets/bourbon";
 @import "~susy";
 
+@import "partials/base/sprites";  //Auto generated from sprite gulp task
+
 @import "partials/layout/**/*.scss";
 
 @import "partials/components/**/*.scss";
