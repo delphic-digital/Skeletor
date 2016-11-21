@@ -1,5 +1,6 @@
 import SkeletorPlugin from './skeletor.plugin';
 
+//TODO: Build out nav drawer skeletor component
 class NavigationDrawer extends SkeletorPlugin {
 
 	constructor(element, options){

@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Guy from '../lib/skeletor/skeletor.guy';
 
 //Needs a shim to workaround es6 code this transpiled to es5 for web components v1
 //https://github.com/webcomponents/custom-elements#user-content-known-issues

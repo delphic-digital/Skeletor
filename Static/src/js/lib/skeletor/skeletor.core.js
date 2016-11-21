@@ -5,6 +5,13 @@ class Skeletor {
 
 	constructor(method){
 		this._uuids = [];
+
+		//Register a custom jquery selector for skeletor-* components
+		$.extend($.expr[':'], {
+			skeletor : function(e) {
+				return /^skeletor-/i.test(e.tagName);
+			}
+		});
 	}
 
 	jQueryPlugin(method){
