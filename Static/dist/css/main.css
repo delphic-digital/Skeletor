@@ -415,11 +415,11 @@ template {
 [hidden] {
   display: none; }
 
-skeletor-guy, skeletor-tall-guy {
+skeletor-guy {
   background-image: url("../../assets/spritesheets/sprite.png"); }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  skeletor-guy, skeletor-tall-guy {
+  skeletor-guy {
     background-image: url("../../assets/spritesheets/sprite@2x.PNG");
     background-size: 316px 884px; } }
 
@@ -441,14 +441,6 @@ skeletor-guy, skeletor-tall-guy {
   color: #b30006;
   background: #ffeedd; }
 
-/*
-	TODO: Create sprity SASS mixins so we don't have to extend here.
-
-	https://github.com/sprity/sprity/wiki/Available-variable-in-custom-templates
-	https://github.com/twolfson/spritesheet-templates/blob/master/lib/templates/sass_retina.template.handlebars
-	https://github.com/sprity/sprity-sass/blob/master/template/scss.hbs
-
-*/
 skeletor-guy {
   display: block;
   background-position: 0px 0px;
@@ -458,19 +450,8 @@ skeletor-guy {
   width: 224px;
   height: 246px; }
 
-skeletor-tall-guy {
-  display: block;
-  background-position: 0px -246px;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  display: block;
-  width: 318px;
-  height: 640px; }
-
 skeletor-nav-drawer {
   display: block;
   width: 200px;
   height: 200px;
   background: blue; }
-
-/*# sourceMappingURL=main.css.map */

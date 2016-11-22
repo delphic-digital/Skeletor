@@ -1,11 +1,3 @@
-/*
-	TODO: Create sprity SASS mixins so we don't have to extend here.
-
-	https://github.com/sprity/sprity/wiki/Available-variable-in-custom-templates
-	https://github.com/twolfson/spritesheet-templates/blob/master/lib/templates/sass_retina.template.handlebars
-	https://github.com/sprity/sprity-sass/blob/master/template/scss.hbs
-
-*/
 
 skeletor-guy {
 	$block: &;
@@ -13,12 +5,3 @@ skeletor-guy {
 	display: block;
 	@include sprite($skeletor);
 }
-
-
-skeletor-tall-guy {
-	$block: &;
-
-	display: block;
-	@include sprite($skeletor_tall);
-}
-
