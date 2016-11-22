@@ -14,7 +14,7 @@ class SkeletorPlugin extends HTMLElement {
 		if(!this.$element.data('skeletorComponent')){ this.$element.data('skeletorComponent', this); }
 
 		//Store UUID with Skeletor
-		skeletor.registerInstance(this.UUID);
+		skeletor.registerComponentInstance(this.UUID);
 	}
 
 	//web component v1 spec: Fired when custom element is added to DOM.

@@ -6,12 +6,7 @@ class Skeletor {
 	constructor(method){
 		this._uuids = [];
 
-		//Register a custom jquery selector for skeletor-* elements
-		$.extend($.expr[':'], {
-			skeletor : function(e) {
-				return /^skeletor-/i.test(e.tagName);
-			}
-		});
+		this.setSelector();
 	}
 
 	jQueryPlugin(method){
@@ -54,18 +49,27 @@ class Skeletor {
 			}
 		})
 
-		customElements.define(elementName, plugin);
+		window.customElements.define(elementName, plugin);
 
 		console.info(`successfully registered skeletor plugin: ${plugin.name}`)
 	}
 
-	registerInstance(value){
+	registerComponentInstance(value){
 		this._uuids.push(value);
 	}
 
 	getYoDigits(length, namespace) {
 		length = length || 6;
 		return Math.round(Math.pow(36, length + 1) - Math.random() * Math.pow(36, length)).toString(36).slice(1) + (namespace ? '-' + namespace : '');
+	}
+
+	setSelector(){
+		//Register a custom jquery selector for skeletor-* elements
+		$.extend($.expr[':'], {
+			skeletor : function(e) {
+				return /^skeletor-/i.test(e.tagName);
+			}
+		});
 	}
 
 }
