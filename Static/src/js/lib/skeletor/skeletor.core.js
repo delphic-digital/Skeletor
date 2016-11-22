@@ -1,6 +1,8 @@
 import $ from 'jquery';
 
 class Skeletor {
+	//TODO: Document skeletor core methods
+
 	get VERSION() { return '0.3.0'; }
 
 	constructor(method){
