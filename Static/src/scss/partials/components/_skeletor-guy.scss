@@ -8,10 +8,17 @@
 */
 
 skeletor-guy {
-	@extend .icon;
 	$block: &;
 
 	display: block;
 	@include sprite($skeletor);
+}
+
+
+skeletor-tall-guy {
+	$block: &;
+
+	display: block;
+	@include sprite($skeletor_tall);
 }
 

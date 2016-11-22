@@ -415,11 +415,11 @@ template {
 [hidden] {
   display: none; }
 
-.icon, skeletor-guy {
+skeletor-guy, skeletor-tall-guy {
   background-image: url("../../assets/spritesheets/sprite.png"); }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .icon, skeletor-guy {
+  skeletor-guy, skeletor-tall-guy {
     background-image: url("../../assets/spritesheets/sprite@2x.PNG");
     background-size: 316px 884px; } }
 
@@ -457,6 +457,15 @@ skeletor-guy {
   display: block;
   width: 224px;
   height: 246px; }
+
+skeletor-tall-guy {
+  display: block;
+  background-position: 0px -246px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  width: 318px;
+  height: 640px; }
 
 skeletor-nav-drawer {
   display: block;

@@ -5,8 +5,6 @@ import './lib/skeletor/skeletor.core';
 
 import * as common from './components/common/index';
 
-//TODO: Get all components on the page and init them.
-
 //Needs a shim to workaround es6 code this transpiled to es5 for web components v1
 //https://github.com/webcomponents/custom-elements#user-content-known-issues
 

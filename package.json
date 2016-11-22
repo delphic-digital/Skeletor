@@ -61,7 +61,7 @@
     "build": "npm-run-all build:*",
     "build:js": "jspm bundle Static/src/js/main.js Static/dist/js/main.js --inject",
     "build:css": "node-sass Static/src/scss -o Static/dist/css --importer node_modules/node-sass-magic-importer/dist/cli.js --output-style compressed",
-    "build:sprite": "sprity create Static/assets/spritesheets/ Static/src/sprites/bitmaps/*.png -s ../../src/scss/partials/base/_sprites.scss -c ../../assets/spritesheets -d 1:72 -d 2:192 -p sass --style-type scss --engine gm",
+    "build:sprite": "sprity create Static/assets/spritesheets/ Static/src/sprites/bitmaps/*.png -s ../../src/scss/partials/base/_sprites.scss -c ../../assets/spritesheets -d 1:72 -d 2:192 -p sass --style-type scss --engine gm -t ./sass_retina.template.handlebars",
     "server": "browser-sync start --server --files *.html, Static/dist/css/*.css, Static/src/js/**/*.js --no-open",
     "unbundle": "jspm unbundle Static/src/js/main.js"
   },
