@@ -6,18 +6,18 @@ class SkeletorPlugin extends HTMLElement {
 	constructor(element, options){
 		super();
 		this.NAME = this.constructor.name;
-		this.UUID = SkeletorPlugin.getYoDigits(6, this.constructor.name)
+		this.UUID = skeletor.getYoDigits(6, this.NAME);
 		this.$element = $(this) || $(document);
 		this.options = options;
 
 		//Store plugin on element for later retrievel
-		if(!this.$element.data('skeletorPlugin')){ this.$element.data('skeletorPlugin', this); }
+		if(!this.$element.data('skeletorComponent')){ this.$element.data('skeletorComponent', this); }
 
 		//Store UUID with Skeletor
 		skeletor.registerInstance(this.UUID);
 	}
 
-	//web component v1 spec
+	//web component v1 spec: Fired when custom element is added to DOM.
 	connectedCallback() {
 		this.init();
 	};
@@ -26,13 +26,9 @@ class SkeletorPlugin extends HTMLElement {
 		console.log('connected:',this);
 	}
 
+	//Define custom element element here
 	static register(elementName){
-		skeletor.registerPlugin(this, elementName);
-	}
-
-	static getYoDigits(length, namespace) {
-		length = length || 6;
-		return Math.round(Math.pow(36, length + 1) - Math.random() * Math.pow(36, length)).toString(36).slice(1) + (namespace ? '-' + namespace : '');
+		skeletor.registerComponent(this, this.ELEMENT_NAME);
 	}
 
 	info() { console.log(this); }

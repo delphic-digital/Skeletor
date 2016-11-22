@@ -6,7 +6,7 @@ class Skeletor {
 	constructor(method){
 		this._uuids = [];
 
-		//Register a custom jquery selector for skeletor-* components
+		//Register a custom jquery selector for skeletor-* elements
 		$.extend($.expr[':'], {
 			skeletor : function(e) {
 				return /^skeletor-/i.test(e.tagName);
@@ -16,7 +16,7 @@ class Skeletor {
 
 	jQueryPlugin(method){
 		let type = typeof method;
-		let pluginInstance = this.data('skeletorPlugin'); //determine the class of plugin
+		let pluginInstance = this.data('skeletorComponent'); //determine the class of plugin
 
 		if(type === 'undefined'){ //needs a parameter passed as a method
 			throw new ReferenceError(`We're sorry, you have to pass a method for ${(pluginInstance ? pluginInstance.NAME : 'this element')}.`);
@@ -33,11 +33,11 @@ class Skeletor {
 				}else{
 
 					this.each(function(i, el){ //otherwise loop through the jQuery collection and invoke the method on each
-						pluginInstance[method].apply($(el).data('skeletorPlugin'), args);
+						pluginInstance[method].apply($(el).data('skeletorComponent'), args);
 					});
 				}
 			}else{ //error for no class or no method
-				throw new ReferenceError("We're sorry, '" + method + "' is not an available method for " + (pluginInstance ? pluginInstance.NAME : 'this element') + '.');
+				throw new ReferenceError(`We're sorry, ${ method} is not an available method for ${(pluginInstance ? pluginInstance.NAME : 'this element')}.`);
 			}
 		}else{ //error for invalid argument type
 			throw new TypeError(`We're sorry, ${type} type is not a valid parameter. You must use a string representing the method you wish to invoke.`);
@@ -46,7 +46,7 @@ class Skeletor {
 		return this;
 	}
 
-	registerPlugin(plugin, elementName){
+	registerComponent(plugin, elementName){
 
 		Object.defineProperty(Skeletor.prototype, plugin.name, {
 			get: function() {
@@ -61,6 +61,11 @@ class Skeletor {
 
 	registerInstance(value){
 		this._uuids.push(value);
+	}
+
+	getYoDigits(length, namespace) {
+		length = length || 6;
+		return Math.round(Math.pow(36, length + 1) - Math.random() * Math.pow(36, length)).toString(36).slice(1) + (namespace ? '-' + namespace : '');
 	}
 
 }

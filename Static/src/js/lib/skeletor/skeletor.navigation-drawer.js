@@ -14,16 +14,16 @@ class NavigationDrawer extends SkeletorPlugin {
 		}
 	}
 
-	static get ELEMENT_NAME() {
-		return "skeletor-nav-drawer";
-	}
-
 	init(){
 		super.init();
 	}
 
 	open(value){
 		console.log('open', value)
+	}
+
+	static get ELEMENT_NAME() {
+		return "skeletor-nav-drawer";
 	}
 }
 

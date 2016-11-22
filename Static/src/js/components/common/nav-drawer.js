@@ -13,6 +13,6 @@ class MyNavDrawer extends NavigationDrawer{
 	}
 }
 
-MyNavDrawer.register(MyNavDrawer.ELEMENT_NAME);
+MyNavDrawer.register();
 
 export default MyNavDrawer;

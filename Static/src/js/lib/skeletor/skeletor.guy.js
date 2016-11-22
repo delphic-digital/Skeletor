@@ -13,10 +13,10 @@ class Guy extends SkeletorPlugin {
 	init(){
 		super.init();
 	}
+
+	static get ELEMENT_NAME() {
+		return "skeletor-guy";
+	}
 }
-
-//register with skeletor framework and create the element
-Guy.register("skeletor-guy");
-
 
 export default Guy;
