@@ -52,12 +52,14 @@
     "normalize-scss": "^6.0.0",
     "npm-run-all": "^3.1.0",
     "sane": "^1.4.1",
+    "sass-inline-svg": "^0.2.0",
     "sass-jspm-importer": "0.0.6",
     "sass-watch": "^0.1.0",
     "sprity-cli": "^1.0.1",
     "sprity-gm": "^1.0.2",
     "sprity-sass": "^1.0.4",
     "susy": "^2.2.12",
+    "svg-sprite": "^1.3.6",
     "touch-cli": "0.0.1"
   },
   "scripts": {
@@ -65,8 +67,9 @@
     "watch:css": "sane \"npm run build:css -- --source-map true --output-style expanded\" Static/src/scss --glob=**/*.scss",
     "build": "npm-run-all build:*",
     "build:js": "jspm bundle Static/src/js/main.js Static/dist/js/main.js --inject",
-    "build:css": "node-sass Static/src/scss -o Static/dist/css --importer customSassImporter.js",
+    "build:css": "node-sass Static/src/scss -o Static/dist/css --importer customSassImporter.js --functions customSassFunctions.js",
     "build:sprite": "sprity create Static/assets/spritesheets/ Static/src/sprites/bitmaps/*.png -s ../../src/scss/partials/base/_sprites.scss -c ../../assets/spritesheets -d 1:72 -d 2:192 -p sass --style-type scss --engine gm -t ./sass_retina.template.handlebars",
+    "build:svg": "svg-sprite --symbol --symbol-dest . --symbol-sprite vector.spritesheet.svg --symbol-example --symbol-example-dest vector.example.html --dest=Static/assets/spritesheets Static/src/sprites/vectors/*.svg",
     "server": "browser-sync start --server --files *.html, Static/dist/css/*.css, Static/src/js/**/*.js --no-open",
     "unbundle": "jspm unbundle Static/src/js/main.js"
   }
