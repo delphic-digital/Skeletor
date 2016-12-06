@@ -11,6 +11,9 @@
       "logdown": "npm:logdown@^1.4.2",
       "onMediaQuery": "github:JoshBarr/on-media-query@^0.2.0",
       "picturefill": "npm:picturefill@^3.0.2",
+      "skeletor-core": "local:skeletor-core@3.0.0",
+      "skeletor-plugin-accordion": "local:skeletor-plugin-accordion@0.1.0",
+      "skeletor-plugin-base": "local:skeletor-plugin-base@0.1.0",
       "svg4everybody": "npm:svg4everybody@^2.1.3"
     },
     "devDependencies": {
@@ -49,6 +52,7 @@
     "normalize-scss": "^6.0.0",
     "npm-run-all": "^3.1.0",
     "sane": "^1.4.1",
+    "sass-jspm-importer": "0.0.6",
     "sass-watch": "^0.1.0",
     "sprity": "^1.0.8",
     "sprity-cli": "^1.0.1",
@@ -60,7 +64,7 @@
     "watch:css": "sane \"npm run build:css -- --source-map true --output-style expanded\" Static/src/scss --glob=**/*.scss",
     "build": "npm-run-all build:*",
     "build:js": "jspm bundle Static/src/js/main.js Static/dist/js/main.js --inject",
-    "build:css": "node-sass Static/src/scss -o Static/dist/css --importer node_modules/node-sass-magic-importer/dist/cli.js --output-style compressed",
+    "build:css": "node-sass Static/src/scss -o Static/dist/css --importer customSassImporter.js",
     "build:sprite": "sprity create Static/assets/spritesheets/ Static/src/sprites/bitmaps/*.png -s ../../src/scss/partials/base/_sprites.scss -c ../../assets/spritesheets -d 1:72 -d 2:192 -p sass --style-type scss --engine gm -t ./sass_retina.template.handlebars",
     "server": "browser-sync start --server --files *.html, Static/dist/css/*.css, Static/src/js/**/*.js --no-open",
     "unbundle": "jspm unbundle Static/src/js/main.js"
@@ -69,3 +73,4 @@
     "sprity-scss": "^1.0.1"
   }
 }
+
