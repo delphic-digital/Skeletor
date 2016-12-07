@@ -1,18 +1,31 @@
-/*import $ from 'jquery';
-import Guy from '../lib/skeletor/skeletor.guy';
+//Example skeletor plugin that registers a custom element
 
-class MyGuy extends Guy{
+import $ from 'jquery';
+import SkeletorPlugin from 'skeletor-plugin-base';
 
-	constructor(){
-		super();
+class SkeletorGuy extends SkeletorPlugin{
+
+	constructor(element, options){
+		super(element, options);
+
+		this.VERSION = '0.1.0';
+
+		this.defaults = {}
 	}
 
 	init(){
 		super.init();
 	}
+
+	click(){
+		console.log('click')
+	}
+
+	//Required prop!
+
+	static get ELEMENT_NAME() {
+		return "skeletor-guy";
+	}
 }
 
-MyGuy.register();
-
-export default MyGuy;
-*/
+export default SkeletorGuy;

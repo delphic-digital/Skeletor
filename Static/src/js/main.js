@@ -37,10 +37,20 @@ class SkeletorSite{
 
 		*/
 
+		//NOTE: Load modules async or bundle together?
+		//TODO: Use one promise for all: http://exploringjs.com/es6/ch_modules.html#_loader-method-importing-modules
+
 		$(':skeletor').not('[shared]').each((i, elm)=>{
 			let moduleName = $(elm).prop("tagName").toLowerCase();
-			System.import('./components/'+moduleName, __moduleName).then( (module) => {
-				//console.log(module)
+			SystemJS.import('./components/'+moduleName, __moduleName).then( (module) => {
+				/*
+				This load Skeletor custom elements and corresponding JS.
+				Custom elements component are automically initialized when DOM element is seen
+				*/
+
+				//Register custom element.
+				//module.default is the plugin default export
+				module.default.register();
 			})
 		})
 	}

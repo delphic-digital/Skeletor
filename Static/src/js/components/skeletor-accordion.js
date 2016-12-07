@@ -1,5 +1,6 @@
-import Accordion from 'skeletor-plugin-accordion';
+//Example skeletor plugin that registers a custom element
 
+import Accordion from 'skeletor-plugin-accordion';
 
 class MyAccordion extends Accordion{
 
@@ -12,7 +13,5 @@ class MyAccordion extends Accordion{
 		//this.setAttribute('shared','');
 	}
 }
-
-MyAccordion.register();
 
 export default MyAccordion;
