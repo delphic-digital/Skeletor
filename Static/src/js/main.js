@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import polyfills  from './lib/polyfills';
-import { logger } from './lib/utils/index';
-import './lib/skeletor/skeletor.core';
+//import { logger } from './lib/utils/index';
+import skeletor from 'skeletor-core';
 
 import * as common from './components/common/index';
 

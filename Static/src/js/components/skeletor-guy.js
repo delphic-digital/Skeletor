@@ -1,4 +1,4 @@
-import $ from 'jquery';
+/*import $ from 'jquery';
 import Guy from '../lib/skeletor/skeletor.guy';
 
 class MyGuy extends Guy{
@@ -15,3 +15,4 @@ class MyGuy extends Guy{
 MyGuy.register();
 
 export default MyGuy;
+*/
