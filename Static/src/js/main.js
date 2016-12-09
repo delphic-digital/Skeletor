@@ -8,6 +8,8 @@ import * as common from './components/common/index';
 //Needs a shim to workaround es6 code this transpiled to es5 for web components v1
 //https://github.com/webcomponents/custom-elements#user-content-known-issues
 
+//https://developers.google.com/web/fundamentals/getting-started/primers/customelements
+
 class SkeletorSite{
 
 	constructor() {
@@ -28,7 +30,7 @@ class SkeletorSite{
 	}
 
 	initPageComponents(){
-		//Get custom elements on page that start with skeletor-
+		//Get custom elements on page that start with skeletor- and have async attribute
 
 		/* we need a `__moduleName` here to support relative urls. Spec is still incoming:
 
@@ -40,12 +42,12 @@ class SkeletorSite{
 		//NOTE: Load modules async or bundle together?
 		//TODO: Use one promise for all: http://exploringjs.com/es6/ch_modules.html#_loader-method-importing-modules
 
-		$(':skeletor').not('[shared]').each((i, elm)=>{
+		$(':skeletor[async]').each((i, elm)=>{
 			let moduleName = $(elm).prop("tagName").toLowerCase();
 			SystemJS.import('./components/'+moduleName, __moduleName).then( (module) => {
 				/*
 				This load Skeletor custom elements and corresponding JS.
-				Custom elements component are automically initialized when DOM element is seen
+				Custom elements component are automatically initialized when DOM element is seen
 				*/
 
 				//Register custom element.
