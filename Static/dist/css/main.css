@@ -477,6 +477,76 @@ skeletor-guy {
   }
 }
 
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "mobile";
+}
+
+@media (min-width: 768px) {
+  html {
+    font-family: "tablet";
+  }
+}
+
+@media (min-width: 1224px) {
+  html {
+    font-family: "desktop";
+  }
+}
+
+body {
+  background: #37474f;
+  color: #e8e8e9;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 18px;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  transition: background .45s;
+}
+
+.btn-primary:hover {
+  text-decoration: none;
+  color: #F8B853;
+}
+
+input[type=text],
+input[type=password],
+input[type=search],
+input[type=email],
+input[type=url],
+input[type=tel] {
+  -webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+  display: block;
+  position: relative;
+  padding: 0.625em 0.625em;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #CCC;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=tel]:focus {
+  outline: 0;
+  border-bottom-color: #000;
+}
+
 .msg-positive, .msg-neutral, .msg-negative {
   clear: both;
   display: block;

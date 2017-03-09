@@ -3,14 +3,23 @@
 @include normalize();
 
 //https://github.com/JohnAlbin/normalize-scss#how-to-use-it
+
 @import "~breakpoint-sass";
 @import "~bourbon/app/assets/stylesheets/bourbon";
 @import "~susy";
 
-@import "partials/base/sprites";  //Auto generated from sprite gulp task
+//Skeletor Addons
+@import "~skeletor-sass-utilities";
+
+@import "partials/settings";
+
+@import "partials/base/svg"; //Auto generated from inline svg npm task
+@import "partials/base/sprites";  //Auto generated from sprite npm task
+@import "partials/base/typography";
+@import "partials/base/scaffolding";
+@import "partials/base/buttons";
+@import "partials/base/inputs";
 
 @import "partials/layout/**/*.scss";
 
 @import "partials/components/**/*.scss";
-
-@import "jspm:skeletor-plugin-accordion/src/skeletor-plugin-accordion"

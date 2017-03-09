@@ -55,6 +55,7 @@
     "sass-inline-svg": "^0.2.0",
     "sass-jspm-importer": "0.0.6",
     "sass-watch": "^0.1.0",
+    "skeletor-sass-utilities": "github:delphic-digital/skeletor-sass-utilities",
     "sprity-cli": "^1.0.1",
     "sprity-gm": "^1.0.2",
     "sprity-sass": "^1.0.4",
