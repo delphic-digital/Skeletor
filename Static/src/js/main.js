@@ -25,11 +25,12 @@ class SkeletorSite{
 	initCommonComponents(){
 		for (var key of Object.keys(common)) {
 			let component = common[key];
-			//new component();
+			component.register();
 		}
 	}
 
 	initPageComponents(){
+
 		//Get custom elements on page that start with skeletor- and have async attribute
 
 		/* we need a `__moduleName` here to support relative urls. Spec is still incoming:

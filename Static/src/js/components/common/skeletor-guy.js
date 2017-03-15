@@ -14,7 +14,11 @@ class SkeletorGuy extends SkeletorPlugin{
 	}
 
 	init(){
-		super.init();
+		super.init(); console.log('jeff')
+
+		/*this.headerElm.addEventListener('click', e => {
+			this.dispatchEvent(new Event('toggle', {bubbles: true, composed: true}));
+		});*/
 	}
 
 	click(){
