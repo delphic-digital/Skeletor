@@ -107,6 +107,7 @@ module.exports = {
 			paths: {
 				//Map all CDN paths to empty so optimizer doesn't try to include them
 				jquery: "empty:",
+				velocity: "empty:",
 			}
 		}
 	}
