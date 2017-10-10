@@ -1,0 +1,33 @@
+// Main Nav
+// ------------------------------------------------------------------------------
+
+//	<div class="main-nav">
+//		<ul class="main-nav__list">
+//			<li class="main-nav__item">
+//				<a class="main-nav__link main-nav__link--active"></a>
+//				<a class="main-nav__link"></a>
+//			</li>
+//		</ul>
+//	</div>11
+//
+
+/* Mobile main nav styles */
+.main-nav {
+	&__list{}
+	&__item{}
+	&__link{
+		&--active {}
+	}
+}
+
+@include breakpoint($medium){
+	.main-nav {
+		/* Tablet main nav styles */
+	}
+}
+
+@include breakpoint($large){
+	.main-nav {
+		/* Desktop main nav styles */
+	}
+}

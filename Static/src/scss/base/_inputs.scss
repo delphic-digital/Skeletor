@@ -1,0 +1,21 @@
+%input {
+	display: block;
+	position: relative;
+	padding: em(10) em(10);
+	width: 100%;
+
+	border: 0;
+	border-bottom: 1px solid #CCC;
+}
+
+// @include input_text_types() {
+// 	@extend %input;
+// }
+
+
+// //Active states
+
+// @include input_text_types(true) {
+// 	outline: 0;
+// 	border-bottom-color: #000;
+// }

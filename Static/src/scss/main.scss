@@ -1,24 +1,19 @@
-@import "bourbon";
-@import "susy";
-@import "breakpoint";
+$output-bourbon-deprecation-warnings: false;
+@import "bourbon"; //include paths set in the webpack config
+@import '~susy/sass/susy'; //tilda tells webpack this is not a relative path, so it'll look in places like... node_modules :D
+@import '~breakpoint-sass/stylesheets/breakpoint';
 
-@import "partials/settings";
+@import "abstracts/**/*"; //mixins / functions / variables
 
-// Automatically injected Bower CSS dependencies via wiredep (never manually edit this block)
-// bower:css
-// endbower
+*, *:before, *:after {@include prefixer(box-sizing, border-box, webkit moz spec); }
+html {
+	font-family: "mobile";
+	@include breakpoint($medium) { font-family: "tablet"; }
+	@include breakpoint($large) { font-family: "desktop"; }
+}
 
-// Automatically injected Bower SCSS dependencies via wiredep (never manually edit this block)
-// bower:scss
-// endbower
+@import "base/**/*"; //base styles - pretty much just html elements
+@import "components/**/*"; //this is where most things will live
+@import "layout/**/*"; //The containers within which the components will live Plus the fixed things like header / footer
 
-@import "partials/base/svg"; //Auto generated from inline svg gulp task
-@import "partials/base/sprites";  //Auto generated from sprite gulp task
-@import "partials/base/typography";
-@import "partials/base/scaffolding";
-@import "partials/base/buttons";
-@import "partials/base/inputs";
-
-@import "partials/layout/**/*";
-
-@import "partials/components/**/*";
+// Utility classes

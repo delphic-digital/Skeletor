@@ -1,0 +1,23 @@
+$oldIE: false !default;
+
+$breakpoints: (
+	tiny:  320px,  /* small Smartphones and people who make their browsers tiny and people who zoom in to an extreme degree in their browsers --------------- */
+	small:  540px,  /* big Smartphones and small landscape phones and people who make their browsers small and people who zoom in in their browsers --------------- */
+	medium: 768px,  /* Tablets Portrait and small tablets and big phones in landscape and people who make their browsers medium and people who zoom in in their browsers a little but ---------- */
+	large:  1224px, /* Desktops and laptops and big tablets and people who make their browsers large ------ */
+	xlarge: 1824px  /* Large screens and massive tablets! and people who zoom out on their browsers ------------- */
+);
+
+$min-medium: map-get($breakpoints, medium);
+$min-large: map-get($breakpoints, large);
+$min-xlarge: map-get($breakpoints, xlarge);
+
+$max-small: map-get($breakpoints, medium)  - 1px;
+$max-medium: map-get($breakpoints, large)  - 1px;
+$max-large: map-get($breakpoints, xlarge)  - 1px;
+
+
+$small: map-get($breakpoints, small);
+$medium: $min-medium,'no-query' true;
+$large:  $min-large,'no-query' true;
+$xlarge:  $min-xlarge,'no-query' true;
