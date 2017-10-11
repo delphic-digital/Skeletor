@@ -1,0 +1,16 @@
+.flip {
+    transform: perspective(600px) rotateY(0deg);
+    transition: transform .3s ease-in;
+
+    &--fast {
+        transition: transform .1s ease-in;
+    }
+
+    &--slow {
+        transition: transform 3s ease-in;
+    }
+
+    &.flipped {
+        transform: perspective(600px) rotateY(180deg);
+    }
+}

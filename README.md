@@ -1,23 +1,35 @@
 # The Webpack version of Skeletor
 
- - svg
-    - compile them all into a file to be rendered server side and 'use'd
-    - inline sass variable
-    - png fallback
- - sprite sheets
- - hot reloading / local proxy
- - configure linting to standards we all agree on
+## JS
 
  - ES6: write modern JS!
- - Hot reloading: using webpack-dev-server, port is set in webpack.config.js
- - TODO: get code splitting working, possibly with the data-component pattern, look into it 
- - PNG spriting: put your png files in src/sprite_png 
-    - it'll spit them out along with utility classes in dist/sprite
-    - TODO: set up a base64 inline scss version
- - SVG spriting:
-    - TODO: get this working properly, should be close
- - [Sass-lint](https://github.com/sasstools/sass-lint) (not scss-lint), there's a [VSCode plugin](https://marketplace.visualstudio.com/items?itemName=glen-84.sass-lint)
  - [ESLint](https://eslint.org/), also there's a [VSCode plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint). This is hooked up to webpack so you'll see it shouting at you in the console.
+ - TODO: Code splitting. [In progress](https://webpack.js.org/plugins/commons-chunk-plugin/)
+
+## SASS
+
+ - Susy
+ - Breakpoints
+ - Bourbon
+ - [Sass-lint](https://github.com/sasstools/sass-lint) (not scss-lint), there's a [VSCode plugin](https://marketplace.visualstudio.com/items?itemName=glen-84.sass-lint)
+ - TODO: set up inline SVG SASS
+
+## SVG
+
+ - TODO: compile them all into a file to be rendered server side and 'use'd
+ - TODO: inline sass variable (same as the todo in the sass above)
+ - TODO: png fallback
+
+## Sprites
+
+ - TODO: Build into the SASS flow - currently it spits out it's own css file and png sprite
+ - TODO: pull this out the main compiling flow, it's slow (gut feeling haven't checked)
+
+## General
+
+ - Hot reloading: using webpack-dev-server, port is set in webpack.config.js
+ - TODO: local proxy
+ - TODO: configure linting to standards we all agree on
 
 ## Introduction
 

@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BabiliPlugin = require('babili-webpack-plugin');
@@ -8,10 +9,9 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 module.exports = {
     context: path.resolve(__dirname, './Static/src'),
     entry: {
-        common: [
-            './js/common.js',
-            './scss/main.scss'
-        ],
+        homepage: './js/homepage.js',
+        darkpage: './js/darkpage.js',
+        styles: './scss/main.scss',
         vendor: [
             'svg4everybody',
             'picturefill',
@@ -95,6 +95,19 @@ module.exports = {
                 cssImageRef: '~sprite.png'
             }
         }),
-        new SpriteLoaderPlugin()
+        new SpriteLoaderPlugin(),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'commons',
+            // (the commons chunk name)
+
+            filename: 'commons.js',
+            // (the filename of the commons chunk)
+
+            // minChunks: 3,
+            // (Modules must be shared between 3 entries)
+
+            // chunks: ["pageA", "pageB"],
+            // (Only use these entries)
+        })
     ]
 };
