@@ -30,6 +30,8 @@ module.exports = {
     "globals": {
         "__dirname": true,
         "module": true,
-        "require": true
+        "require": true,
+        "$": true,
+        "Velocity": true
     }
 };

@@ -108,6 +108,11 @@ module.exports = {
 
             // chunks: ["pageA", "pageB"],
             // (Only use these entries)
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            Velocity: 'velocity-animate',
+            //define common modules in here so you don't have to require / import them in every module
         })
     ]
 };
