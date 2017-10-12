@@ -5,6 +5,10 @@ const BabiliPlugin = require('babili-webpack-plugin');
 const bourbon = require('node-bourbon').includePaths;
 const SpritesmithPlugin = require('webpack-spritesmith');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const SvgStorePlugin = require('external-svg-sprite-loader/lib/SvgStorePlugin');
+
+const extractCSS = new ExtractTextPlugin({filename: 'css/[name].css'});
+const extractSVG = new ExtractTextPlugin({filename: '[name].svg'});
 
 module.exports = {
     context: path.resolve(__dirname, './Static/src'),
@@ -25,7 +29,7 @@ module.exports = {
     },
     output: {
         path: path.resolve('./Static/dist/'),
-        filename: '[name].js'
+        filename: 'js/[name].js'
     },
     module: {
         rules: [
@@ -39,7 +43,7 @@ module.exports = {
                 use: ['file-loader?name=i/[hash].[ext]']
             },
             {
-                test: /\.svg$/,
+                test: /\.xsvg$/,
                 use: [
                     {
                         loader: 'svg-sprite-loader',
@@ -53,8 +57,25 @@ module.exports = {
                 ]
             },
             {
+                test: /\.xxsvg$/,
+                use: extractSVG.extract({
+                    use: [
+                        { 
+                            loader: 'external-svg-sprite-loader',
+                            options: {
+                                publicPath: path.resolve('./Static/dist/svg/')
+                            }
+                        }
+                    ]
+                })
+            },
+            {
+                test: /\.svg$/,
+                loader: 'external-svg-sprite-loader',
+            },
+            {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
+                use: extractCSS.extract({
                     use: [
                         { loader: 'css-loader' }, 
                         { loader: 'postcss-loader' }, 
@@ -78,9 +99,8 @@ module.exports = {
         modules: ['node_modules', 'spritesmith-generated']
     },
     plugins: [
-        new ExtractTextPlugin({
-            filename: '[name].css',
-        }),
+        extractCSS,
+        extractSVG,
         new BabiliPlugin(),
         new SpritesmithPlugin({
             src: {
@@ -96,6 +116,7 @@ module.exports = {
             }
         }),
         new SpriteLoaderPlugin(),
+        new SvgStorePlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'commons',
             // (the commons chunk name)
