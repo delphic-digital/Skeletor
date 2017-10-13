@@ -31,6 +31,15 @@
  - TODO: local proxy
  - TODO: configure linting to standards we all agree on
 
+## Editor plugins
+
+For VS Code:
+
+ - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) will underline code formatting issues so you can catch them without relying on the command line output.
+ - [Style Lint](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint) same for Sass.
+ - [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) Will the size of the js you import and warn when it's getting too big.
+
+
 ## Introduction
 
 _Skeletor_ is a directory structure and Gulpfile designed as an easy starting point for front end development of projects. Mainly it was developed for projects at Delphic Digital, but it was designed to be agnostic, so any project is capable of using it. It is designed to give you a quick and organized way to start developing web apps with best practices in mind.
