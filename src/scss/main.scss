@@ -1,11 +1,12 @@
 $output-bourbon-deprecation-warnings: false;
-@import "bourbon"; //include paths set in the webpack config
-@import '~susy/sass/susy'; //tilda tells webpack this is not a relative path, so it'll look in places like... node_modules :D
-@import '~breakpoint-sass/stylesheets/breakpoint';
+@import "bourbon";
+@import "susy";
+@import "breakpoint";
 
 @import "abstracts/**/*"; //mixins / functions / variables
 
 *, *:before, *:after {@include prefixer(box-sizing, border-box, webkit moz spec); }
+
 html {
 	font-family: "mobile";
 	@include breakpoint($medium) { font-family: "tablet"; }

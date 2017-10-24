@@ -28,6 +28,7 @@ module.exports = {
         "no-console": [1]
     },
     "globals": {
+        "global": true,
         "__dirname": true,
         "module": true,
         "require": true,

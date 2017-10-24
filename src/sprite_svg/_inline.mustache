@@ -1,0 +1,24 @@
+{{#svgs}}
+${{{name}}}: '{{{inline}}}' {{width}} {{height}};
+{{/svgs}}
+
+@mixin inline-svg($name, $fill:'#000') {
+	$fill: to-string($fill);
+	$img: inline-svg-fill( nth($name, 1),$fill);
+	background: transparent url($img) no-repeat 50% 50%;
+	background-size: 100%;
+	width: nth($name, 2);
+	height: nth($name, 3);
+}
+
+@function inline-svg-width($name) {
+	@return nth($name, 2);
+}
+
+@function inline-svg-height($name) {
+	@return nth($name, 3);
+}
+
+@function inline-svg-fill($svg, $fill) {
+	@return str-replace($svg, '%3Csvg', '%3Csvg%20fill%3D%22#{url-encode($fill)}%22');
+}
