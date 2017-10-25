@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps');
 
 var sassSettings = {
-    outputStyle: 'compressed',
+    outputStyle: 'nested',
     importer: require('node-sass-globbing'),
     includePaths:[].concat(
         require('bourbon').includePaths,

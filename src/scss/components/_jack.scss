@@ -1,5 +1,5 @@
 .jack {
-    background-image: url('/svg/jack.svg') no-repeat 0;
+    @include inline-svg($jack);
     width: 100px;
-    height: 100px;
+    height: 100px; 
 }

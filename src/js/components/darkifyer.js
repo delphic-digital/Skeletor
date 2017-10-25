@@ -1,4 +1,6 @@
 // Simple components can just be in their own named file
+import $ from 'jquery';
+import Velocity from 'velocity-animate';
 
 function init(){
     document.body.style.backgroundColor = '#2b2836';

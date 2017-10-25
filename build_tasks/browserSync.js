@@ -18,8 +18,9 @@ if (global.skeletor.proxy) {
     inittor = function() {
         global.browserSync.init({
             server: {
-                baseDir: './dist' //assuming dist as there is no 'real' site it's unlikely the dist paths will have been configured yet
-            }
+                baseDir: './dist', //assuming dist as there is no 'real' site it's unlikely the dist paths will have been configured yet
+            },
+            open: false
         });
     };
 }

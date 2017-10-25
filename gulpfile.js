@@ -19,7 +19,7 @@ global.skeletor = {
 
 require('./build_tasks/browserSync.js');
 require('./build_tasks/sass.js');
-require('./build_tasks/js.js');
+require('./build_tasks/webpack.js');
 require('./build_tasks/svg_sprite.js');
 require('./build_tasks/svg_inlinecss.js');
 require('./build_tasks/png_sprite.js');
@@ -27,13 +27,13 @@ require('./build_tasks/png_sprite.js');
 //Watching you work
 gulp.task('watch', function(){
     gulp.watch(`${global.skeletor.srcScssDir}/**/*.scss`, gulp.series('sass', 'browserSync:reload'));
-    gulp.watch(`${global.skeletor.srcJsDir}/**/*.js`, gulp.series('js', 'browserSync:reload'));
+    gulp.watch(`${global.skeletor.srcJsDir}/**/*.js`, gulp.series('webpack', 'browserSync:reload'));
     gulp.watch(`${global.skeletor.srcSvgDir}/**/*.svg`, gulp.series('svg_sprite', 'svg_inlinecss', 'browserSync:reload'));
     gulp.watch(`${global.skeletor.srcPngDir}/**/*.png`, gulp.series('png_sprite', 'browserSync:reload'));
 });
 
 //build all the files!
-gulp.task('build', gulp.series('js', 'svg_sprite', 'svg_inlinecss', 'png_sprite', 'sass'));
+gulp.task('build', gulp.series('webpack', 'svg_sprite', 'svg_inlinecss', 'png_sprite', 'sass'));
 
 //default task watches
-gulp.task('default', gulp.series('build', 'browserSync', 'watch'));
+gulp.task('default', gulp.series('build', 'watch', 'browserSync'));

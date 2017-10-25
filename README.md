@@ -8,6 +8,7 @@
 💀 - Will need configured for each project.
 
  - TODO: Browsersync streaming
+ - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/)
  - TODO: configure linting to standards we all agree on
  - TODO: Testing examples (ava)
  - TODO: SVG png sprite fallback?
