@@ -26,7 +26,7 @@ const webpackConfig = {
     module: {
         rules: [
             { 
-                test: /\.js$/, 
+                test: /(?!test)[\w-]{4}\.js$/, //match .js files but not .test.js files
                 use: ['babel-loader', {
                     loader: 'eslint-loader',
                     options: {

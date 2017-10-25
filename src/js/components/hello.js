@@ -4,6 +4,10 @@ function init(){
     $('.js-hello').html('hello');
 }
 
+function iReturnTrue(){
+    return true;
+}
+
 export default {
-    init
+    init, iReturnTrue
 };

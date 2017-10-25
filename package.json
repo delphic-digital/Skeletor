@@ -4,8 +4,23 @@
   "version": "0.16.0",
   "scripts": {
     "start": "gulp",
-    "test": "ava",
+    "test": "ava --tap | tap-spec",
     "build": "gulp build"
+  },
+  "ava": {
+    "files": [
+      "./src/js/**/*.test.js"
+    ],
+    "source": [
+      "**/*.js"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "tap": true,
+    "powerAssert": false,
+    "require": "babel-core/register",
+    "babel": "inherit"
   },
   "devDependencies": {
     "ava": "^0.23.0",
@@ -41,6 +56,8 @@
     "sass-lint": "^1.12.0",
     "susy": "^3.0.1",
     "svgo": "^0.7.2",
+    "tap-diff": "^0.1.1",
+    "tap-spec": "^4.1.1",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0",
     "webpack-spritesmith": "^0.3.3",

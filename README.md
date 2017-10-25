@@ -5,14 +5,13 @@ _Skeletor_ is an opinionated starting point for front end projects. Mainly it wa
  - `npm install`
  - `npm start` runs a build, starts the watchers, fires up browsersync
  - `npm run build` runs a build
- - `npm test` runs the tests - not that there are any yet
+ - `npm test` runs .test.js files using [AVA](https://github.com/avajs/ava)
 
 💀 - Will need configured for each project.
 
  - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/)
  - TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/), modules defined in >3 chunks will be split out into their own chunk. 
  - TODO: configure linting to standards we all agree on
- - TODO: Testing examples (ava)
  - TODO: SVG png sprite fallback?
  - TODO: check sass linting is actually working
 
