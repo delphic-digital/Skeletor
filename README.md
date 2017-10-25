@@ -7,18 +7,16 @@
 
 💀 - Will need configured for each project.
 
- - TODO: Browsersync serving local files (for prototyping before the main site is ready to proxy)
  - TODO: Browsersync streaming
  - TODO: configure linting to standards we all agree on
  - TODO: Testing examples (ava)
  - TODO: SVG png sprite fallback?
  - TODO: check sass linting is actually working
- - TODO: postcss, autoprefixer & css next
 
 ## General
 
- - 💀 local proxy (./gulpfile.js `global.skeletor.proxy`)
- - 💀 FED src files directory (./gulpfile.js `const fedSrcRoot = ...`)
+ - 💀 local proxy (./gulpfile.js `global.skeletor.proxy`). Initially `false` & serving static files. If set, will switch from static to a proxy server.
+ - 💀 FED src files directory (./gulpfile.js `const fedSrcRoot = ...`). For a single project repo, package.json & fed src dir should stay in the root, renaming it's fine though.
  - 💀 JS distribution directory (./gulpfile.js `global.skeletor.distJsDir`)
  - 💀 CSS distribution directory (./gulpfile.js `global.skeletor.distCssDir`)
  - 💀 SVG distribution directory (./gulpfile.js `global.skeletor.distSpriteSvgDir`)
@@ -33,15 +31,16 @@ For special js heavy pages, `import` their components into ./src/js/special-page
 
  - ES6: write modern modular Javascript!
  - [ESLint](https://eslint.org/): code styles defined in the .eslintrc.js file
- - Bundle analysis (after you `npm start` open [localhost:8888](http://localhost:8888/))
+ - [Bundle analysis](https://github.com/webpack-contrib/webpack-bundle-analyzer) (after you `npm start` open [localhost:8888](http://localhost:8888/))
  - 💀 [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/), modules defined in >3 chunks will be split out into their own chunk. 
 
 ## SASS
 
- - Susy
- - Breakpoints
- - Bourbon
+ - [Susy](http://oddbird.net/susy/)
+ - [Breakpoints](http://breakpoint-sass.com/)
+ - [Bourbon](http://bourbon.io/)
  - [Sass-lint](https://github.com/sasstools/sass-lint)
+ - [Postcss](http://postcss.org/) & [css next](http://cssnext.io/)
 
 ## SVG
 
