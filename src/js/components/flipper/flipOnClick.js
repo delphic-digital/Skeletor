@@ -1,4 +1,4 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 
 export default function flipOnClick($elm, overrides){
     const defaults = {

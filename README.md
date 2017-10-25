@@ -7,7 +7,7 @@
 
 💀 - Will need configured for each project.
 
- - TODO: Browsersync streaming
+ - TODO: Fix svg inliner
  - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/)
  - TODO: configure linting to standards we all agree on
  - TODO: Testing examples (ava)
@@ -32,8 +32,7 @@ For special js heavy pages, `import` their components into ./src/js/special-page
 
  - ES6: write modern modular Javascript!
  - [ESLint](https://eslint.org/): code styles defined in the .eslintrc.js file
- - [Bundle analysis](https://github.com/webpack-contrib/webpack-bundle-analyzer) (after you `npm start` open [localhost:8888](http://localhost:8888/))
- - 💀 [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/), modules defined in >3 chunks will be split out into their own chunk. 
+ - 💀 TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/), modules defined in >3 chunks will be split out into their own chunk. 
 
 ## SASS
 

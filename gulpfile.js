@@ -26,14 +26,12 @@ require('./build_tasks/png_sprite.js');
 
 //Watching you work
 gulp.task('watch', function(){
-    gulp.watch(`${global.skeletor.srcScssDir}/**/*.scss`, gulp.series('sass', 'browserSync:reload'));
-    gulp.watch(`${global.skeletor.srcJsDir}/**/*.js`, gulp.series('webpack', 'browserSync:reload'));
+    gulp.watch(`${global.skeletor.srcScssDir}/**/*.scss`, gulp.series('sass:watch'));
     gulp.watch(`${global.skeletor.srcSvgDir}/**/*.svg`, gulp.series('svg_sprite', 'svg_inlinecss', 'browserSync:reload'));
     gulp.watch(`${global.skeletor.srcPngDir}/**/*.png`, gulp.series('png_sprite', 'browserSync:reload'));
 });
 
-//build all the files!
-gulp.task('build', gulp.series('webpack', 'svg_sprite', 'svg_inlinecss', 'png_sprite', 'sass'));
+gulp.task('build', gulp.series('webpack:build', 'svg_sprite', 'svg_inlinecss', 'png_sprite', 'sass:build'));
 
-//default task watches
-gulp.task('default', gulp.series('build', 'watch', 'browserSync'));
+//default task watches - start up browsersync then fire off all the watchers simultaniously!
+gulp.task('default', gulp.series('browserSync', gulp.parallel('webpack:watch', 'watch')));

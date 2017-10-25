@@ -42,7 +42,6 @@
     "susy": "^3.0.1",
     "svgo": "^0.7.2",
     "webpack": "^3.0.0",
-    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.5.0",
     "webpack-spritesmith": "^0.3.3",
     "webpack-stream": "^4.0.0"

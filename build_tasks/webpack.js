@@ -2,12 +2,16 @@ const gulp = require('gulp');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const BabiliPlugin = require('babili-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const path = require('path');
 
 const webpackConfig = {
     entry: {
-        common: `${global.skeletor.srcJsDir}/common.js`,
-        darkpage: `${global.skeletor.srcJsDir}/darkpage.js`,
+        main: [
+            `${global.skeletor.srcJsDir}/common.js`,
+            `${global.skeletor.srcJsDir}/darkpage.js`
+        ]
+        // common: `${global.skeletor.srcJsDir}/common.js`,
+        // darkpage: `${global.skeletor.srcJsDir}/darkpage.js`,
         // vendor: [
         //     'svg4everybody',
         //     'picturefill',
@@ -16,6 +20,7 @@ const webpackConfig = {
     },
     // devtool: 'eval',
     output: {
+        path: path.resolve(global.skeletor.distJsDir),
         filename: '[name].js'
     },
     module: {
@@ -34,24 +39,25 @@ const webpackConfig = {
         //     name: 'commons',
         //     filename: 'commons.js',
         // }),
-        // new webpack.ProvidePlugin({
-        //     $: 'jquery',
-        //     Velocity: 'velocity-animate',
-        //     //define common modules in here so you don't have to require / import them in every module
-        // }),
-        // new BundleAnalyzerPlugin({
-        //     analyzerMode: 'server',
-        //     analyzerHost: '127.0.0.1',
-        //     analyzerPort: 8888,
-        //     reportFilename: 'report.html',
-        //     defaultSizes: 'gzip',
-        //     openAnalyzer: false,
-        // })
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            Velocity: 'velocity-animate',
+            //define common modules in here so you don't have to require / import them in every module
+        })
     ]
 };
 
-gulp.task('webpack', () => {
-    return gulp.src(`${global.skeletor.srcJsDir}`)
-        .pipe(webpackStream(webpackConfig), webpack)
-        .pipe(gulp.dest(`${global.skeletor.distJsDir}`));  
+
+gulp.task('webpack:build', () => {
+    return gulp.src(global.skeletor.srcJsDir)
+        .pipe(webpackStream(webpackConfig))
+        .pipe(gulp.dest(global.skeletor.distJsDir));  
+});
+
+gulp.task('webpack:watch', () => {
+    webpackConfig.watch = true;
+    return gulp.src(global.skeletor.srcJsDir)
+        .pipe(webpackStream(webpackConfig))
+        .pipe(gulp.dest(global.skeletor.distJsDir))
+        .on('change', global.browserSync.reload); //TODO: this isn't reloading.
 });

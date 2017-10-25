@@ -19,12 +19,20 @@ var postcssPlugins = [
     cssnano({ autoprefixer: false }) //already included in postcss-cssNext
 ];
 
-gulp.task('sass', function () {
+gulp.task('sass:watch', function () {
     return gulp.src(`${global.skeletor.srcScssDir}/main.scss`)
         .pipe(sourcemaps.init())
         .pipe(sass(sassSettings).on('error', sass.logError))
         .pipe(postcss(postcssPlugins))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(global.skeletor.distCssDir))
         .pipe(global.browserSync.stream({match: '**/*.css'}));
+});
+
+gulp.task('sass:build', function () {
+    return gulp.src(`${global.skeletor.srcScssDir}/main.scss`)
+        .pipe(sourcemaps.init())
+        .pipe(sass(sassSettings).on('error', sass.logError))
+        .pipe(postcss(postcssPlugins))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(global.skeletor.distCssDir));
 });
