@@ -1,9 +1,5 @@
 const gulp = require('gulp');
 
-//TODO: browser sync streams
-//TODO: postcss plugins
-//TODO: documentation!
-
 //Keeping all the fed development files together, wherever a project needs them to be
 const fedSrcRoot = './src';
 
@@ -17,7 +13,7 @@ global.skeletor = {
     distCssDir: './dist/css',
     distSpriteSvgDir: './dist/sprite',
     distSpritePngDir: './dist/sprite',
-    proxy: 'project.dev', //The local url where the 'real' version of the site is running
+    proxy: false, //The local url where the 'real' version of the site is running. Or false to serve the static files form ./dist
     distCssPngSpriteDirUrl: '../../assets/spritesheets' //for the dist css's url('...') - will be specific to each project
 };
 

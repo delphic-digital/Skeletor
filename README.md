@@ -1,35 +1,61 @@
-# The Webpack version of Skeletor
+# Front End build boilerplate 
+
+ - `npm install`
+ - `npm start` runs a build, starts the watchers, fires up browsersync
+ - `npm run build` runs a build
+ - `npm test` runs the tests - not that there are any yet
+
+💀 - Will need configured for each project.
+
+ - TODO: Browsersync serving local files (for prototyping before the main site is ready to proxy)
+ - TODO: Browsersync streaming
+ - TODO: configure linting to standards we all agree on
+ - TODO: Testing examples (ava)
+ - TODO: SVG png sprite fallback?
+ - TODO: check sass linting is actually working
+ - TODO: postcss, autoprefixer & css next
+
+## General
+
+ - 💀 local proxy (./gulpfile.js `global.skeletor.proxy`)
+ - 💀 FED src files directory (./gulpfile.js `const fedSrcRoot = ...`)
+ - 💀 JS distribution directory (./gulpfile.js `global.skeletor.distJsDir`)
+ - 💀 CSS distribution directory (./gulpfile.js `global.skeletor.distCssDir`)
+ - 💀 SVG distribution directory (./gulpfile.js `global.skeletor.distSpriteSvgDir`)
+ - 💀 png distribution directory (./gulpfile.js `global.skeletor.distSpritePngDir`)
+ - 💀 CSS sprite sheet directory url (./gulpfile.js `global.skeletor.distCssPngSpriteDirUrl`) 
 
 ## JS
 
- - ES6: write modern JS!
- - [ESLint](https://eslint.org/), also there's a [VSCode plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint). This is hooked up to webpack so you'll see it shouting at you in the console.
- - TODO: Code splitting. [In progress](https://webpack.js.org/plugins/commons-chunk-plugin/)
+include ./dist/js/commons.js on every page.
+
+For special js heavy pages, `import` their components into ./src/js/special-page.js and include ./dist/js/special-page.js on the site
+
+ - ES6: write modern modular Javascript!
+ - [ESLint](https://eslint.org/): code styles defined in the .eslintrc.js file
+ - Bundle analysis (after you `npm start` open [localhost:8888](http://localhost:8888/))
+ - 💀 [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/), modules defined in >3 chunks will be split out into their own chunk. 
 
 ## SASS
 
  - Susy
  - Breakpoints
  - Bourbon
- - [Sass-lint](https://github.com/sasstools/sass-lint) (not scss-lint), there's a [VSCode plugin](https://marketplace.visualstudio.com/items?itemName=glen-84.sass-lint)
- - TODO: set up inline SVG SASS
+ - [Sass-lint](https://github.com/sasstools/sass-lint)
 
 ## SVG
 
- - TODO: compile them all into a file to be rendered server side and 'use'd
- - TODO: inline sass variable (same as the todo in the sass above)
- - TODO: png fallback
+Place individual svg files in ./src/sprite_svg/
 
-## Sprites
+ - 💀 Compiles svgs into a sprite file ready to be `<use>`d
+ - Generates _svg.scss which provides the `inline-svg` mixin for setting svgs as css backgrounds
 
- - TODO: Build into the SASS flow - currently it spits out it's own css file and png sprite
- - TODO: pull this out the main compiling flow, it's slow (gut feeling haven't checked)
+## Png Sprites
 
-## General
+Place individual png files in ./src/sprite_png/
 
- - Hot reloading: using webpack-dev-server, port is set in webpack.config.js
- - TODO: local proxy
- - TODO: configure linting to standards we all agree on
+ - 💀 Sprites the png files into pngSprite.png
+ - Generates _png.scss which provieds the `sprites` mixin and utility classes to set pngs as css backgrounds (I think - need to verify)
 
 ## Editor plugins
 
@@ -42,7 +68,7 @@ For VS Code:
 
 ## Introduction
 
-_Skeletor_ is a directory structure and Gulpfile designed as an easy starting point for front end development of projects. Mainly it was developed for projects at Delphic Digital, but it was designed to be agnostic, so any project is capable of using it. It is designed to give you a quick and organized way to start developing web apps with best practices in mind.
+_Skeletor_ is a directory structure and Gulpfile designed as an easy starting point for front end development of projects. Mainly it was developed for projects at Delphic Digital, but it was designed to be agnostic, so any project is capable of using it. It is designed to give you a quick and organized way to start developing websites with best practices in mind.
 
 ### Preface
 We gathered our best practices and what works best for our type of projects into a bunch of code to kick off projects.

@@ -2,10 +2,11 @@ const gulp = require('gulp');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const BabiliPlugin = require('babili-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const webpackConfig = {
     entry: {
-        homepage: `${global.skeletor.srcJsDir}/homepage.js`,
+        common: `${global.skeletor.srcJsDir}/common.js`,
         darkpage: `${global.skeletor.srcJsDir}/darkpage.js`,
         vendor: [
             'svg4everybody',
@@ -13,14 +14,14 @@ const webpackConfig = {
             'velocity-animate'
         ]
     },
-    devtool: 'source-map',
+    devtool: 'eval',
     output: {
         filename: '[name].js'
     },
     module: {
         rules: [
             { 
-                test: /\.(js|jsx)$/, 
+                test: /\.js$/, 
                 use: ['babel-loader', 'eslint-loader'], 
                 exclude: /node_modules/ 
             }
@@ -29,22 +30,22 @@ const webpackConfig = {
     plugins: [
         new BabiliPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
+            children: true,
             name: 'commons',
-            // (the commons chunk name)
-
             filename: 'commons.js',
-            // (the filename of the commons chunk)
-
-            // minChunks: 3,
-            // (Modules must be shared between 3 entries)
-
-            // chunks: ["pageA", "pageB"],
-            // (Only use these entries)
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             Velocity: 'velocity-animate',
             //define common modules in here so you don't have to require / import them in every module
+        }),
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'server',
+            analyzerHost: '127.0.0.1',
+            analyzerPort: 8888,
+            reportFilename: 'report.html',
+            defaultSizes: 'gzip',
+            openAnalyzer: false,
         })
     ],
     profile: true,
