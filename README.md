@@ -9,11 +9,14 @@ _Skeletor_ is an opinionated starting point for front end projects. Mainly it wa
 
 💀 - Will need configured for each project.
 
+ - TODO: configure linting to standards we all agree on
+ - TODO: check sass linting is actually working
+ - TODO: set up accesability audits
+ - TODO: set up performance audits (there must be something that does it through browsersync)
+ - TODO: SVG png sprite fallback?
  - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/)
  - TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/), modules defined in >3 chunks will be split out into their own chunk. 
- - TODO: configure linting to standards we all agree on
- - TODO: SVG png sprite fallback?
- - TODO: check sass linting is actually working
+ - TODO: set up a dockerfile & some instructions
 
 ## General
 
@@ -29,9 +32,10 @@ _Skeletor_ is an opinionated starting point for front end projects. Mainly it wa
 ## JS
 
  - ES6: write modern modular Javascript!
+ - Bundled by Webpack, take your pick of the plugins available there
  - [ESLint](https://eslint.org/): code styles defined in the .eslintrc.js file
 
-## SASS
+## SASS & PostCSS
 
  - [Susy](http://oddbird.net/susy/)
  - [Breakpoints](http://breakpoint-sass.com/)
@@ -39,7 +43,7 @@ _Skeletor_ is an opinionated starting point for front end projects. Mainly it wa
  - [Sass-lint](https://github.com/sasstools/sass-lint)
  - [Postcss](http://postcss.org/) & [css next](http://cssnext.io/)
 
-## SVG
+## SVG Spriting & inline Sass
 
 Place individual svg files in ./src/sprite_svg/
 
