@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 */
 gulp.task('svg_inlinecss', function() {
     return gulp.src(`${global.skeletor.srcSvgDir}/**/*.svg`)
-        .pipe(svgmin())
+        // .pipe(svgmin())
         .pipe(inlineSvg({
             template: `${global.skeletor.srcSvgDir}/_inline.mustache`
         }))

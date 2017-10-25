@@ -27,7 +27,12 @@ const webpackConfig = {
         rules: [
             { 
                 test: /\.js$/, 
-                use: ['babel-loader', 'eslint-loader'], 
+                use: ['babel-loader', {
+                    loader: 'eslint-loader',
+                    options: {
+                        formatter: require('eslint/lib/formatters/codeframe')
+                    }
+                }], 
                 exclude: /node_modules/ 
             }
         ]
@@ -54,10 +59,19 @@ gulp.task('webpack:build', () => {
         .pipe(gulp.dest(global.skeletor.distJsDir));  
 });
 
-gulp.task('webpack:watch', () => {
-    webpackConfig.watch = true;
-    return gulp.src(global.skeletor.srcJsDir)
-        .pipe(webpackStream(webpackConfig))
-        .pipe(gulp.dest(global.skeletor.distJsDir))
-        .on('change', global.browserSync.reload); //TODO: this isn't reloading.
-});
+if (global.skeletor.useBrowserSync) {
+    gulp.task('webpack:watch', () => {
+        webpackConfig.watch = true;
+        return gulp.src(global.skeletor.srcJsDir)
+            .pipe(webpackStream(webpackConfig))
+            .pipe(gulp.dest(global.skeletor.distJsDir))
+            .pipe(global.browserSync.stream({match: '**/*.js'}));
+    });
+} else {
+    gulp.task('webpack:watch', () => {
+        webpackConfig.watch = true;
+        return gulp.src(global.skeletor.srcJsDir)
+            .pipe(webpackStream(webpackConfig))
+            .pipe(gulp.dest(global.skeletor.distJsDir));
+    });
+}

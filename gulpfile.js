@@ -5,6 +5,7 @@ const fedSrcRoot = './src';
 
 //Dist files may need to be split apart by type, hence no shared root variable
 global.skeletor = {
+    useBrowserSync: true,
     srcJsDir: `${fedSrcRoot}/js`,
     srcScssDir: `${fedSrcRoot}/scss`,
     srcSvgDir: `${fedSrcRoot}/sprite_svg`,
@@ -27,11 +28,22 @@ require('./build_tasks/png_sprite.js');
 //Watching you work
 gulp.task('watch', function(){
     gulp.watch(`${global.skeletor.srcScssDir}/**/*.scss`, gulp.series('sass:watch'));
-    gulp.watch(`${global.skeletor.srcSvgDir}/**/*.svg`, gulp.series('svg_sprite', 'svg_inlinecss', 'browserSync:reload'));
-    gulp.watch(`${global.skeletor.srcPngDir}/**/*.png`, gulp.series('png_sprite', 'browserSync:reload'));
+
+    //TODO this a better way, I'm sure there's a better way
+    if (global.skeletor.useBrowserSync) {
+        gulp.watch(`${global.skeletor.srcSvgDir}/**/*.svg`, gulp.series('svg_sprite', 'svg_inlinecss', 'browserSync:reload'));
+        gulp.watch(`${global.skeletor.srcPngDir}/**/*.png`, gulp.series('png_sprite', 'browserSync:reload'));
+    } else {
+        gulp.watch(`${global.skeletor.srcSvgDir}/**/*.svg`, gulp.series('svg_sprite', 'svg_inlinecss'));
+        gulp.watch(`${global.skeletor.srcPngDir}/**/*.png`, gulp.series('png_sprite'));
+    }
 });
 
 gulp.task('build', gulp.series('webpack:build', 'svg_sprite', 'svg_inlinecss', 'png_sprite', 'sass:build'));
 
-//default task watches - start up browsersync then fire off all the watchers simultaniously!
-gulp.task('default', gulp.series('browserSync', gulp.parallel('webpack:watch', 'watch')));
+if (global.skeletor.useBrowserSync) {
+    //default task watches - start up browsersync then fire off all the watchers simultaniously!
+    gulp.task('default', gulp.series('browserSync', gulp.parallel('webpack:watch', 'watch')));
+} else {
+    gulp.task('default', gulp.parallel('webpack:watch', 'watch'));
+}
