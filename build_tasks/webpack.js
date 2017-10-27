@@ -10,15 +10,15 @@ const webpackConfig = {
         main: [
             `${global.skeletor.srcJsDir}/common.js`,
         ],
+        future: [
+            `${global.skeletor.srcJsDir}/future.js`,
+        ],
         vendor: [
             'jquery',
             'velocity-animate',
             'svg4everybody',
             'picturefill'
-        ],
-        future: `${global.skeletor.srcJsDir}/future.js`,
-        // common: `${global.skeletor.srcJsDir}/common.js`,
-        // darkpage: `${global.skeletor.srcJsDir}/darkpage.js`,
+        ]
     },
     // devtool: 'eval',
     output: {
@@ -41,9 +41,9 @@ const webpackConfig = {
     },
     plugins: [
         new BabiliPlugin(),
-        // new webpack.optimize.CommonsChunkPlugin({ //TODO: This breaks - webpack jsonp is not defined
-        //     name: 'vendor',
-        // }),
+        new webpack.optimize.CommonsChunkPlugin({ //TODO: This breaks - webpack jsonp is not defined
+            name: 'common',
+        }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             Velocity: 'velocity-animate',
@@ -64,7 +64,7 @@ gulp.task('webpack:build', () => {
     webpackConfig.plugins.push(new BundleAnalyzerPlugin({
         analyzerMode: 'static',
         reportFilename: 'js-bundle-analysis.html',
-        defaultSizes: 'parsed',
+        defaultSizes: 'stat',
         openAnalyzer: true,
         generateStatsFile: false, //if you want to use https://chrisbateman.github.io/webpack-visualizer/ turn this to true, it will appear in dist/js
         statsFilename: 'stats.json'

@@ -1,22 +1,5 @@
 const gulp = require('gulp');
-
-//Keeping all the fed development files together, wherever a project needs them to be
-const fedSrcRoot = './src';
-
-//Dist files may need to be split apart by type, hence no shared root variable
-global.skeletor = {
-    useBrowserSync: true,
-    srcJsDir: `${fedSrcRoot}/js`,
-    srcScssDir: `${fedSrcRoot}/scss`,
-    srcSvgDir: `${fedSrcRoot}/sprite_svg`,
-    srcPngDir: `${fedSrcRoot}/sprite_png`,
-    distJsDir: './dist/js',
-    distCssDir: './dist/css',
-    distSpriteSvgDir: './dist/sprite',
-    distSpritePngDir: './dist/sprite',
-    proxy: false, //The local url where the 'real' version of the site is running. Or false to serve the static files form ./dist
-    distCssPngSpriteDirUrl: '../../assets/spritesheets' //for the dist css's url('...') - will be specific to each project
-};
+global.skeletor = require('./skeletor.config.js');
 
 require('./build_tasks/browserSync.js');
 require('./build_tasks/sass.js');

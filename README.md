@@ -5,38 +5,44 @@ _Skeletor_ is an opinionated starting point for front end projects. Mainly it wa
  - `npm install`
  - `npm start` runs a build, starts the watchers, fires up browsersync
  - `npm run build` runs a build
- - `npm test` runs .test.js files using [AVA](https://github.com/avajs/ava)
+ - `npm run test` runs the tests
  - You might also want to remove ./src/scss/future from production projects. It's a place where only our dreams can fly.
 
 💀 - Will need configured for each project.
 
  - TODO: configure linting to standards we all agree on
  - TODO: check sass linting is actually working
- - TODO: set up accesability audits - or at least instructions to do so
- - TODO: set up performance audits (there must be something that does it through browsersync)
  - TODO: SVG png sprite fallback?
- - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/)
- - TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/), modules defined in >3 chunks will be split out into their own chunk. 
- - TODO: set up a dockerfile & some instructions
- - TODO: Package-lock.json (when we're all on or beyond npm5)
+ - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/), might not be worth it - we don't build proper spas
+ - TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/) needs work.
+ - TODO: Package-lock.json (when we're all on or beyond npm5) / shrinkwrap on build?
 
 ## General
 
- - 💀 local proxy (./gulpfile.js `global.skeletor.proxy`). Initially `false` & serving static files. If set, will switch from static to a proxy server.
- - toggle BrowserSync (./gulpfile.js `global.skeletor.useBrowserSync`) Initially `true`. Set to `false` for slow servers so you can reload manually.
- - 💀 FED src files directory (./gulpfile.js `const fedSrcRoot = ...`). For a single project repo, package.json & fed src dir should stay in the root, renaming it's fine though.
- - 💀 JS distribution directory (./gulpfile.js `global.skeletor.distJsDir`)
- - 💀 CSS distribution directory (./gulpfile.js `global.skeletor.distCssDir`)
- - 💀 SVG distribution directory (./gulpfile.js `global.skeletor.distSpriteSvgDir`)
- - 💀 png distribution directory (./gulpfile.js `global.skeletor.distSpritePngDir`)
- - 💀 CSS sprite sheet directory url (./gulpfile.js `global.skeletor.distCssPngSpriteDirUrl`) 
+Configuration options in ./skeletor.config.js
+
+ - 💀 local proxy (./skeletor.config.js `proxy`). Initially `false` & serving static files. If set, will switch from static to a proxy server.
+ - toggle BrowserSync (./skeletor.config.js `useBrowserSync`) Initially `true`. Set to `false` for slow servers so you can reload manually.
+ - 💀 FED src files directory (./skeletor.config.js `fedSrcRoot`). For a single project repo, package.json & fed src dir should stay in the root, renaming it's fine though.
+ - 💀 JS distribution directory (./skeletor.config.js `distJsDir`)
+ - 💀 CSS distribution directory (./skeletor.config.js `distCssDir`)
+ - 💀 SVG distribution directory (./skeletor.config.js `distSpriteSvgDir`)
+ - 💀 png distribution directory (./skeletor.config.js `distSpritePngDir`)
+ - 💀 CSS sprite sheet directory url (./skeletor.config.js `distCssPngSpriteDirUrl`) 
+
+## Testing `npm run test`
+
+Test results are output to the command line. If the test script ends in npm ERR! you've probably got a few failing one, scroll up to read them!
+
+ - accesability testing with [Pa11y](http://pa11y.org/) (will test the index file in dist by default, but switches to the proxy when you set that)
+ - JS Unit testing with [AVA](https://github.com/avajs/ava)
 
 ## JS
 
  - ES6: write modern modular Javascript!
  - Bundled by Webpack, take your pick of the plugins available there
  - [ESLint](https://eslint.org/): code styles defined in the .eslintrc.js file
- - Bundle size analyzer! On `npm run build` opens a visual to show you how much JS you're pulling in.
+ - Bundle size analyzer! On `npm run build` opens a visual to give you an idea of how much JS you're pulling in. Note that this is showing the src, not dist. TODO analyse the dist
 
 ## SASS & PostCSS
 
