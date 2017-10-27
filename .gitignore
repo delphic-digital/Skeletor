@@ -5,3 +5,5 @@ Static/dist/**
 *.sublime-project
 *.sublime-workspace
 npm-debug.log.*
+js-bundle-analysis.html
+stats.json
