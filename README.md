@@ -2,33 +2,39 @@
 
 _Skeletor_ is an opinionated starting point for front end projects. Mainly it was developed for projects at Delphic Digital, but it was designed to be agnostic, so any project is capable of using it. It is designed to give you a quick and organized way to start developing websites with best practices in mind.
 
+Note that "💀" marks things that you will likely need to configure for each project.
+
+## Quick start
+
+ - Copy the repo _(don't clone it, updates aren't guarenteed to be backwards compatible - if that's what you want, look at [Brunch](http://brunch.io/))_
  - `npm install`
- - `npm start` runs a build, starts the watchers, fires up browsersync
- - `npm run build` runs a build
- - `npm run test` runs the tests
+ - `npm start`
+ - `npm run build`
+ - `npm run test`
  - You might also want to remove ./src/scss/future from production projects. It's a place where only our dreams can fly.
-
-💀 - Will need configured for each project.
-
- - TODO: configure JS linting to standards we all agree on
- - TODO: configure Sass linting to standards we all agree on
- - TODO: SVG png sprite fallback?
- - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/), might not be worth it - we don't build proper spas
- - TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/) needs work.
- - TODO: Package-lock.json (when we're all on or beyond npm5) / shrinkwrap on build?
 
 ## General
 
 Configuration options in ./skeletor.config.js
 
- - 💀 local proxy (./skeletor.config.js `proxy`). Initially `false` & serving static files. If set, will switch from static to a proxy server.
- - toggle BrowserSync (./skeletor.config.js `useBrowserSync`) Initially `true`. Set to `false` for slow servers so you can reload manually.
- - 💀 FED src files directory (./skeletor.config.js `fedSrcRoot`). For a single project repo, package.json & fed src dir should stay in the root, renaming it's fine though.
- - 💀 JS distribution directory (./skeletor.config.js `distJsDir`)
- - 💀 CSS distribution directory (./skeletor.config.js `distCssDir`)
- - 💀 SVG distribution directory (./skeletor.config.js `distSpriteSvgDir`)
- - 💀 png distribution directory (./skeletor.config.js `distSpritePngDir`)
- - 💀 CSS sprite sheet directory url (./skeletor.config.js `distCssPngSpriteDirUrl`) 
+ - 💀 `proxy` to set what browsersync points at
+    - `false` will set browsersync to static mode and serve files from the dist folder
+    - `localproject.dev` will set browsersync to proxy that url
+ - 💀 `useBrowserSync` allows you to disable it
+    - `true` browsersync will be started on `npm start`
+    - `false` will not start browsersync. _(Because sometimes you're proxying a server that is just painfully slow)_
+ - 💀 local path variables _(If a system needs your JS dist files in one place, your CSS in another, and your assets in a third. It happens.)_
+    - `fedSrcRoot` The src directory for the working files, used as a root to the other src path variable
+        - `srcJsDir`
+        - `srcScssDir`
+        - `srcSvgDir`
+        - `srcPngDir`
+    - `fedDistRoot` Same as src, but for dist! _Note if your dist dir has to be split by type, this may become redundant_
+        - `distJsDir`
+        - `distCssDir`
+        - 💀 `distSpriteSvgDir` The SVG sprite to be `<use>`d either as an external sprite or rendered into page templates.
+        - 💀 `distSpritePngDir` png sprite, will probably have to be pointed to some kind of theme assets dir relative to the CMS your in.
+        - 💀 `distCssPngSpriteDirUrl` This sets the URL that will be used by production CSS to locate the png sprite.
 
 ## Testing `npm run test`
 
@@ -75,3 +81,12 @@ For VS Code:
  - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) will underline code formatting issues so you can catch them without relying on the command line output.
  - [Style Lint](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint) same for Sass.
  - [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) Will the size of the js you import and warn when it's getting too big.
+
+## Things that still need doing
+
+ - TODO: configure JS linting to standards we all agree on
+ - TODO: configure Sass linting to standards we all agree on
+ - TODO: SVG png sprite fallback?
+ - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/), might not be worth it - we don't build proper spas
+ - TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/) needs optmization work, again probably not be worth it for most projects.
+ - TODO: Package-lock.json (when we're all on or beyond npm5) / shrinkwrap on build?

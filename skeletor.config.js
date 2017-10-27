@@ -21,5 +21,5 @@ module.exports = {
     distSpritePngDir: `${fedDistRoot}/sprite`,
     proxy: false, 
     distCssPngSpriteDirUrl: '../../assets/spritesheets', //for the dist css's url('...') - will be specific to each project
-    pa11yTestUrl: `${fedDistRoot}/index.html`
+    pa11yTestUrl: pa11yTestUrl
 };
