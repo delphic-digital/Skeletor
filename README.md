@@ -10,8 +10,8 @@ _Skeletor_ is an opinionated starting point for front end projects. Mainly it wa
 
 💀 - Will need configured for each project.
 
- - TODO: configure linting to standards we all agree on
- - TODO: check sass linting is actually working
+ - TODO: configure JS linting to standards we all agree on
+ - TODO: configure Sass linting to standards we all agree on
  - TODO: SVG png sprite fallback?
  - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/), might not be worth it - we don't build proper spas
  - TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/) needs work.
@@ -32,7 +32,7 @@ Configuration options in ./skeletor.config.js
 
 ## Testing `npm run test`
 
-Test results are output to the command line. If the test script ends in npm ERR! you've probably got a few failing one, scroll up to read them!
+Test results are output to the command line. If the test script ends in npm ERR! you've probably got a few failing tests, scroll up to read them!
 
  - accesability testing with [Pa11y](http://pa11y.org/) (will test the index file in dist by default, but switches to the proxy when you set that)
  - JS Unit testing with [AVA](https://github.com/avajs/ava)
@@ -67,6 +67,8 @@ Place individual png files in ./src/sprite_png/
  - Generates _png.scss which provieds the `sprites` mixin and utility classes to set pngs as css backgrounds (I think - need to verify)
 
 ## Editor plugins
+
+_These are not required, just a few recommended plugins that work with well with the tools Skeletor uses._
 
 For VS Code:
 
