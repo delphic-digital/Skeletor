@@ -1,0 +1,10 @@
+.flex-grid {
+
+    @include breakpoint(medium) {
+        display: flex;
+    
+        &__col {
+            flex: 1;
+        }
+    }
+}

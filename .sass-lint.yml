@@ -58,23 +58,30 @@ rules:
   placeholder-name-format: 1
   variable-name-format: 1
 
-  # Style Guide
+  # Style Guide https://github.com/sasstools/sass-lint/tree/master/docs/rules
   attribute-quotes: 1
   bem-depth: 0
   border-zero: 1
-  brace-style: 1
+  brace-style:
+    - 1
+    - style: 1tbs
+    - allow-single-line: true
   clean-import-paths: 1
   empty-args: 1
   hex-length: 1
   hex-notation: 1
-  indentation: 1
+  indentation:
+    - 1
+    - size: 'tab'
   leading-zero: 1
   max-line-length: 0
   max-file-line-count: 0
   nesting-depth: 1
   property-sort-order: 1
-  pseudo-element: 1
-  quotes: 1
+  pseudo-element: 0
+  quotes:
+    - 1
+    - style: double
   shorthand-values: 1
   url-quotes: 1
   variable-for-property: 1

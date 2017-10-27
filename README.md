@@ -79,7 +79,7 @@ _These are not required, just a few recommended plugins that work with well with
 For VS Code:
 
  - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) will underline code formatting issues so you can catch them without relying on the command line output.
- - [Style Lint](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint) same for Sass.
+ - [Sass Lint](https://marketplace.visualstudio.com/items?itemName=glen-84.sass-lint) same for Sass.
  - [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) Will the size of the js you import and warn when it's getting too big.
 
 ## Things that still need doing

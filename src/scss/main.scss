@@ -4,15 +4,23 @@ $output-bourbon-deprecation-warnings: false;
 @import "susy";
 @import "breakpoint";
 
- //mixins / functions / variables & related utility classes
+//mixins / functions / variables & related utility classes
 @import "abstracts/**/*";
 
-*, *:before, *:after {@include prefixer(box-sizing, border-box, webkit moz spec); }
+*,
+*:before,
+*:after {
+	@include prefixer(box-sizing, border-box, webkit moz spec);
+}
 
 html {
 	font-family: "mobile";
-	@include breakpoint($medium) { font-family: "tablet"; }
-	@include breakpoint($large) { font-family: "desktop"; }
+	@include breakpoint($medium) {
+		font-family: "tablet";
+	}
+	@include breakpoint($large) {
+		font-family: "desktop";
+	}
 }
 
 @import "base/**/*"; //base styles - pretty much just html elements
