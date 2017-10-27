@@ -5,8 +5,8 @@ import hello from './components/hello.js';
 import darkifyer from './components/darkifyer.js';
 
 $(document).ready(function() {
-    darkifyer.init();
-    hello.init();
-    console.log('hi!');
-    console.log('hohohoooooo!');
+	darkifyer.init();
+	hello.init();
+	console.log('hi!');
+	console.log('hohohoooooo!');
 });

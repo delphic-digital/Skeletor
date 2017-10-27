@@ -3,10 +3,10 @@
 // import Velocity from 'velocity-animate';
 
 function init(){
-    document.body.style.backgroundColor = '#2b2836';
-    Velocity($('body'),{ opacity: 0.5 },{delay: 1000});
+	document.body.style.backgroundColor = '#2b2836';
+	Velocity($('body'),{ opacity: 0.5 },{delay: 1000});
 }
 
 export default {
-    init
+	init
 };

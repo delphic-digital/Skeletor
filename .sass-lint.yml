@@ -76,7 +76,10 @@ rules:
   leading-zero: 1
   max-line-length: 0
   max-file-line-count: 0
-  nesting-depth: 1
+  # This is an ideal to strive towards. Ignore or turn it up if you must
+  nesting-depth:
+    - 1
+    - max-depth: 2
   property-sort-order: 1
   pseudo-element: 0
   quotes:
