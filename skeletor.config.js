@@ -15,10 +15,12 @@ module.exports = {
 	srcScssDir: `${fedSrcRoot}/scss`,
 	srcSvgDir: `${fedSrcRoot}/sprite_svg`,
 	srcPngDir: `${fedSrcRoot}/sprite_png`,
+	srcPugDir: `${fedSrcRoot}/_pug`,
 	distJsDir: `${fedDistRoot}/js`,
 	distCssDir: `${fedDistRoot}/css`,
 	distSpriteSvgDir: `${fedDistRoot}/sprite`,
 	distSpritePngDir: `${fedDistRoot}/sprite`,
+	distPugDir: `${fedDistRoot}/_markup`,
 	proxy: false, 
 	distCssPngSpriteDirUrl: '../../assets/spritesheets', //for the dist css's url('...') - will be specific to each project
 	localUrl: localUrl,

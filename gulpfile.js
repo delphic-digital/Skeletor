@@ -7,6 +7,7 @@ require('./build_tasks/webpack.js');
 require('./build_tasks/svg_sprite.js');
 require('./build_tasks/svg_inlinecss.js');
 require('./build_tasks/png_sprite.js');
+require('./build_tasks/_pug.js');
 
 //Watching you work
 gulp.task('watch', function(){
