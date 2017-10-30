@@ -26,6 +26,7 @@ module.exports = {
     },
     "globals": {
         "global": true,
+        "process": true,
         "__dirname": true,
         "module": true,
         "require": true,

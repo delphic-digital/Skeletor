@@ -7,6 +7,7 @@
     "test": "run-s test:*",
     "test:unit": "ava --tap | tap-spec",
     "test:a11y": "node pa11y.js",
+    "test:performance": "pwmetrics --config=pwmetrics.config.js",
     "build": "gulp build"
   },
   "ava": {
@@ -25,7 +26,6 @@
     "babel": "inherit"
   },
   "devDependencies": {
-    "ava": "^0.23.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-babili": "^0.1.4",
@@ -60,7 +60,6 @@
     "sass-lint": "^1.12.0",
     "susy": "^3.0.1",
     "svgo": "^0.7.2",
-    "tap-diff": "^0.1.1",
     "tap-spec": "^4.1.1",
     "webpack": "^3.0.0",
     "webpack-bundle-analyzer": "^2.9.0",

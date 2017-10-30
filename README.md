@@ -10,7 +10,7 @@ Note that "💀" marks things that you will likely need to configure for each pr
  - `npm install`
  - `npm start`
  - `npm run build`
- - `npm run test`
+ - `npm run test` (_Note this will require some global installs, trying to keep the critical path a little lighter for you._) `npm i -g ava pwmetrics`
  - You might also want to remove ./src/scss/future from production projects. It's a place where only our dreams can fly.
 
 ## General
@@ -20,6 +20,9 @@ Configuration options in ./skeletor.config.js
  - 💀 `proxy` to set what browsersync points at
     - `false` will set browsersync to static mode and serve files from the dist folder
     - `localproject.dev` will set browsersync to proxy that url
+ - `testUrl` built from `proxy`, this will be your local _(Note to run tests against your local it has to be running already)_
+ - 💀 `stagingUrl` so we can point tests at staging
+ - 💀 `liveUrl` and also test live!
  - 💀 `useBrowserSync` allows you to disable it
     - `true` browsersync will be started on `npm start`
     - `false` will not start browsersync. _(Because sometimes you're proxying a server that is just painfully slow)_
@@ -36,12 +39,29 @@ Configuration options in ./skeletor.config.js
         - 💀 `distSpritePngDir` png sprite, will probably have to be pointed to some kind of theme assets dir relative to the CMS your in.
         - 💀 `distCssPngSpriteDirUrl` This sets the URL that will be used by production CSS to locate the png sprite.
 
-## Testing `npm run test`
+## Testing
 
-Test results are output to the command line. If the test script ends in npm ERR! you've probably got a few failing tests, scroll up to read them!
+Also the testing tools aren't installed to the local project, they're not on the critical path (for now) which we're trying to keep light. So you will have to install these globally (unless you already have them in which case, begin!):
 
- - accesability testing with [Pa11y](http://pa11y.org/) (will test the index file in dist by default, but switches to the proxy when you set that)
- - JS Unit testing with [AVA](https://github.com/avajs/ava)
+ - `npm i -g ava pwmetrics`
+
+### Accesability testing
+
+ - `npm run test:a11y`
+
+Testing the markup with [Pa11y](http://pa11y.org/). Will test the index file in dist by default, but switches to the proxy when you set that.
+
+### Performance testing
+
+ - `npm run test:performance`
+
+Testing with [PWMetrics](https://www.npmjs.com/package/pwmetrics). It will open a browser, let it sit for a while then it should close and log the test results to the console. Note that this can be set up to save results into google sheets, will need some research and configuration to do that though.
+
+### JS Unit testing
+
+ - `npm run test:unit`
+
+Testing with [AVA](https://github.com/avajs/ava). This will only ever test your local source code, it can't test distributed code through a url. Also test results are output to the command line. If the test script ends in npm ERR! you've probably got a few failing tests, scroll up to read them!
 
 ## JS
 
@@ -90,3 +110,4 @@ For VS Code:
  - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/), might not be worth it - we don't build proper spas
  - TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/) needs optmization work, again probably not be worth it for most projects.
  - TODO: Package-lock.json (when we're all on or beyond npm5) / shrinkwrap on build?
+ - TODO: set up pwmetrics to submit reports to google drive - get performance reports graphed over time!
