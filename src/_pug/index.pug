@@ -1,1 +1,23 @@
-doctype html
+extends _base.pug
+
+block header
+	h1(class="js-hello")
+
+block content
+	.flex-grid
+		.flex-grid__col
+			| Col
+		.flex-grid__col
+			| Col
+		.flex-grid__col
+			| Col
+			
+	.flip.js-flip.jack
+		| Flip
+	.flip.js-flip--fast.jack
+		| Flip fast!
+	.flip.js-flip--slow.jack
+		| Flip sloowww
+	.icon-skeletor_tall.js-skeletor-guy(data-component="skeletor-guy")
+
+block footer
