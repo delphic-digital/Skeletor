@@ -13,6 +13,13 @@ Note that "💀" marks things that you will likely need to configure for each pr
  - `npm run test` (_Note this will require some global installs, trying to keep the critical path a little lighter for you._) `npm i -g ava pwmetrics`
  - You might also want to remove ./src/scss/future from production projects. It's a place where only our dreams can fly.
 
+## Static markup
+
+Currently set up with [pug](https://pugjs.org) (Jade rebranded) in ./src/_pug. Compiles to ./dist/_markup.
+
+ - TODO: serve markup from browsersync & point pa11y there.
+ - TODO: add ssi for personal choice & a toggle to switch between. At least until one wins out. Old vs New.
+
 ## General
 
 Configuration options in ./skeletor.config.js
