@@ -7,6 +7,9 @@ $output-bourbon-deprecation-warnings: false;
 //mixins / functions / variables & related utility classes
 @import "abstracts/**/*";
 
+//utility classes & mixins to spit out the css for them
+@import "utilities/**/*";
+
 *,
 *:before,
 *:after {
@@ -27,4 +30,3 @@ html {
 @import "components/**/*"; //this is where most things will live
 @import "layout/**/*"; //The containers within which the components will live Plus the fixed things like header / footer
 @import "future/**/*"; //Things we cannot yet include in production because they're just too damn new.
-// Utility classes

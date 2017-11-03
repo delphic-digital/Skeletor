@@ -1,0 +1,12 @@
+//Stop those floaters from sliding all over your markup. Shudder.
+@mixin clearfix {
+	&:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+}
+
+.clearfix {
+	@include clearfix();
+}
