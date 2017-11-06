@@ -4,6 +4,7 @@ global.skeletor = require('./skeletor.config.js');
 require('./build_tasks/browserSync.js');
 require('./build_tasks/sass.js');
 require('./build_tasks/webpack.js');
+require('./build_tasks/eslint.js');
 require('./build_tasks/svg_sprite.js');
 require('./build_tasks/svg_inlinecss.js');
 require('./build_tasks/png_sprite.js');
@@ -21,6 +22,9 @@ gulp.task('watch', function(){
 		gulp.watch(`${global.skeletor.srcSvgDir}/**/*.svg`, gulp.series('svg_sprite', 'svg_inlinecss'));
 		gulp.watch(`${global.skeletor.srcPngDir}/**/*.png`, gulp.series('png_sprite'));
 	}
+
+	//eslint no matter for BrowserSync!
+	gulp.watch(`${global.skeletor.srcJsDir}/**/*.js`, gulp.series('eslint'));
 
 	if (global.skeletor.templateLang) { //allow it to be set to false if static markup isn't needed
 

@@ -39,6 +39,7 @@
     "eslint": "^4.6.1",
     "eslint-loader": "^1.9.0",
     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-eslint": "^4.0.0",
     "gulp-image-resize": "^0.13.0",
     "gulp-inline-svg": "^1.1.1",
     "gulp-postcss": "^7.0.0",
