@@ -31,7 +31,7 @@ module.exports = {
 	srcPngDir: `${fedSrcRoot}/sprite_png`,
 	distSpritePngDir: `${fedDistRoot}/sprite`,
 	
-	templateLang: false, // 'ssi' | 'pug' | false
+	templateLang: 'pug', // 'ssi' | 'pug' | false
 	srcPugDir: `${fedSrcRoot}/_pug`,
 	srcSSIDir: `${fedSrcRoot}/_ssi`,
 	distTemplateDir: `${fedDistRoot}/_markup` //both pug and ssi render to here - only use one at a time

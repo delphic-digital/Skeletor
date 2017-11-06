@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const BabiliPlugin = require('babili-webpack-plugin');
+const PrepackWebpackPlugin = require('prepack-webpack-plugin').default;
 const path = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -26,7 +27,7 @@ const webpackConfig = {
 		rules: [
 			{ 
 				test: /(?!test)[\w-]{4}\.js$/, //match .js files but not .test.js files
-				include: path.resolve(__dirname, "src"),
+				include: path.resolve(__dirname, 'src'),
 				use: ['babel-loader', {
 					loader: 'eslint-loader',
 					options: {
@@ -49,19 +50,24 @@ const webpackConfig = {
 gulp.task('webpack:build', () => {
 	//Some libs ditch developer niceties in production mode - turn it on!
 	//TODO: check if this can be / is being set by gulp
-	webpackConfig.plugins.push(new webpack.DefinePlugin({
-		'process.env.NODE_ENV': '"production"'
-	}));
-
-	//on build run an analysis (Not in the watcher - don't want to slow down development by doing this on every save)
-	webpackConfig.plugins.push(new BundleAnalyzerPlugin({
-		analyzerMode: 'static',
-		reportFilename: 'js-bundle-analysis.html',
-		defaultSizes: 'stat',
-		openAnalyzer: true,
-		generateStatsFile: false, //if you want to use https://chrisbateman.github.io/webpack-visualizer/ turn this to true, it will appear in dist/js
-		statsFilename: 'stats.json'
-	}));
+	webpackConfig.plugins = [
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': '"production"'
+		}),
+		// new PrepackWebpackPlugin(), //TODO get this running https://prepack.io/getting-started.html
+		new BabiliPlugin(),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor'
+		}),
+		new BundleAnalyzerPlugin({
+			analyzerMode: 'static',
+			reportFilename: 'js-bundle-analysis.html',
+			defaultSizes: 'stat',
+			openAnalyzer: true,
+			generateStatsFile: false, //if you want to use https://chrisbateman.github.io/webpack-visualizer/ turn this to true, it will appear in dist/js
+			statsFilename: 'stats.json'
+		})
+	];
 
 
 	return gulp.src(global.skeletor.srcJsDir)
