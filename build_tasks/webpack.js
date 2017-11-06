@@ -8,14 +8,11 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const webpackConfig = {
     entry: {
         main: [
-            `${global.skeletor.srcJsDir}/common.js`,
-        ],
-        future: [
-            `${global.skeletor.srcJsDir}/future.js`,
+            `${global.skeletor.srcJsDir}/main.js`
         ],
         vendor: [
             'jquery',
-            'velocity-animate',
+            // 'velocity-animate',
             'svg4everybody',
             'picturefill'
         ]
@@ -29,6 +26,7 @@ const webpackConfig = {
         rules: [
             { 
                 test: /(?!test)[\w-]{4}\.js$/, //match .js files but not .test.js files
+                include: path.resolve(__dirname, "src"),
                 use: ['babel-loader', {
                     loader: 'eslint-loader',
                     options: {
@@ -41,13 +39,8 @@ const webpackConfig = {
     },
     plugins: [
         new BabiliPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({ //TODO: This breaks - webpack jsonp is not defined
-            name: 'common',
-        }),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            Velocity: 'velocity-animate',
-            //define common modules in here so you don't have to require / import them in every module
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor'
         })
     ]
 };

@@ -10,7 +10,7 @@ if (!proxy) {
 
 //Dist files may need to be split apart by type, hence no shared root variable
 module.exports = {
-	templateLang: 'ssi', // 'ssi' | 'pug'
+	templateLang: 'pug', // 'ssi' | 'pug'
 	useBrowserSync: true,
 	srcJsDir: `${fedSrcRoot}/js`,
 	srcScssDir: `${fedSrcRoot}/scss`,

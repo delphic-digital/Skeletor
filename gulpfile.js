@@ -21,6 +21,22 @@ gulp.task('watch', function(){
 		gulp.watch(`${global.skeletor.srcSvgDir}/**/*.svg`, gulp.series('svg_sprite', 'svg_inlinecss'));
 		gulp.watch(`${global.skeletor.srcPngDir}/**/*.png`, gulp.series('png_sprite'));
 	}
+
+	if (global.skeletor.templateLang == 'ssi') {
+		if (global.skeletor.useBrowserSync) {
+			gulp.watch(`${global.skeletor.srcSSIDir}/**/*.html`, gulp.series('static_templates', 'browserSync:reload'));
+		} else {
+			gulp.watch(`${global.skeletor.srcSSIDir}/**/*.html`, gulp.series('static_templates'));
+		}
+	}
+
+	if (global.skeletor.templateLang == 'pug') {
+		if (global.skeletor.useBrowserSync) {
+			gulp.watch(`${global.skeletor.srcPugDir}/**/*.pug`, gulp.series('static_templates', 'browserSync:reload'));
+		} else {
+			gulp.watch(`${global.skeletor.srcPugDir}/**/*.pug`, gulp.series('static_templates'));
+		}
+	}
 });
 
 gulp.task('build', gulp.series('webpack:build', 'svg_sprite', 'svg_inlinecss', 'png_sprite', 'sass:build'));
