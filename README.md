@@ -1,6 +1,6 @@
 # Front End build tooling boilerplate 
 
-_Skeletor_ is an opinionated starting point for front end projects. Mainly it was developed for projects at Delphic Digital, but it was designed to be agnostic, so any project is capable of using it. It is designed to give you a quick and organized way to start developing websites with best practices in mind.
+_Skeletor_ is an opinionated starting point for front end projects at Hero Digital, but there's nothing proprietery in here nor is it tied to any particular cms. It is designed to give you a quick and organized way to start developing front end code.
 
 Note that "💀" marks things that you will likely need to configure for each project.
 
@@ -11,15 +11,15 @@ Note that "💀" marks things that you will likely need to configure for each pr
  - `npm start`
  - `npm run build`
  - And if you feel like leveling up:
- - `npm run test-js` _Requires [Ava](https://github.com/avajs/ava)_ `npm i -g ava`
- - `npm run test-a11y` _Requires [Pa11y](https://github.com/pa11y/pa11y)_ `npm i -g pa11y`
- - `npm run test-speed` _Requires [pwmetrics](https://github.com/paulirish/pwmetrics)_ `npm i -g pwmetrics`
+ - `npm run test-js` To run js unit tests! modulefilename.test.js _Requires [Ava](https://github.com/avajs/ava)_ `npm i -g ava`
+ - `npm run test-a11y` To run accessibility tests on your html _Requires [Pa11y](https://github.com/pa11y/pa11y)_ `npm i -g pa11y`
+ - `npm run test-speed` To get speed metrics _Requires [pwmetrics](https://github.com/paulirish/pwmetrics)_ `npm i -g pwmetrics`
 
 ## Static markup
 
 Your choice between: 
- - **[Pug](https://pugjs.org)** (Jade rebranded) for more extensive work in static markup with all the power of an actual templating language
- - **Server Side Includes** if your project is starting asap and the backend isn't quite ready yet)
+ - **[Pug](https://pugjs.org)** (Jade rebranded) for writing static markup with all the power of an actual templating language.
+ - **Server Side Includes** for those ASAP projects when the backend isn't quite ready yet.
 
 ## General
 
@@ -28,13 +28,13 @@ Configuration options in ./skeletor.config.js
  - 💀 `useBrowserSync` allows you to disable it
     - `useBrowserSync:true` browsersync will be started on `npm start`
     - `useBrowserSync:false` will not start browsersync. _(Because sometimes you're proxying a server that is just painfully slow)_
- - 💀 `proxy` to set what browsersync points at
-    - `proxy = false` will set browsersync to static mode and serve files from the dist folder
-    - `proxy = 'localproject.dev'` will set browsersync to proxy that url
- - 💀 `localUrl` Currently only used by pa11y to test the served markup, either static or a running site.
- - 💀 `stagingUrl` For use in pwmetircs.config.js or pa11y.js if you want to test staging
- - 💀 `liveUrl` Same again. This is where speed testing will really count.
- - 💀 local path variables _(If a system needs your JS dist files in one place, your CSS in another, and your assets in a third. It happens.)_
+ - 💀 `proxy` for BrowserSync
+    - `proxy = false` browsersync will serve the static files in ./dist/_markup
+    - `proxy = 'localproject.dev'` BrowserSync will proxy that url
+ - 💀 `localUrl` used in the pa11y & pwmetrics configuration for testing targets
+ - 💀 `stagingUrl` Also pa11y & pwmetrics - you'll have to set this in their config to run staging tests
+ - 💀 `liveUrl` Same again. This is where speed testing will really count (pwmetrics is already pointing at this so you can run baseline speed tests).
+ - 💀 local path variables _(For those projects that need your JS dist files in one place, your CSS in another, and your assets in a third.)_
     - `fedSrcRoot` The src directory for the working files, used as a root to the other src path variable
     - `fedDistRoot` Same as src, but for dist! _Note if your dist dir has to be split by type, this may become redundant_
     - Javascript paths
