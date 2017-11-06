@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
-    svgSprite = require('gulp-svg-sprite'),
-    svgmin = require('gulp-svgmin');
+    svgSprite = require('gulp-svg-sprite');
 
 
 /**

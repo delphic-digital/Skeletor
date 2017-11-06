@@ -124,3 +124,4 @@ For VS Code:
  - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/), might not be worth it - we don't build proper spas
  - TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/) needs optmization work, again probably not be worth it for most projects.
  - TODO: set up pwmetrics to submit reports to google drive - get performance reports graphed over time!
+ - TODO: switch to `babel-preset-env` and link to docs for it
