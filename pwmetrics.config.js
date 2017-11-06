@@ -5,7 +5,7 @@ var skeletorConfig = require('./skeletor.config.js');
 //https://www.npmjs.com/package/pwmetrics
 
 module.exports = {
-	url: skeletorConfig.localUrl,
+	url: skeletorConfig.liveUrl,
 	expectations: {
 		ttfmp: {
 			warn: '>=500',

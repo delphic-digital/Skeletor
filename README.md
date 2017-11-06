@@ -10,63 +10,70 @@ Note that "💀" marks things that you will likely need to configure for each pr
  - `npm install`
  - `npm start`
  - `npm run build`
- - `npm run test` (_Note this will require some global installs, trying to keep the critical path a little lighter for you._) `npm i -g ava pwmetrics`
- - You might also want to remove ./src/scss/future from production projects. It's a place where only our dreams can fly.
+ - And if you feel like leveling up:
+ - `npm run test-js` _Requires [Ava](https://github.com/avajs/ava)_ `npm i -g ava`
+ - `npm run test-a11y` _Requires [Pa11y](https://github.com/pa11y/pa11y)_ `npm i -g pa11y`
+ - `npm run test-speed` _Requires [pwmetrics](https://github.com/paulirish/pwmetrics)_ `npm i -g pwmetrics`
 
 ## Static markup
 
-Currently set up with [pug](https://pugjs.org) (Jade rebranded) in ./src/_pug. Compiles to ./dist/_markup.
-
- - TODO: serve markup from browsersync & point pa11y there.
- - TODO: add ssi for personal choice & a toggle to switch between. At least until one wins out. Old vs New.
+Your choice between: 
+ - **[Pug](https://pugjs.org)** (Jade rebranded) for more extensive work in static markup with all the power of an actual templating language
+ - **Server Side Includes** if your project is starting asap and the backend isn't quite ready yet)
 
 ## General
 
 Configuration options in ./skeletor.config.js
 
- - 💀 `proxy` to set what browsersync points at
-    - `false` will set browsersync to static mode and serve files from the dist folder
-    - `localproject.dev` will set browsersync to proxy that url
- - `testUrl` built from `proxy`, this will be your local _(Note to run tests against your local it has to be running already)_
- - 💀 `stagingUrl` so we can point tests at staging
- - 💀 `liveUrl` and also test live!
  - 💀 `useBrowserSync` allows you to disable it
-    - `true` browsersync will be started on `npm start`
-    - `false` will not start browsersync. _(Because sometimes you're proxying a server that is just painfully slow)_
+    - `useBrowserSync:true` browsersync will be started on `npm start`
+    - `useBrowserSync:false` will not start browsersync. _(Because sometimes you're proxying a server that is just painfully slow)_
+ - 💀 `proxy` to set what browsersync points at
+    - `proxy = false` will set browsersync to static mode and serve files from the dist folder
+    - `proxy = 'localproject.dev'` will set browsersync to proxy that url
+ - 💀 `localUrl` Currently only used by pa11y to test the served markup, either static or a running site.
+ - 💀 `stagingUrl` For use in pwmetircs.config.js or pa11y.js if you want to test staging
+ - 💀 `liveUrl` Same again. This is where speed testing will really count.
  - 💀 local path variables _(If a system needs your JS dist files in one place, your CSS in another, and your assets in a third. It happens.)_
     - `fedSrcRoot` The src directory for the working files, used as a root to the other src path variable
-        - `srcJsDir`
-        - `srcScssDir`
-        - `srcSvgDir`
-        - `srcPngDir`
     - `fedDistRoot` Same as src, but for dist! _Note if your dist dir has to be split by type, this may become redundant_
+    - Javascript paths
+        - `srcJsDir`
         - `distJsDir`
+    - Styling paths
+        - `srcScssDir`
         - `distCssDir`
-        - 💀 `distSpriteSvgDir` The SVG sprite to be `<use>`d either as an external sprite or rendered into page templates.
-        - 💀 `distSpritePngDir` png sprite, will probably have to be pointed to some kind of theme assets dir relative to the CMS your in.
         - 💀 `distCssPngSpriteDirUrl` This sets the URL that will be used by production CSS to locate the png sprite.
+    - Raster sprite (png) paths
+        - `srcPngDir`
+        - 💀 `distSpritePngDir` png sprite, will probably have to be pointed to some kind of theme assets dir relative to the CMS your in.
+    - SVG sprite paths
+        - `srcSvgDir`
+        - 💀 `distSpriteSvgDir` The SVG sprite to be `<use>`d either as an external sprite or rendered into page templates.
+ - `templateLang` 'pug', 'ssi', or `false` if you don't need it
+    - `srcPugDir` if running pug, these are used as the static markup source
+    - `srcSSIDir` or if running ssi, these are used
+    - `distTemplateDir` either way, static markup gets rendered here
 
 ## Testing
 
-Also the testing tools aren't installed to the local project, they're not on the critical path (for now) which we're trying to keep light. So you will have to install these globally (unless you already have them in which case, begin!):
-
- - `npm i -g ava pwmetrics`
+The testing tools are not installed locally by default, #agencylife. To install all the testing tools: `npm i -g ava pa11y pwmetrics`
 
 ### Accesability testing
 
- - `npm run test:a11y`
+ - `npm run test-a11y`
 
 Testing the markup with [Pa11y](http://pa11y.org/). Will test the index file in dist by default, but switches to the proxy when you set that.
 
 ### Performance testing
 
- - `npm run test:performance`
+ - `npm run test-speed`
 
 Testing with [PWMetrics](https://www.npmjs.com/package/pwmetrics). It will open a browser, let it sit for a while then it should close and log the test results to the console. Note that this can be set up to save results into google sheets, will need some research and configuration to do that though.
 
 ### JS Unit testing
 
- - `npm run test:unit`
+ - `npm run test-js`
 
 Testing with [AVA](https://github.com/avajs/ava). This will only ever test your local source code, it can't test distributed code through a url. Also test results are output to the command line. If the test script ends in npm ERR! you've probably got a few failing tests, scroll up to read them!
 
@@ -116,5 +123,4 @@ For VS Code:
  - TODO: SVG png sprite fallback?
  - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/), might not be worth it - we don't build proper spas
  - TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/) needs optmization work, again probably not be worth it for most projects.
- - TODO: Package-lock.json (when we're all on or beyond npm5) / shrinkwrap on build?
  - TODO: set up pwmetrics to submit reports to google drive - get performance reports graphed over time!

@@ -4,10 +4,10 @@
   "version": "0.16.0",
   "scripts": {
     "start": "gulp",
-    "test": "run-s test:*",
-    "test:unit": "ava --tap | tap-spec",
-    "test:a11y": "node pa11y.js",
-    "test:performance": "pwmetrics --config=pwmetrics.config.js",
+    "test": "run-s test-*",
+    "test-js": "ava --tap | tap-spec",
+    "test-a11y": "node pa11y.js",
+    "test-speed": "pwmetrics --config=pwmetrics.config.js",
     "build": "gulp build"
   },
   "ava": {
@@ -55,8 +55,6 @@
     "node-bourbon": "^4.2.8",
     "node-sass": "^4.5.3",
     "node-sass-globbing": "0.0.23",
-    "npm-run-all": "^4.1.1",
-    "pa11y": "^4.13.1",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^3.0.2",
     "sass-lint": "^1.12.0",

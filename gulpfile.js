@@ -22,19 +22,24 @@ gulp.task('watch', function(){
 		gulp.watch(`${global.skeletor.srcPngDir}/**/*.png`, gulp.series('png_sprite'));
 	}
 
-	if (global.skeletor.templateLang == 'ssi') {
-		if (global.skeletor.useBrowserSync) {
-			gulp.watch(`${global.skeletor.srcSSIDir}/**/*.html`, gulp.series('static_templates', 'browserSync:reload'));
-		} else {
-			gulp.watch(`${global.skeletor.srcSSIDir}/**/*.html`, gulp.series('static_templates'));
-		}
-	}
+	if (global.skeletor.templateLang) { //allow it to be set to false if static markup isn't needed
 
-	if (global.skeletor.templateLang == 'pug') {
-		if (global.skeletor.useBrowserSync) {
-			gulp.watch(`${global.skeletor.srcPugDir}/**/*.pug`, gulp.series('static_templates', 'browserSync:reload'));
-		} else {
-			gulp.watch(`${global.skeletor.srcPugDir}/**/*.pug`, gulp.series('static_templates'));
+		//for writing markup with server side includes. 
+		if (global.skeletor.templateLang == 'ssi') {
+			if (global.skeletor.useBrowserSync) {
+				gulp.watch(`${global.skeletor.srcSSIDir}/**/*.html`, gulp.series('static_templates', 'browserSync:reload'));
+			} else {
+				gulp.watch(`${global.skeletor.srcSSIDir}/**/*.html`, gulp.series('static_templates'));
+			}
+		}
+	
+		//Pug ftw!
+		if (global.skeletor.templateLang == 'pug') {
+			if (global.skeletor.useBrowserSync) {
+				gulp.watch(`${global.skeletor.srcPugDir}/**/*.pug`, gulp.series('static_templates', 'browserSync:reload'));
+			} else {
+				gulp.watch(`${global.skeletor.srcPugDir}/**/*.pug`, gulp.series('static_templates'));
+			}
 		}
 	}
 });
