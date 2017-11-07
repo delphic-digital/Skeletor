@@ -125,3 +125,5 @@ For VS Code:
  - TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/) needs optmization work, again probably not be worth it for most projects.
  - TODO: set up pwmetrics to submit reports to google drive - get performance reports graphed over time!
  - TODO: switch to `babel-preset-env` and link to docs for it
+ - TODO: https://github.com/sindresorhus/gulp-imagemin image minification
+ - TODO: api testing
