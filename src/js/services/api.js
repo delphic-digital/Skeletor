@@ -1,9 +1,5 @@
 /**
- * This uses promises as a local cache. 
- * call() returns a promise that is saved to one of the cache objects. 
- * If you call the same url the now existing promise will be returned.
- * You can call this multiple times before the api returns, it will still only make one request.
- * You can call this multiple times after the api returns, in that case it will resolve immidiatly.
+ * Use this to make api calls!
  * 
  * TODO: warning / cancel http requests made if the current domain is http
  * TODO: Responces are assumed to be JSON. Provide a configuration parameter to allow other types to be expected 
@@ -38,11 +34,18 @@ function call(url, fetchConfig){
 }
 
 /**
+ * All get requests are cached by default (as a promise saved to the getCaches object using the url as the key).
+ * You can call this multiple times before the api returns, it will still only make one request and all calls to it will resolve when that one http request resolves. Nifty!
+ * You can call this multiple times after the api returns, in that case it will resolve immidiatly and not make any further requests. Unless you pass anything in as the second parameter
  * @param {*} url - Pass in the full url you wish to call, including the protocal
  * @param {*} bustCache - If you pass anything into bust cache, it will bust the cache.
  * @returns {Promise} - Promise object returns data parsed as json
  */
 function get(url, bustCache) {
+	if (typeof bustCache === 'object') {
+		//this may happen when get is mistakenly used in place of post or it's assumed there are configuration options. TODO: make those configuration options
+		console.warn('bustCache is usually a boolean, got object: ', bustCache);
+	}
 
 	if (typeof getCaches[url] == 'undefined' || typeof bustCache !== 'undefined') {
 		getCaches[url] = call(url, {method: 'GET'});
