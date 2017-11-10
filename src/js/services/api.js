@@ -6,10 +6,7 @@
  * You can call this multiple times after the api returns, in that case it will resolve immidiatly.
  * 
  * TODO: warning / cancel http requests made if the current domain is http
- * TODO: local cache busting param if requests do actually need to make another request
- * TODO: post requests getting cached... probably not a good idea
- * TODO: post data into post request
- * TODO: any other types other than json? Should probably add some override configuration
+ * TODO: Responces are assumed to be JSON. Provide a configuration parameter to allow other types to be expected 
  *  
 api.get(https://your-fancy-api.com/?givemedata=allthedata)
 	.then((data) => {
@@ -19,8 +16,7 @@ api.get(https://your-fancy-api.com/?givemedata=allthedata)
 	});
 */
 
-let getCaches = {},
-	postCaches = {};
+let getCaches = {};
 
 function call(url, fetchConfig){
 
@@ -41,24 +37,29 @@ function call(url, fetchConfig){
 	});
 }
 
-function get(url) {
+/**
+ * @param {*} url - Pass in the full url you wish to call, including the protocal
+ * @param {*} bustCache - If you pass anything into bust cache, it will bust the cache.
+ * @returns {Promise} - Promise object returns data parsed as json
+ */
+function get(url, bustCache) {
 
-	if (typeof getCaches[url] == 'undefined') {
+	if (typeof getCaches[url] == 'undefined' || typeof bustCache !== 'undefined') {
 		getCaches[url] = call(url, {method: 'GET'});
 	}
 
 	return getCaches[url];
 }
 
-function post(url) {
-
-	if (typeof postCaches[url] == 'undefined') {
-		postCaches[url] = call(url, {method: 'POST'});
-	}
-
-	return postCaches[url];
+/**
+ * Post requests are not cached
+ * @param {*} url - Again the full url with protocal 
+ * @param {*} data - Pass in the data you wish to send
+ * @returns {Promise} - Promise object returns data parsed as json
+ */
+function post(url, data) {
+	return call(url, {method: 'POST', body: data});
 }
-
 
 export default {
 	get, post
