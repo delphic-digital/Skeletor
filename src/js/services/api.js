@@ -2,7 +2,11 @@
  * Use this to make api calls!
  * 
  * TODO: warning / cancel http requests made if the current domain is http
- * TODO: Responces are assumed to be JSON. Provide a configuration parameter to allow other types to be expected 
+ * TODO: Responces are assumed to be JSON. Provide a configuration parameter to allow other types to be expected, eg:
+ * TODO: turn api into a class & save the domain so further calls only need to add the path. 
+ *       let amazingDataApi = new Api('https://amazingdata.com/');
+ *       amazingDataApi.get('amazing-things')
+ *           .then( ...
  *  
 api.get(https://your-fancy-api.com/?givemedata=allthedata)
 	.then((data) => {
