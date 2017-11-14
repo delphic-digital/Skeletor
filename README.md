@@ -11,7 +11,7 @@ Note that "💀" marks things that you will likely need to configure for each pr
  - `npm start`
  - `npm run build`
  - And if you feel like leveling up:
- - `npm run test-js` To run js unit tests! modulefilename.test.js _Requires [Ava](https://github.com/avajs/ava)_ `npm i -g ava`
+ - `npm run test-js` To run js unit tests! modulefilename.test.js
  - `npm run test-a11y` To run accessibility tests on your html _Requires [Pa11y](https://github.com/pa11y/pa11y)_ `npm i -g pa11y`
  - `npm run test-speed` To get speed metrics _Requires [pwmetrics](https://github.com/paulirish/pwmetrics)_ `npm i -g pwmetrics`
 
@@ -57,7 +57,7 @@ Configuration options in ./skeletor.config.js
 
 ## Testing
 
-The testing tools are not installed locally by default, #agencylife. To install all the testing tools: `npm i -g ava pa11y pwmetrics`
+The testing tools are not installed locally by default, #agencylife. To install all the testing tools: `npm i -g pa11y pwmetrics`
 
 ### Accesability testing
 

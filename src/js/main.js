@@ -6,5 +6,9 @@ window.$ = $;
 
 $(document).ready(function() {
 	flipper.init();
-		hello.init();
+	hello.init();
+
+	//included in the vendor bundle (look at the vendors array in /build_tasks/webpack.js) 
+	//Allows you to <use> external svgs with support for IE 9, 10, and 11.
+	window.svg4everybody();
 });
