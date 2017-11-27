@@ -3,6 +3,9 @@ import hello from './components/hello.js'; //simple component in it's oen js fil
 import flipper from './components/flipper'; //complex component contained in a folder, just name the folder
 import weather from './components/weather.js';
 
+import './vendor/svg4everybody.js';
+window.svg4everybody();
+
 //jQuery everywhere!
 window.$ = $;
 
