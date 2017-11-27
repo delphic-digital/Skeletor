@@ -13,7 +13,6 @@ const webpackConfig = {
 		vendor: [
 			'jquery',
 			// 'velocity-animate',
-			'svg4everybody',
 			'picturefill'
 		]
 	},
