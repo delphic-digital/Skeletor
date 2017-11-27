@@ -29,6 +29,7 @@ module.exports = {
         "process": true,
         "__dirname": true,
         "module": true,
+        "define": true,
         "require": true,
         "$": true,
         "Velocity": true
