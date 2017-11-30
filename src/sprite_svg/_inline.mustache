@@ -7,8 +7,6 @@ ${{{name}}}: "{{{inline}}}" {{width}} {{height}};
 	$img: inline-svg-fill( nth($name, 1),$fill);
 	background: transparent url($img) no-repeat 50% 50%;
 	background-size: 100%;
-	width: nth($name, 2);
-	height: nth($name, 3);
 }
 
 @function inline-svg-width($name) {
