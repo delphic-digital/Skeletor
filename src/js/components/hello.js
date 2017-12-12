@@ -5,7 +5,7 @@ function init(){
 }
 
 function iReturnTrue(){
-		return true;
+	return true;
 }
 
 export default {

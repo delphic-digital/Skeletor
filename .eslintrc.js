@@ -22,7 +22,7 @@ module.exports = {
             "error",
             "always"
         ],
-        "no-console": [1]
+        "no-console": [0]
     },
     "globals": {
         "global": true,
