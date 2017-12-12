@@ -58,7 +58,6 @@
     "node-sass-globbing": "0.0.23",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^3.0.2",
-    "prepack-webpack-plugin": "^1.1.0",
     "sass-lint": "^1.12.0",
     "supertest": "^3.0.0",
     "susy": "^3.0.1",
