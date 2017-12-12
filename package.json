@@ -8,7 +8,8 @@
     "test-js": "ava --tap | tap-spec",
     "test-a11y": "node pa11y.js",
     "test-speed": "pwmetrics --config=pwmetrics.config.js",
-    "build": "gulp build"
+    "build": "gulp build",
+    "api": "node _api/app.js"
   },
   "ava": {
     "files": [
@@ -57,6 +58,7 @@
     "node-sass-globbing": "0.0.23",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^3.0.2",
+    "restify": "^6.3.4",
     "sass-lint": "^1.12.0",
     "supertest": "^3.0.0",
     "susy": "^3.0.1",
