@@ -13,7 +13,6 @@ const webpackConfig = {
 		vendor: [
 			'jquery',
 			// 'velocity-animate',
-			'svg4everybody',
 			'picturefill'
 		]
 	},
@@ -25,9 +24,10 @@ const webpackConfig = {
 	module: {
 		rules: [
 			{ 
-				test: /(?!test)[\w-]{4}\.js$/, //match .js files but not .test.js files
-				exclude: /node_modules/,
-				// include: path.resolve(__dirname, 'src'),
+				// test: /(?!test)[\w-]{4}\.js$/, //match .js files but not .test.js files
+				test: /\.js$/,
+				exclude: /node_modules/, 
+				// include: path.resolve(__dirname, './src/js'),
 				use: {
 					loader: 'babel-loader',
 					options: {

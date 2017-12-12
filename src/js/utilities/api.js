@@ -22,16 +22,13 @@ function call(url, fetchConfig){
 
 	return new Promise((resolve, reject) => {
 		//TODO check between http and https
-
-		//clear out any double slashes
-		let cleanUrl = url.replace(/\/\//g, '/');
 		
-		fetch(cleanUrl, fetchConfig).then((res) => {
+		fetch(url, fetchConfig).then((res) => {
 			return res.json();
 		}).then((jsonizedRes) => {
 			resolve(jsonizedRes);
 		}).catch((err) => {
-			console.error(`REQUEST FAIL ${cleanUrl}`, err);
+			console.error(`REQUEST FAIL ${url}`, err);
 			reject(err);
 		});
 	});
