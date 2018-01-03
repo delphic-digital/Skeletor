@@ -127,3 +127,12 @@ For VS Code:
  - TODO: switch to `babel-preset-env` and link to docs for it
  - TODO: https://github.com/sindresorhus/gulp-imagemin image minification
  - TODO: api testing
+
+## Fed futures
+
+ - Fill out minimal a11y components / common layouts (essentially roll our own bootstrap?)
+ - Establish JS / CSS budgets
+ - Pull out specific vendor functions (eg, slim down jQuery - we probably don't use all of it)
+ - image lazy loading (eg fuzz to full on image? svg angle thing?)
+ - Service workers - get a good demo set up / research tools that make them easier to use.
+ - Automated regression testing pointing at staging environments (eg nightwatch / something powered by headless chrome), flag all visual changes so we see if we've broken anything. Run once before update and once after.
