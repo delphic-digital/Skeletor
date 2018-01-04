@@ -136,3 +136,40 @@ For VS Code:
  - image lazy loading (eg fuzz to full on image? svg angle thing?)
  - Service workers - get a good demo set up / research tools that make them easier to use.
  - Automated regression testing pointing at staging environments (eg nightwatch / something powered by headless chrome), flag all visual changes so we see if we've broken anything. Run once before update and once after.
+ 
+ http://perf.rocks/tools/node/
+ 
+ Tooling:
+  - cssnano (already in!)
+  - svgo (yes! thought I ad it in already but seems I missed it)
+  - critical (yes this looks good! Probably quite tricky given the types of projects we do, but would be worth a dig!)
+  - CSS Colorguard (yes! But I bet design won't like it)
+  - sharp (image min - yes this should go in! imagemagik is a competitor but sharp claims to be faster)
+  - ImageOptim-CLI (competitor to sharp, so yes if it's better)
+  - cssshrink (we might already have css shrunk down as far as it can go, would need a positive test before implementing this)
+  - clean-css (also test - we may already have css shrunk as much as we can)
+  - cwebp  (yes if browser support & fallback - BB did a post on this I believe (webp)!)
+  
+ Metrics:
+  - Parker (style sheet analysis - looks interesting! Check if there are any competitors, there's not much in the day of docs here)
+  - StyleStats (competitor to Parker, looks newer - no idea which is better)
+  - unusedjs (good idea, would be nice if there was a webpack / eslint thing that does this without proxying though)
+  - zopfli (potentially - might need coordination with devops as it's usually the server that deals with this kind of compression)
+  - lighthouse (used by pwmetrics - todo: compare, is pwmetrics just a subset of what lighthouse can do?)
+  - bigrig (takes the output from chrome metrics (lighthouse!) and makes a pretty graph)
+  - TMI (Too Many Images) (yes looks interesting - see how we're doing against the rest of the web)
+  - sitespeed.io (yes this looks fun!)
+  - perfjankie (tests scroll jank - if we start doing heavy animation stuff this will probably be a good thing to look into)
+  - RWDPerf (looks abandoned - lighthouse might cover the same things though, look into lighthouse throttling / mobile emulation)
+ 
+ Probably no:
+  - HTMLMinifier (for static sites possibly - it's already an option in pug. For client sites, maybe sitecore does this?)
+  - perfschool (I think this is just a tutorial?)
+  - speedgun (runs on phantom - looks abandoned (headless chrome has overtaken phantom))
+  - Phantomas (phantom again)
+  - vulcanize (if we go towards web components this looks like it would be a good thing - more learning needed!)
+  - csscss (this just tells us there is duplicate css - the other tools we have remove it so this one isn't needed)
+  - browser-perf (bundled in sitespeed.io, might be worth checking to see if this does anything extra that sitespeed doesn't cover)
+  - imagemin (depreciated? It points to css shrink now)
+  
+  
