@@ -1,32 +1,15 @@
-//sass plugins!
-$output-bourbon-deprecation-warnings: false;
-@import "bourbon";
-@import "susy";
-@import "breakpoint";
-
-//mixins / functions / variables & related utility classes
-@import "abstracts/**/*";
-
-//utility classes & mixins to spit out the css for them
-@import "utilities/**/*";
-
 *,
 *:before,
 *:after {
-	@include prefixer(box-sizing, border-box, webkit moz spec);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html {
-	font-family: "mobile";
-	@include breakpoint($medium) {
-		font-family: "tablet";
-	}
-	@include breakpoint($large) {
-		font-family: "desktop";
-	}
-}
+@import "breakpoint";
 
-@import "base/**/*"; //base styles - pretty much just html elements
-@import "components/**/*"; //this is where most things will live
-@import "layout/**/*"; //The containers within which the components will live Plus the fixed things like header / footer
-@import "future/**/*"; //Things we cannot yet include in production because they're just too damn new.
+@import "_utilities/**/*";
+
+@import "base/**/*";
+@import "components/**/*";
+@import "layout/**/*"; 

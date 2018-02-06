@@ -9,11 +9,6 @@ const webpackConfig = {
 	entry: {
 		main: [
 			`${global.skeletor.srcJsDir}/main.js`
-		],
-		vendor: [
-			'jquery',
-			// 'velocity-animate',
-			'picturefill'
 		]
 	},
 	// devtool: 'eval',

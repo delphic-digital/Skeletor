@@ -9,5 +9,5 @@ gulp.task('svg_inlinecss', function() {
 		.pipe(inlineSvg({
 			template: `${global.skeletor.srcSvgDir}/_inline.mustache`
 		}))
-		.pipe(gulp.dest(`${global.skeletor.srcScssDir}/abstracts/`)); //_inline-svg.scss
+		.pipe(gulp.dest(`${global.skeletor.srcScssDir}/_utilities/`)); //_inline-svg.scss
 });

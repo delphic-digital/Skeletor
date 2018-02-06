@@ -1,8 +1,0 @@
-.skeletor-component {
-	transform: perspective(600px) rotateY(0deg);
-	transition: transform .3s ease-in;
-
-	&.flipped {
-		transform: perspective(600px) rotateY(180deg);
-	}
-}
