@@ -10,16 +10,6 @@ Note that "💀" marks things that you will likely need to configure for each pr
  - `npm install`
  - `npm start`
  - `npm run build`
- - And if you feel like leveling up:
- - `npm run test-js` To run js unit tests! modulefilename.test.js
- - `npm run test-a11y` To run accessibility tests on your html _Requires [Pa11y](https://github.com/pa11y/pa11y)_ `npm i -g pa11y`
- - `npm run test-speed` To get speed metrics _Requires [pwmetrics](https://github.com/paulirish/pwmetrics)_ `npm i -g pwmetrics`
-
-## Static markup
-
-Your choice between: 
- - **[Pug](https://pugjs.org)** (Jade rebranded) for writing static markup with all the power of an actual templating language.
- - **Server Side Includes** for those ASAP projects when the backend isn't quite ready yet.
 
 ## General
 
@@ -44,52 +34,20 @@ Configuration options in ./skeletor.config.js
         - `srcScssDir`
         - `distCssDir`
         - 💀 `distCssPngSpriteDirUrl` This sets the URL that will be used by production CSS to locate the png sprite.
-    - Raster sprite (png) paths
-        - `srcPngDir`
-        - 💀 `distSpritePngDir` png sprite, will probably have to be pointed to some kind of theme assets dir relative to the CMS your in.
     - SVG sprite paths
         - `srcSvgDir`
         - 💀 `distSpriteSvgDir` The SVG sprite to be `<use>`d either as an external sprite or rendered into page templates.
- - `templateLang` 'pug', 'ssi', or `false` if you don't need it
-    - `srcPugDir` if running pug, these are used as the static markup source
-    - `srcSSIDir` or if running ssi, these are used
-    - `distTemplateDir` either way, static markup gets rendered here
 
-## Testing
-
-The testing tools are not installed locally by default, #agencylife. To install all the testing tools: `npm i -g pa11y pwmetrics`
-
-### Accesability testing
-
- - `npm run test-a11y`
-
-Testing the markup with [Pa11y](http://pa11y.org/). Will test the index file in dist by default, but switches to the proxy when you set that.
-
-### Performance testing
-
- - `npm run test-speed`
-
-Testing with [PWMetrics](https://www.npmjs.com/package/pwmetrics). It will open a browser, let it sit for a while then it should close and log the test results to the console. Note that this can be set up to save results into google sheets, will need some research and configuration to do that though.
-
-### JS Unit testing
-
- - `npm run test-js`
-
-Testing with [AVA](https://github.com/avajs/ava). This will only ever test your local source code, it can't test distributed code through a url. Also test results are output to the command line. If the test script ends in npm ERR! you've probably got a few failing tests, scroll up to read them!
 
 ## JS
 
  - ES6: write modern modular Javascript!
  - Bundled by Webpack, take your pick of the plugins available there
- - [ESLint](https://eslint.org/): code styles defined in the .eslintrc.js file
  - Bundle size analyzer! On `npm run build` opens a visual to give you an idea of how much JS you're pulling in. Note that this is showing the src, not dist. TODO analyse the dist
 
 ## SASS & PostCSS
 
- - [Susy](http://oddbird.net/susy/)
  - [Breakpoints](http://breakpoint-sass.com/)
- - [Bourbon](http://bourbon.io/)
- - [Sass-lint](https://github.com/sasstools/sass-lint)
  - [Postcss](http://postcss.org/) & [css next](http://cssnext.io/features/)
 
 ## SVG Spriting & inline Sass
@@ -99,12 +57,6 @@ Place individual svg files in ./src/sprite_svg/
  - 💀 Compiles svgs into a sprite file ready to be `<use>`d
  - Generates _svg.scss which provides the `inline-svg` mixin for setting svgs as css backgrounds
 
-## Png Sprites
-
-Place individual png files in ./src/sprite_png/
-
- - 💀 Sprites the png files into pngSprite.png
- - Generates _png.scss which provieds the `sprites` mixin and utility classes to set pngs as css backgrounds (I think - need to verify)
 
 ## Editor plugins
 
@@ -120,56 +72,4 @@ For VS Code:
 
  - TODO: configure JS linting to standards we all agree on
  - TODO: configure Sass linting to standards we all agree on
- - TODO: SVG png sprite fallback?
- - TODO: [Hot module reloading](https://css-tricks.com/combine-webpack-gulp-4/), might not be worth it - we don't build proper spas
- - TODO: [Code splitting](https://webpack.js.org/plugins/commons-chunk-plugin/) needs optmization work, again probably not be worth it for most projects.
- - TODO: set up pwmetrics to submit reports to google drive - get performance reports graphed over time!
  - TODO: switch to `babel-preset-env` and link to docs for it
- - TODO: https://github.com/sindresorhus/gulp-imagemin image minification
- - TODO: api testing
-
-## Fed futures
-
- - Fill out minimal a11y components / common layouts (essentially roll our own bootstrap?)
- - Establish JS / CSS budgets
- - Pull out specific vendor functions (eg, slim down jQuery - we probably don't use all of it)
- - image lazy loading (eg fuzz to full on image? svg angle thing?)
- - Service workers - get a good demo set up / research tools that make them easier to use.
- - Automated regression testing pointing at staging environments (eg nightwatch / something powered by headless chrome), flag all visual changes so we see if we've broken anything. Run once before update and once after.
- 
- http://perf.rocks/tools/node/
- 
- Tooling:
-  - cssnano (already in!)
-  - svgo (yes! thought I ad it in already but seems I missed it)
-  - critical (yes this looks good! Probably quite tricky given the types of projects we do, but would be worth a dig!)
-  - CSS Colorguard (yes! But I bet design won't like it)
-  - sharp (image min - yes this should go in! imagemagik is a competitor but sharp claims to be faster)
-  - ImageOptim-CLI (competitor to sharp, so yes if it's better)
-  - cssshrink (we might already have css shrunk down as far as it can go, would need a positive test before implementing this)
-  - clean-css (also test - we may already have css shrunk as much as we can)
-  - cwebp  (yes if browser support & fallback - BB did a post on this I believe (webp)!)
-  
- Metrics:
-  - Parker (style sheet analysis - looks interesting! Check if there are any competitors, there's not much in the day of docs here)
-  - StyleStats (competitor to Parker, looks newer - no idea which is better)
-  - unusedjs (good idea, would be nice if there was a webpack / eslint thing that does this without proxying though)
-  - zopfli (potentially - might need coordination with devops as it's usually the server that deals with this kind of compression)
-  - lighthouse (used by pwmetrics - todo: compare, is pwmetrics just a subset of what lighthouse can do?)
-  - bigrig (takes the output from chrome metrics (lighthouse!) and makes a pretty graph)
-  - TMI (Too Many Images) (yes looks interesting - see how we're doing against the rest of the web)
-  - sitespeed.io (yes this looks fun!)
-  - perfjankie (tests scroll jank - if we start doing heavy animation stuff this will probably be a good thing to look into)
-  - RWDPerf (looks abandoned - lighthouse might cover the same things though, look into lighthouse throttling / mobile emulation)
- 
- Probably no:
-  - HTMLMinifier (for static sites possibly - it's already an option in pug. For client sites, maybe sitecore does this?)
-  - perfschool (I think this is just a tutorial?)
-  - speedgun (runs on phantom - looks abandoned (headless chrome has overtaken phantom))
-  - Phantomas (phantom again)
-  - vulcanize (if we go towards web components this looks like it would be a good thing - more learning needed!)
-  - csscss (this just tells us there is duplicate css - the other tools we have remove it so this one isn't needed)
-  - browser-perf (bundled in sitespeed.io, might be worth checking to see if this does anything extra that sitespeed doesn't cover)
-  - imagemin (depreciated? It points to css shrink now)
-  
-  
